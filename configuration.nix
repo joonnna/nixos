@@ -41,6 +41,7 @@
       neovim
       git
       gh
+      gcc
       rustup
       docker
       docker-compose
