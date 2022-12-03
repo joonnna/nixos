@@ -23,7 +23,7 @@
 
   time.timeZone = "Europe/Oslo";
 
-  services.gnome3.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;
   programs.ssh.startAgent = true;
 
   # Enable CUPS to print documents.
