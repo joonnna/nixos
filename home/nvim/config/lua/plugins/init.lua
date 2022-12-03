@@ -1,0 +1,5 @@
+-- require('plugins/install')
+require('plugins/lsp')
+require('plugins/lualine')
+require('plugins/colorscheme')
+require('plugins/treesitter')
