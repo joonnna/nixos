@@ -2,6 +2,7 @@
 
 {
   hardware.bluetooth.enable = true;
+  hardware.pulseaudio.extraConfig = " load-module module-switch-on-connect ";
 
   services.pipewire = {
     enable = true;
