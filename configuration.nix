@@ -32,10 +32,12 @@
   programs.fish.enable = true;
   nixpkgs.config.allowUnfree = true;
 
+  virtualisation.docker.enable = true;
+
   users.users.jon = {
     isNormalUser = true;
     initialPassword = "pw123";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
     packages = with pkgs; [
       flameshot
       neovim

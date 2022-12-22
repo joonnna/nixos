@@ -14,7 +14,7 @@
       cc = "cargo clippy";
       testing = "nvim ~/workspace/testing/src/main.rs";
 
-      sp = "cargo sqlx prepare --lib";
+      sp = "cargo sqlx prepare -- --lib";
       sm = "sqlx migrate run";
 
       gs = "git status";
