@@ -1,14 +1,9 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
+{ config, lib, pkgs, nixpkgs, ... }:
 
 {
   imports =
     [
-      ./hardware-configuration.nix
-      ./home.nix
+      ./hm.nix
       ./gui.nix
       ./sound.nix
     ];
@@ -23,11 +18,12 @@
 
   time.timeZone = "Europe/Oslo";
 
+  nix.nixPath = [ "/etc/nix/path" ];
+  nix.registry.nixpkgs.flake = nixpkgs;
+  environment.etc."nix/path/nixpkgs".source = nixpkgs;
+
   services.gnome.gnome-keyring.enable = true;
   programs.ssh.startAgent = true;
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   programs.fish.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -44,7 +40,6 @@
       git
       gh
       gcc
-      rustup
       docker
       docker-compose
       vivaldi
@@ -73,6 +68,8 @@
       nodePackages.bash-language-server
       # For bash language server
       shellcheck
+
+      dbeaver
     ];
     shell = pkgs.fish;
   };

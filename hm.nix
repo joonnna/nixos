@@ -1,20 +1,18 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, nixpkgs, home-manager, ... }:
 
-let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-in
 {
   imports = [
-    (import "${home-manager}/nixos")
+    home-manager.nixosModule
   ];
 
   home-manager.users.jon = { pkgs, lib, ... }: {
     imports = [
-      ./home/i3.nix
-      ./home/nvim/nvim.nix
-      ./home/git.nix
-      ./home/alacritty.nix
-      ./home/fish.nix
+      ./hm/i3.nix
+      ./hm/nvim/nvim.nix
+      ./hm/git.nix
+      ./hm/alacritty.nix
+      ./hm/fish.nix
+      ./hm/starship.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
@@ -25,9 +23,11 @@ in
       EDITOR = "nvim";
       TERMINAL = "alacritty";
       SHELL = "fish";
+      NIX_PATH = "/etc/nix/path";
     };
 
     fonts.fontconfig.enable = true;
+
     home.packages = [
       (pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
     ];
@@ -45,3 +45,5 @@ in
     '';
   };
 }
+
+

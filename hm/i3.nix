@@ -15,8 +15,8 @@
           # is only set for the shell ant not ~/.profile.
           "${modifier}+Return" = "exec alacritty";
 
-          "${modifier}+Shift+d" = "exec wpctl set-volume @DEFAULT_SINK@ 0.2-";
-          "${modifier}+Shift+v" = "exec wpctl set-volume @DEFAULT_SINK@ 0.2+";
+          "${modifier}+Shift+d" = "exec wpctl set-volume @DEFAULT_SINK@ 0.1-";
+          "${modifier}+Shift+v" = "exec wpctl set-volume @DEFAULT_SINK@ 0.1+";
         };
     };
   };

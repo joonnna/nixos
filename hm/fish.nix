@@ -47,11 +47,5 @@
       htop = "btm";
       top = "btm";
     };
-    plugins = [
-      {
-        name = "pure";
-        src = pkgs.fishPlugins.pure.src;
-      }
-    ];
   };
 }
