@@ -6,6 +6,8 @@
     desktopManager = {
       xterm.enable = false;
     };
+    videoDrivers = [ "nvidia" ];
+
 
     displayManager = {
       defaultSession = "none+i3";

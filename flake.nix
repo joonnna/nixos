@@ -12,14 +12,14 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       specialArgs = attrs;
-      modules = [ ./configuration.nix ./home-desktop/hardware-configuration.nix ];
+      modules = [ ./configuration.nix ./home-desktop/hardware-configuration.nix ./home-desktop/settings.nix ];
     };
 
     nixosConfigurations.jon-work-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       specialArgs = attrs;
-      modules = [ ./configuration.nix ./work-desktop/hardware-configuration.nix ];
+      modules = [ ./configuration.nix ./work-desktop/hardware-configuration.nix ./work-desktop/settings.nix ];
     };
   };
 }

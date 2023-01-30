@@ -13,7 +13,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.device = "nodev";
 
-  networking.hostName = "jon";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Oslo";
@@ -57,6 +56,10 @@
       procs
       loc
       bottom
+
+      neofetch
+      tree-sitter
+      nodejs
 
       # Language servers
       sumneko-lua-language-server
