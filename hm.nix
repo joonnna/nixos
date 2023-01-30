@@ -32,6 +32,41 @@
       (pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
     ];
 
+    home.file."workspace/flake.nix".text = ''
+      {
+        description = "rust setup overlay";
+
+        inputs = {
+          rust-overlay.url = "github:oxalica/rust-overlay";
+          flake-utils.url = "github:numtide/flake-utils";
+        };
+
+        outputs = { self, nixpkgs, rust-overlay, flake-utils, ... }:
+          flake-utils.lib.eachDefaultSystem (system:
+            let
+              overlays = [ (import rust-overlay) ];
+              pkgs = import nixpkgs {
+                inherit system overlays;
+              };
+            in
+            with pkgs;
+            {
+              devShells.default = mkShell {
+                buildInputs = [
+                  openssl
+                  pkg-config
+                  protobuf
+                  rust-bin.stable.latest.default
+                ];
+              };
+            }
+          );
+      }
+    '';
+    home.file."workspace/.envrc".text = ''
+      use flake
+    '';
+
     # Private registries definitions
     xdg.configFile."cargo/config".text = ''
       [registries]
