@@ -6,6 +6,10 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.device = "nodev";
+
   services.xserver.displayManager.setupCommands = ''
     LEFT='DP-2'
     CENTER='DP-0'
