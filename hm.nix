@@ -4,7 +4,7 @@
   imports = [
     home-manager.nixosModule
   ];
-
+  home-manager.useGlobalPkgs = true;
   home-manager.users.jon = { pkgs, lib, ... }: {
     imports = [
       ./hm/i3.nix
