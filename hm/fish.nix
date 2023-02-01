@@ -20,6 +20,9 @@
       gs = "git status";
       gl = "git ol";
 
+      enix = "nvim ~/nixos/configuration.nix";
+      unix = "sudo nixos-rebuild switch --flake ~/nixos";
+
       gss = "git push -u origin HEAD";
       gp = "git push";
       gds = "git diff --staged";

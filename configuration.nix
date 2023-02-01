@@ -77,6 +77,8 @@
     keep-derivations = true
   '';
 
+  nix.settings.experimental-features = "nix-command flakes";
+
   system.stateVersion = "22.05";
 }
 
