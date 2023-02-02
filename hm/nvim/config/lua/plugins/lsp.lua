@@ -50,22 +50,20 @@ cmp.setup({
     }
 })
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Update through paru
 require('lspconfig')['rust_analyzer'].setup {
-    capabilites = capabilites,
     settings = {
         ["rust-analyzer"] = {
             cargo = {
                 allFeatures = true,
                 allTargets = true,
             },
-            checkOnSave = {
+            check = {
                 command = "clippy",
                 allTargets = true,
                 allFeatures = true,
-                extraArgs = { "--tests", "--all-targets", "--all-features" },
+                extraArgs = { "--tests" }
             }
         }
     }
@@ -74,42 +72,38 @@ require('lspconfig')['rust_analyzer'].setup {
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bicep
 local bicep_lsp_bin = "/usr/local/bin/bicep-langserver/Bicep.LangServer.dll"
 require 'lspconfig'.bicep.setup {
-    capabilities = capabilities,
     cmd = { "dotnet", bicep_lsp_bin };
 }
 
--- paru -S lua-language-server
-require 'lspconfig'.sumneko_lua.setup {
-    capabilities = capabilities,
-}
+require 'lspconfig'.sumneko_lua.setup {}
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
--- npm install -g yaml-language-server
 require('lspconfig').yamlls.setup {
-    capabilities = capabilities,
+    settings = {
+        yaml = {
+            trace = {
+                server = "verbose"
+            },
+            schemas = {
+                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+                kubernetes = "/*.yaml",
+            },
+            schemaDownload = { enable = true },
+            validate = true
+        },
+    }
 }
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls
--- npm install -g dockerfile-language-server-nodejs
-require 'lspconfig'.dockerls.setup {
-    capabilites = capabilites,
-}
+require 'lspconfig'.dockerls.setup {}
 
 -- https://github.com/denoland/deno
--- Update through cargo install-update
 require 'lspconfig'.denols.setup {
-    capabilites = capabilites,
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx",
         "markdown", "json" }
 }
 
 -- https://github.com/mads-hartmann/bash-language-server
--- npm i -g bash-language-server
--- paru -S shellcheck-bin
-require 'lspconfig'.bashls.setup {
-    capabilites = capabilites,
-}
+require 'lspconfig'.bashls.setup {}
 
-require 'lspconfig'.rnix.setup {
-    capabilites = capabilites,
-}
+require 'lspconfig'.rnix.setup {}

@@ -33,14 +33,9 @@
 
       dca = "docker kill (docker ps -q) && docker rm (docker ps -a -q) && docker volume rm (docker volume ls -q) && docker network prune -f";
       ds = "docker ps -a";
-      dr = "docker rm";
-      dk = "docker kill";
+      dcu = "docker-compose up";
+      dc = "docker-compose";
       drd = "docker run -e POSTGRES_PASSWORD=test123 -p 0.0.0.0:5432:5432 -d postgis/postgis:13-3.2-alpine";
-
-      so4 = "TERM=xterm ssh orca@192.168.38.13";
-      so3 = "TERM=xterm ssh orca@192.168.38.12";
-      so2 = "TERM=xterm ssh orca@192.168.38.11";
-      so1 = "TERM=xterm ssh orca@192.168.38.10";
 
       l = "exa";
       ls = "exa";

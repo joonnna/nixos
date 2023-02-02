@@ -42,6 +42,13 @@
       alacritty
       xclip
       fd
+      neofetch
+      tree-sitter
+      nodejs
+      dbeaver
+      k9s
+      azure-cli
+      kubectl
 
       # Rust-based linux command replacements
       exa
@@ -51,10 +58,6 @@
       procs
       loc
       bottom
-
-      neofetch
-      tree-sitter
-      nodejs
 
       # Language servers
       sumneko-lua-language-server
@@ -66,8 +69,6 @@
       nodePackages.bash-language-server
       # For bash language server
       shellcheck
-
-      dbeaver
     ];
     shell = pkgs.fish;
   };
