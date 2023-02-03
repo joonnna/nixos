@@ -11,6 +11,11 @@ o.swapfile = false
 o.clipboard = 'unnamedplus'
 o.termguicolors = true
 
+-- https://github.com/neovim/neovim/issues/14433
+vim.g.loaded_sql_completion = 0
+vim.g.omni_sql_default_compl_type = 'syntax'
+vim.g.omni_sql_no_default_maps = 1
+
 -- In-order:
 -- Remove trailing whitespaces
 -- Highlights trailing whitespaces (hightlight and match command)

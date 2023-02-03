@@ -4,9 +4,10 @@ local autocmd = vim.api.nvim_create_autocmd
 require("formatter").setup({
     filetype = {
         sql = function()
+            local config = reverse_find_file('.sql-formatter.json')
             return {
                 exe = "sql-formatter",
-                args = { "-l", "postgresql" },
+                args = config == nil and { "-l", "postgresql" } or { '--config', config }
             }
         end,
     },
@@ -26,3 +27,47 @@ autocmd("BufWritePost", {
     end,
     desc = "Formatting",
 })
+
+group = augroup("Formatter", {})
+autocmd("BufWritePost", {
+    pattern = {
+        "*.sql",
+    },
+    group = group,
+    callback = function()
+        if not vim.b.disable_formatting then
+            vim.cmd.FormatWrite()
+        end
+    end,
+    desc = "Formatting",
+})
+
+function _reverse_find_file(file, dir)
+    local files = get_os_command_output({ 'ls', '-a1' }, dir)
+    for _, x in pairs(files) do
+        if x == file then
+            return dir .. '/' .. file
+        end
+    end
+
+    return dir == '/' and nil or _reverse_find_file(file, path_pop(dir))
+end
+
+function reverse_find_file(file) return _reverse_find_file(file, path_pop(vim.api.nvim_buf_get_name(0))) end
+
+function get_os_command_output(cmd, cwd)
+    local result = {}
+    local job = vim.fn.jobstart(cmd, {
+        cwd = cwd,
+        stdout_buffered = true,
+        on_stdout = function(_, output, _) result = output end,
+    })
+    vim.fn.jobwait({ job })
+
+    return result
+end
+
+function path_pop(path)
+    local new_path, _ = string.gsub(path, '/[^/]+$', '')
+    return new_path == '' and '/' or new_path
+end

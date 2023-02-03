@@ -49,6 +49,8 @@
       k9s
       azure-cli
       kubectl
+      sqlx-cli
+      postgresql
 
       # Rust-based linux command replacements
       exa
@@ -58,6 +60,7 @@
       procs
       loc
       bottom
+
 
       # Language servers
       sumneko-lua-language-server
