@@ -67,6 +67,7 @@
       nodePackages.dockerfile-language-server-nodejs
       nodePackages.yaml-language-server
       nodePackages.bash-language-server
+      nodePackages.sql-formatter
       # For bash language server
       shellcheck
     ];

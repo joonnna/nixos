@@ -2,11 +2,9 @@
 
 {
   hardware.bluetooth.enable = true;
-  hardware.pulseaudio.extraConfig = ''
-    load-module module-switch-on-connect
-    load-module module-bluez5-discover
-  '';
+  hardware.pulseaudio.extraConfig = " load-module module-switch-on-connect ";
 
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
