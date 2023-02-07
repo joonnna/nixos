@@ -51,6 +51,7 @@
       kubectl
       sqlx-cli
       postgresql
+      unzip
 
       # Rust-based linux command replacements
       exa
