@@ -2,18 +2,16 @@
 
 let
   # installs a vim plugin from git with a given tag / branch
-  pluginGit = ref: repo: pkgs.vimUtils.buildVimPluginFrom2Nix {
+  pluginGit = repo: ref: rev: pkgs.vimUtils.buildVimPluginFrom2Nix {
     pname = "${lib.strings.sanitizeDerivationName repo}";
     version = ref;
     src = builtins.fetchGit {
       url = "https://github.com/${repo}.git";
       ref = ref;
-      rev = "9b0e1d1815a5756735150e9242e9713bc7257046";
+      rev = rev;
     };
   };
 
-  # always installs latest version
-  plugin = pluginGit "HEAD";
 in
 {
   programs.neovim = {
@@ -43,7 +41,8 @@ in
       lualine-lsp-progress
 
       plenary-nvim
-      (plugin "seblj/nvim-formatter")
+      (pluginGit "seblj/nvim-formatter" "HEAD" "9b0e1d1815a5756735150e9242e9713bc7257046")
+      (pluginGit "nanotee/sqls.nvim" "HEAD" "a0048b7018c99b68456f91b4aa42ce288f0c0774")
     ];
   };
 

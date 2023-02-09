@@ -1,11 +1,14 @@
 { config, lib, pkgs, nixpkgs, ... }:
 
+let customNodePackages = pkgs.callPackage ./custom_node_packages { };
+in
 {
   imports =
     [
       ./hm.nix
       ./gui.nix
       ./sound.nix
+      # ./custom_node_packages/override.nix
     ];
 
   networking.networkmanager.enable = true;
@@ -57,6 +60,8 @@
       postgresql
       unzip
       libreoffice
+      node2nix
+      customNodePackages.sql-language-server
 
       # Rust-based linux command replacements
       exa
@@ -77,6 +82,10 @@
       nodePackages.yaml-language-server
       nodePackages.bash-language-server
       nodePackages.sql-formatter
+
+      # TODO: install this declaratively
+      # nodePackages.sql-language-server
+
       # For bash language server
       shellcheck
     ];
