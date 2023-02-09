@@ -18,6 +18,10 @@
 
   services.gnome.gnome-keyring.enable = true;
   programs.ssh.startAgent = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
 
   programs.fish.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -52,6 +56,7 @@
       sqlx-cli
       postgresql
       unzip
+      libreoffice
 
       # Rust-based linux command replacements
       exa
