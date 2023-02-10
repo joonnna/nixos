@@ -28,12 +28,12 @@ autocmd("BufWritePost", {
     desc = "Formatting",
 })
 
-group = augroup("Formatter", {})
+local group2 = augroup("Formatter2", {})
 autocmd("BufWritePost", {
     pattern = {
         "*.sql",
     },
-    group = group,
+    group = group2,
     callback = function()
         if not vim.b.disable_formatting then
             vim.cmd.FormatWrite()
