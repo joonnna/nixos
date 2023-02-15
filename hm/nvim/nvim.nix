@@ -35,7 +35,6 @@ in
 
       cmp_luasnip
       nvim-cmp
-      cmp-buffer
       cmp-nvim-lsp
       cmp-nvim-lsp-signature-help
 
