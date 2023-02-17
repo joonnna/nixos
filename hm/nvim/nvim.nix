@@ -32,6 +32,7 @@ in
 
       vim-nix
       vim-fish
+      csv-vim
 
       cmp_luasnip
       nvim-cmp

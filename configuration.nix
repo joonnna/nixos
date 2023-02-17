@@ -56,6 +56,7 @@
       sqlx-cli
       postgresql
       unzip
+      zip
       libreoffice
 
       # Rust-based linux command replacements
