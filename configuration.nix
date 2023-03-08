@@ -58,6 +58,8 @@
       unzip
       zip
       libreoffice
+      terraform
+      heaptrack
 
       # Rust-based linux command replacements
       exa
@@ -78,6 +80,8 @@
       nodePackages.yaml-language-server
       nodePackages.bash-language-server
       nodePackages.sql-formatter
+      taplo-lsp
+      terraform-ls
       # For bash language server
       shellcheck
     ];

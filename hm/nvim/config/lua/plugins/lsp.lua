@@ -107,3 +107,7 @@ require 'lspconfig'.denols.setup {
 require 'lspconfig'.bashls.setup {}
 
 require 'lspconfig'.rnix.setup {}
+
+require 'lspconfig'.taplo.setup {}
+
+require 'lspconfig'.terraformls.setup {}
