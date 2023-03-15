@@ -72,10 +72,10 @@ require('lspconfig')['rust_analyzer'].setup {
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bicep
 local bicep_lsp_bin = "/usr/local/bin/bicep-langserver/Bicep.LangServer.dll"
 require 'lspconfig'.bicep.setup {
-    cmd = { "dotnet", bicep_lsp_bin };
+    cmd = { "dotnet", bicep_lsp_bin },
 }
 
-require 'lspconfig'.sumneko_lua.setup {}
+require 'lspconfig'.lua_ls.setup {}
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
 require('lspconfig').yamlls.setup {
