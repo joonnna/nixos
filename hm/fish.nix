@@ -44,6 +44,7 @@
 
       htop = "btm";
       top = "btm";
+      du = "dust";
     };
   };
 }

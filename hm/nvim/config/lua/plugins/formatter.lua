@@ -50,7 +50,11 @@ function _reverse_find_file(file, dir)
         end
     end
 
-    return dir == '/' and nil or _reverse_find_file(file, path_pop(dir))
+    if dir == '/' then
+        return nil
+    else
+        return _reverse_find_file(file, path_pop(dir))
+    end
 end
 
 function reverse_find_file(file) return _reverse_find_file(file, path_pop(vim.api.nvim_buf_get_name(0))) end

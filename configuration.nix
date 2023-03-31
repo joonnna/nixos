@@ -1,5 +1,16 @@
 { config, lib, pkgs, nixpkgs, ... }:
 
+# let
+#   sqlx-cli = pkgs.sqlx-cli.overrideAttrs (oldAttrs: rec {
+#     version = "0.6.3";
+#     src = pkgs.fetchFromGitHub {
+#       owner = "launchbadge";
+#       repo = "sqlx";
+#       rev = "v0.6.3";
+#       sha256 = "11j8vjb9dz551894379gikw6blsaqdchkx19gl62rzbkfcfrpcmc";
+#     };
+#   });
+# in
 {
   imports =
     [
@@ -27,7 +38,6 @@
   nixpkgs.config.allowUnfree = true;
 
   virtualisation.docker.enable = true;
-
   users.users.jon = {
     isNormalUser = true;
     initialPassword = "pw123";
@@ -53,7 +63,7 @@
       k9s
       azure-cli
       kubectl
-      sqlx-cli
+      # sqlx-cli
       postgresql
       unzip
       zip
