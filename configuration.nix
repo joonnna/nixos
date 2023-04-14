@@ -72,6 +72,9 @@
       heaptrack
       chrysalis
 
+      # cargo-subcommands
+      cargo-expand
+
       # Rust-based linux command replacements
       exa
       du-dust
