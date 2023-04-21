@@ -71,6 +71,7 @@
       terraform
       heaptrack
       chrysalis
+      coreutils
 
       # cargo-subcommands
       cargo-expand
