@@ -75,6 +75,7 @@
 
       # cargo-subcommands
       cargo-expand
+      ttyper
 
       # Rust-based linux command replacements
       exa
