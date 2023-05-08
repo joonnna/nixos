@@ -72,6 +72,7 @@
       heaptrack
       chrysalis
       coreutils
+      qmk
 
       # cargo-subcommands
       cargo-expand
@@ -85,7 +86,6 @@
       procs
       loc
       bottom
-
 
       # Language servers
       sumneko-lua-language-server

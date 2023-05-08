@@ -20,6 +20,15 @@
           "${modifier}+e" = "focus down";
           "${modifier}+i" = "focus up";
           "${modifier}+o" = "focus right";
+
+          "${modifier}+Shift+n" = "move left";
+          "${modifier}+Shift+e" = "move down";
+          "${modifier}+Shift+i" = "move up";
+          "${modifier}+Shift+o" = "move right";
+
+          "${modifier}+s" = "layout stacking";
+          "${modifier}+w" = "layout tabbed";
+          "${modifier}+t" = "layout toggle split";
         };
     };
   };
