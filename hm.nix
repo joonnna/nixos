@@ -13,6 +13,7 @@
       ./hm/alacritty.nix
       ./hm/fish.nix
       ./hm/starship.nix
+      ./hm/gh.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
