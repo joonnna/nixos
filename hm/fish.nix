@@ -15,7 +15,7 @@
       testing = "nvim ~/workspace/testing/src/main.rs";
 
       sp = "cargo sqlx prepare -- --lib";
-      sm = "sqlx migrate run";
+      sm = "cargo sqlx migrate run";
 
       gs = "git status";
       gl = "git ol";
