@@ -18,6 +18,7 @@ map('n', '<leader>s', ':FzfLua grep<CR>', { noremap = false })
 map('n', '<leader>ws', ':FzfLua lsp_workspace_symbols<CR>', { noremap = false })
 map('n', '<leader>d', ':FzfLua lsp_workspace_diagnostics<CR>', { noremap = false })
 map('n', '<leader>a', ':FzfLua lsp_code_actions<CR>', { noremap = false })
+map('n', '<leader>c', ':noh<CR>', { noremap = false })
 
 map('n', '<leader><leader>', '<c-^>', { noremap = true })
 
