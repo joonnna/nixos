@@ -8,7 +8,7 @@ let
     src = builtins.fetchGit {
       url = "https://github.com/${repo}.git";
       ref = ref;
-      rev = "1d91be51b39ea6c16eb11bd75fcb96f4115459f1";
+      rev = "a77c61eb3967668839a0ae91f4f8f43938bfae82";
     };
   };
 
