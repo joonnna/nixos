@@ -77,6 +77,8 @@
     xdg.configFile."cargo/config".text = ''
       [registries]
       orcalabs-orcastrator = { index = "https://dl.cloudsmith.io/basic/orcalabs/orcastrator/cargo/index.git" }
+      [build]
+      target-dir = "/home/jon/rust-target"
     '';
 
     # Credentials to publish to private registries
@@ -84,7 +86,6 @@
       [registries.orcalabs-orcastrator]
       token="0ebaa8eecc59492436e8012fe38fce24e4961518"
     '';
-
   };
 }
 
