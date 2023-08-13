@@ -34,75 +34,23 @@
   #   enableSSHSupport = true;
   # };
 
-  programs.fish.enable = true;
+  # Need for nvidia (installed on system level)
   nixpkgs.config.allowUnfree = true;
-
   virtualisation.docker.enable = true;
+
+  # Home-manager can only configure fish, but not set it as default login shell
+  # as that requires root permissions
+  programs.fish.enable = true;
+  # See comment above why this is required
+  # Sets the shell of all users to fish
+  users.defaultUserShell = pkgs.fish;
   users.users.jon = {
     isNormalUser = true;
     initialPassword = "pw123";
     extraGroups = [ "wheel" "networkmanager" "docker" ];
-    packages = with pkgs; [
-      flameshot
-      neovim
-      git
-      gh
-      gcc
-      docker
-      docker-compose
-      vivaldi
-      fish
-      fzf
-      alacritty
-      xclip
-      fd
-      neofetch
-      tree-sitter
-      nodejs
-      dbeaver
-      k9s
-      azure-cli
-      kubectl
-      # sqlx-cli
-      postgresql
-      unzip
-      zip
-      libreoffice
-      terraform
-      heaptrack
-      chrysalis
-      coreutils
-      qmk
-
-      # cargo-subcommands
-      cargo-expand
-      ttyper
-
-      # Rust-based linux command replacements
-      exa
-      du-dust
-      tealdeer
-      lfs
-      procs
-      loc
-      bottom
-
-      # Language servers
-      sumneko-lua-language-server
-      deno
-      rnix-lsp
-      rust-analyzer
-      nodePackages.dockerfile-language-server-nodejs
-      nodePackages.yaml-language-server
-      nodePackages.bash-language-server
-      nodePackages.sql-formatter
-      taplo-lsp
-      terraform-ls
-      # For bash language server
-      shellcheck
-    ];
-    shell = pkgs.fish;
   };
+
+  fonts.fontconfig.enable = true;
 
   nix.extraOptions = ''
     keep-outputs = true
@@ -111,6 +59,7 @@
 
   nix.settings.experimental-features = "nix-command flakes";
 
+  # Does nothing, only metadata from initial config generation during installation
   system.stateVersion = "22.05";
 
   services.udev.packages = [

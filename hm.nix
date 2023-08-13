@@ -4,7 +4,6 @@
   imports = [
     home-manager.nixosModule
   ];
-  home-manager.useGlobalPkgs = true;
   home-manager.users.jon = { pkgs, lib, ... }: {
     imports = [
       ./hm/i3.nix
@@ -17,7 +16,6 @@
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
-    programs.fish.enable = true;
 
     home.stateVersion = config.system.stateVersion;
     home.sessionVariables = {
@@ -29,8 +27,64 @@
 
     fonts.fontconfig.enable = true;
 
-    home.packages = [
+    # need for vivaldi (installed on user level)
+    nixpkgs.config.allowUnfree = true;
+
+    home.packages = with pkgs; [
       (pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
+      flameshot
+      gcc
+      docker
+      docker-compose
+      vivaldi
+      fzf
+      alacritty
+      xclip
+      fd
+      neofetch
+      tree-sitter
+      nodejs
+      dbeaver
+      k9s
+      azure-cli
+      kubectl
+      # sqlx-cli
+      postgresql
+      unzip
+      zip
+      libreoffice
+      terraform
+      heaptrack
+      chrysalis
+      coreutils
+      qmk
+
+      # cargo-subcommands
+      cargo-expand
+      ttyper
+
+      # Rust-based linux command replacements
+      exa
+      du-dust
+      tealdeer
+      lfs
+      procs
+      loc
+      bottom
+
+      # Language servers
+      sumneko-lua-language-server
+      deno
+      rnix-lsp
+      rust-analyzer
+      nodePackages.dockerfile-language-server-nodejs
+      nodePackages.yaml-language-server
+      nodePackages.bash-language-server
+      nodePackages.sql-formatter
+      taplo-lsp
+      terraform-ls
+      # For bash language server
+      shellcheck
     ];
 
 
