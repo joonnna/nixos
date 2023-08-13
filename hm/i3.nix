@@ -1,13 +1,16 @@
-{ config, lib, pkgs, ... }:
+{ lib, ... }:
 
+# TODO:
+#   - Understand how this nix-module works (where does config and its parameters come from?)
+#   - Bind resize mode
 
 {
   xsession.windowManager.i3 = {
     enable = true;
     config = {
-      modifier = "Mod1";
       keybindings =
-        let modifier = "Mod1";
+        let
+          modifier = "Mod1";
         in
         lib.mkOptionDefault {
           # Does not respect $TERMINAL for some reason, suspect the variable
@@ -29,6 +32,7 @@
           "${modifier}+s" = "layout stacking";
           "${modifier}+w" = "layout tabbed";
           "${modifier}+t" = "layout toggle split";
+          "${modifier}+b" = "exec vivaldi";
         };
     };
   };
