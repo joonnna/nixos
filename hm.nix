@@ -71,6 +71,7 @@
       procs
       loc
       bottom
+      ripgrep
 
       # Language servers
       sumneko-lua-language-server
