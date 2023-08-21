@@ -13,20 +13,12 @@ require("formatter").setup({
     },
 })
 
-local group = augroup("Formatter", {})
-autocmd("BufWritePost", {
-    pattern = {
-        "*.rs",
-        "*.sql",
-    },
-    group = group,
-    callback = function()
-        if not vim.b.disable_formatting then
-            vim.cmd.FormatWrite("injections")
-        end
-    end,
-    desc = "Formatting",
-})
+local function format()
+    vim.cmd.FormatWrite('injections')
+end
+
+vim.keymap.set('n', '<leader>x', format)
+
 
 local group2 = augroup("Formatter2", {})
 autocmd("BufWritePost", {
