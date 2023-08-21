@@ -35,6 +35,7 @@ in
       csv-vim
 
       cmp_luasnip
+      luasnip
       nvim-cmp
       cmp-nvim-lsp
       cmp-nvim-lsp-signature-help
