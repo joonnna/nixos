@@ -39,6 +39,7 @@ in
       nvim-cmp
       cmp-nvim-lsp
       cmp-nvim-lsp-signature-help
+      cmp-path
 
       nvim-lspconfig
       lualine-lsp-progress
