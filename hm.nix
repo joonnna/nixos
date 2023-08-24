@@ -13,6 +13,7 @@
       ./hm/fish.nix
       ./hm/starship.nix
       ./hm/gh.nix
+      ./hm/firefox.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
