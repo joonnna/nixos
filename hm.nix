@@ -129,6 +129,13 @@
       https://jon-foss-mikalsen:0ebaa8eecc59492436e8012fe38fce24e4961518@dl.cloudsmith.io
     '';
 
+    # 1password ssh keys
+    xdg.configFile."ssh/config".text = ''
+      Host *
+      	IdentityAgent ~/.1password/agent.sock
+    '';
+
+
     # Private registries definitions
     xdg.configFile."cargo/config".text = ''
       [registries]
