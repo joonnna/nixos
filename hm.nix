@@ -58,6 +58,7 @@
       chrysalis
       coreutils
       qmk
+      _1password-gui
 
       # cargo-subcommands
       cargo-expand
