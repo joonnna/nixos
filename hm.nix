@@ -46,7 +46,7 @@
       nodejs
       dbeaver
       k9s
-      # azure-cli
+      azure-cli
       kubectl
       # sqlx-cli
       postgresql
