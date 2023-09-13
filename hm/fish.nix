@@ -25,6 +25,8 @@
 
       gss = "git push -u origin HEAD";
       gp = "git push";
+      gc = "git checkout";
+      ga = "git add";
       gds = "git diff --staged";
       yeet = "git push --force-with-lease";
       gfm = "git fetch origin master:master";
@@ -40,10 +42,10 @@
       rmposdb = "docker-compose kill postgres && docker-compose rm postgres -f";
       rmdtdb = "docker kill postgres && docker rm postgres -f";
 
-      l = "exa";
-      ls = "exa";
-      ll = "exa -l";
-      lll = "exa -la";
+      l = "eza";
+      ls = "eza";
+      ll = "eza -l";
+      lll = "eza -la";
 
       htop = "btm";
       top = "btm";

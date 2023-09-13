@@ -65,7 +65,7 @@
       ttyper
 
       # Rust-based linux command replacements
-      exa
+      eza
       du-dust
       tealdeer
       lfs
@@ -90,37 +90,6 @@
     ];
 
 
-    home.file."workspace/flake.nix".text = ''
-      {
-        description = "rust setup overlay";
-
-        inputs = {
-          rust-overlay.url = "github:oxalica/rust-overlay";
-          flake-utils.url = "github:numtide/flake-utils";
-        };
-
-        outputs = { self, nixpkgs, rust-overlay, flake-utils, ... }:
-          flake-utils.lib.eachDefaultSystem (system:
-            let
-              overlays = [ (import rust-overlay) ];
-              pkgs = import nixpkgs {
-                inherit system overlays;
-              };
-            in
-            with pkgs;
-            {
-              devShells.default = mkShell {
-                buildInputs = [
-                  openssl
-                  pkg-config
-                  protobuf
-                  rust-bin.stable.latest.default
-                ];
-              };
-            }
-          );
-      }
-    '';
     home.file."workspace/.envrc".text = ''
       use flake
     '';
@@ -132,14 +101,15 @@
     # 1password ssh keys
     xdg.configFile."ssh/config".text = ''
       Host *
-      	IdentityAgent ~/.1password/agent.sock
+      IdentityAgent ~/.1password/agent.sock
     '';
 
 
     # Private registries definitions
     xdg.configFile."cargo/config".text = ''
       [registries]
-      orcalabs-orcastrator = { index = "https://dl.cloudsmith.io/basic/orcalabs/orcastrator/cargo/index.git" }
+      orcalabs-orcastrator = {
+      index = "https://dl.cloudsmith.io/basic/orcalabs/orcastrator/cargo/index.git" }
       [build]
       target-dir = "/home/jon/rust-target"
     '';
@@ -151,5 +121,6 @@
     '';
   };
 }
+
 
 
