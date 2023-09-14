@@ -59,6 +59,8 @@
       coreutils
       qmk
       _1password-gui
+      killall
+      usbutils
 
       # cargo-subcommands
       cargo-expand

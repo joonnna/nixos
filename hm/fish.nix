@@ -12,9 +12,9 @@
       ct = "cargo test";
       ctb = "cargo test build";
       cc = "cargo clippy";
-      testing = "nvim ~/workspace/testing/src/main.rs";
+      play = "nvim ~/workspace/play/play/src/main.rs";
 
-      sp = "cargo sqlx prepare -- --lib";
+      sp = "cargo sqlx prepare --workspace";
       sm = "cargo sqlx migrate run";
 
       gs = "git status";
@@ -26,7 +26,9 @@
       gss = "git push -u origin HEAD";
       gp = "git pull";
       gc = "git checkout";
-      gcm = "git commit";
+      gco = "git commit";
+      gcoa = "git commit --amend --no-edit";
+      gcm = "git checkout master";
       ga = "git add";
       gds = "git diff --staged";
       yeet = "git push --force-with-lease";
@@ -42,6 +44,8 @@
       rmmigdb = "docker-compose kill migration-db && docker-compose rm migration-db -f";
       rmposdb = "docker-compose kill postgres && docker-compose rm postgres -f";
       rmdtdb = "docker kill postgres && docker rm postgres -f";
+
+      tf = "terraform";
 
       l = "eza";
       ls = "eza";
