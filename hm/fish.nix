@@ -24,8 +24,9 @@
       unix = "sudo nixos-rebuild switch --flake ~/nixos";
 
       gss = "git push -u origin HEAD";
-      gp = "git push";
+      gp = "git pull";
       gc = "git checkout";
+      gcm = "git commit";
       ga = "git add";
       gds = "git diff --staged";
       yeet = "git push --force-with-lease";

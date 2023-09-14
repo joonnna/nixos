@@ -108,8 +108,7 @@
     # Private registries definitions
     xdg.configFile."cargo/config".text = ''
       [registries]
-      orcalabs-orcastrator = {
-      index = "https://dl.cloudsmith.io/basic/orcalabs/orcastrator/cargo/index.git" }
+      orcalabs-orcastrator = { index = "https://dl.cloudsmith.io/basic/orcalabs/orcastrator/cargo/index.git" }
       [build]
       target-dir = "/home/jon/rust-target"
     '';
