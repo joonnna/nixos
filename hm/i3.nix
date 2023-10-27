@@ -16,9 +16,15 @@
           # Does not respect $TERMINAL for some reason, suspect the variable
           # is only set for the shell ant not ~/.profile.
           "${modifier}+Return" = "exec alacritty";
-          # "${modifier}+Shift+i" = "exec i3lock";
-          "${modifier}+Shift+d" = "exec wpctl set-volume @DEFAULT_SINK@ 0.1-";
-          "${modifier}+Shift+l" = "exec wpctl set-volume @DEFAULT_SINK@ 0.1+";
+          "${modifier}+Shift+l" = "exec i3lock";
+          "${modifier}+b" = "exec vivaldi";
+          "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_SINK@ toggle";
+          "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 0.1+";
+          "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 0.1-";
+          "XF86AudioPlay" = "exec playerctl play-pause";
+          "XF86AudioPause" = "exec playerctl play-pause";
+          "XF86AudioNext" = "exec playerctl next";
+          "XF86AudioPrev" = "exec playerctl previous";
           "${modifier}+n" = "focus left";
           "${modifier}+e" = "focus down";
           "${modifier}+i" = "focus up";
@@ -32,7 +38,6 @@
           "${modifier}+s" = "layout stacking";
           "${modifier}+w" = "layout tabbed";
           "${modifier}+t" = "layout toggle split";
-          "${modifier}+b" = "exec vivaldi";
         };
     };
   };

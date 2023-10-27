@@ -8,6 +8,10 @@
     };
     videoDrivers = [ "nvidia" ];
 
+    exportConfiguration = true; # link /usr/share/X11/ properly
+    layout = "us,no";
+    xkbOptions = "grp:alt_space_toggle";
+
 
     displayManager = {
       defaultSession = "none+i3";
