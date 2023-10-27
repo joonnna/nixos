@@ -61,6 +61,7 @@
       _1password-gui
       killall
       usbutils
+      jdk17
 
       # cargo-subcommands
       cargo-expand
@@ -85,6 +86,8 @@
       nodePackages.yaml-language-server
       nodePackages.bash-language-server
       nodePackages.sql-formatter
+      nodePackages.pyright
+      nodePackages.prettier
       taplo-lsp
       terraform-ls
       # For bash language server

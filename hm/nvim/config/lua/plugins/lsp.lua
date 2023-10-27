@@ -51,8 +51,12 @@ cmp.setup({
 })
 
 
--- Update through paru
 require('lspconfig')['rust_analyzer'].setup {
+    on_attach = function(client, buffnr)
+        if client.server_capabilities ~= nil then
+            client.server_capabilities.semanticTokensProvider = nil
+        end
+    end,
     settings = {
         ["rust-analyzer"] = {
             cargo = {
@@ -111,3 +115,5 @@ require 'lspconfig'.rnix.setup {}
 require 'lspconfig'.taplo.setup {}
 
 require 'lspconfig'.terraformls.setup {}
+
+require 'lspconfig'.pyright.setup {}

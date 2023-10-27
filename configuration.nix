@@ -37,6 +37,11 @@
   # Need for nvidia (installed on system level)
   nixpkgs.config.allowUnfree = true;
   virtualisation.docker.enable = true;
+  virtualisation.docker.enableNvidia = true;
+  hardware.opengl.driSupport32Bit = true;
+
+  # Need for tensorflow see (https://nixos.wiki/wiki/Tensorflow)
+  hardware.opengl.setLdLibraryPath = true;
 
   # Home-manager can only configure fish, but not set it as default login shell
   # as that requires root permissions

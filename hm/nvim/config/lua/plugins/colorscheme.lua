@@ -4,5 +4,4 @@ require("tokyonight").setup({
         keywords = "NONE",
     }
 })
-
 vim.cmd([[colorscheme tokyonight-storm]])

@@ -41,7 +41,7 @@
       dcu = "docker-compose up";
       dc = "docker-compose";
       drd = "docker run -e POSTGRES_PASSWORD=test123 -p 0.0.0.0:5432:5432 -d postgis/postgis:13-3.2-alpine";
-      rmmigdb = "docker-compose kill migration-db && docker-compose rm migration-db -f";
+      rsmigdb = "docker-compose kill migration-db && docker-compose rm migration-db -f && docker-compose up -d migration-db";
       rmposdb = "docker-compose kill postgres && docker-compose rm postgres -f";
       rmdtdb = "docker kill postgres && docker rm postgres -f";
 

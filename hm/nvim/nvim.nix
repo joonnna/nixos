@@ -30,6 +30,9 @@ in
       lualine-nvim
       tokyonight-nvim
 
+      playground
+
+
       vim-nix
       vim-fish
       csv-vim
@@ -40,6 +43,7 @@ in
       cmp-nvim-lsp
       cmp-nvim-lsp-signature-help
       cmp-path
+      cmp-buffer
 
       nvim-lspconfig
       lualine-lsp-progress
@@ -66,6 +70,7 @@ in
 
   xdg.configFile."nvim/after/queries/rust/injections.scm".text = ''
     ; extends
+
     (macro_invocation
         (scoped_identifier
             path: (identifier) @_path (#eq? @_path "sqlx")
