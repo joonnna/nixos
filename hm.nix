@@ -63,6 +63,7 @@
       killall
       usbutils
       jdk17
+      openapi-generator-cli
 
       # cargo-subcommands
       cargo-expand

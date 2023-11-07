@@ -34,6 +34,12 @@
   #   enableSSHSupport = true;
   # };
 
+
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = true;
+  };
+
   # Need for nvidia (installed on system level)
   nixpkgs.config.allowUnfree = true;
   virtualisation.docker.enable = true;
