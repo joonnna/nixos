@@ -64,6 +64,8 @@
       usbutils
       jdk17
       openapi-generator-cli
+      autorandr
+      brightnessctl
 
       # cargo-subcommands
       cargo-expand

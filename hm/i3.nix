@@ -25,6 +25,8 @@
           "XF86AudioPause" = "exec playerctl play-pause";
           "XF86AudioNext" = "exec playerctl next";
           "XF86AudioPrev" = "exec playerctl previous";
+          "XF86MonBrightnessDown" = "exec brightnessctl s 5%-";
+          "XF86MonBrightnessUp" = "exec brightnessctl s +5%";
           "${modifier}+n" = "focus left";
           "${modifier}+e" = "focus down";
           "${modifier}+i" = "focus up";
