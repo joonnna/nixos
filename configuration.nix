@@ -49,16 +49,26 @@
   # Need for tensorflow see (https://nixos.wiki/wiki/Tensorflow)
   hardware.opengl.setLdLibraryPath = true;
 
+  # environment.systemPackages = [
+  #   pkgs.nushell
+  # ];
+
   # Home-manager can only configure fish, but not set it as default login shell
   # as that requires root permissions
-  programs.fish.enable = true;
+  programs.nushell.enable = true;
+  # programs.nushell = {
+  #   enable = true;
+  # };
+
+  # programs.fish.enable = true;
   # See comment above why this is required
   # Sets the shell of all users to fish
-  users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.nushell;
   users.users.jon = {
     isNormalUser = true;
     initialPassword = "pw123";
     extraGroups = [ "wheel" "networkmanager" "docker" ];
+    shell = pkgs.nushell;
   };
 
   fonts.fontconfig.enable = true;

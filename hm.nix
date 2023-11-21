@@ -10,9 +10,9 @@
       ./hm/nvim/nvim.nix
       ./hm/git.nix
       ./hm/alacritty.nix
-      ./hm/fish.nix
       ./hm/starship.nix
       ./hm/gh.nix
+      ./hm/nu.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
@@ -21,7 +21,7 @@
     home.sessionVariables = {
       EDITOR = "nvim";
       TERMINAL = "alacritty";
-      SHELL = "fish";
+      SHELL = "nu";
       NIX_PATH = "/etc/nix/path";
     };
 
