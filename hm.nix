@@ -66,6 +66,7 @@
       openapi-generator-cli
       autorandr
       brightnessctl
+      linuxKernel.packages.linux_6_5.perf
 
       # cargo-subcommands
       cargo-expand
