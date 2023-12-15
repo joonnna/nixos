@@ -1,47 +1,58 @@
-local map = vim.api.nvim_set_keymap
+local set = vim.keymap.set
+set('n', '<leader>z', ':FzfLua ')
 
 vim.g.mapleader = ' '
 
-local silent_opts = { noremap = true, silent = true }
+-- local silent_opts = { noremap = true, silent = true }
+-- local opts = { noremap = true}
 
-map('n', '<C-s>', ':sus<CR>', { noremap = true })
+-- Keep visual selection when indenting/outdenting
+set('v', '>', '>gv')
+set('v', '<', '<gv')
+
+set('n', '<C-s>', ':sus<CR>')
 -- TODO: make i/v modes work
-map('i', '<C-s>', ':sus<CR>', { noremap = true })
-map('v', '<C-s>', ':sus<CR>', { noremap = true })
+set('i', '<C-s>', ':sus<CR>')
+set('v', '<C-s>', ':sus<CR>')
 
-map('n', 'j', 'gj', { noremap = true })
-map('n', 'k', 'gk', { noremap = true })
-map('n', 'J', '10j', { noremap = true })
-map('n', 'K', '10k', { noremap = true })
+set('n', 'j', 'gj')
+set('n', 'k', 'gk')
+set('n', 'J', '10j')
+set('n', 'K', '10k')
 
-map('n', '<leader>c', ':noh<CR>', { noremap = false })
-map('n', '<leader><leader>', '<c-^>', { noremap = true })
-map('n', '<leader>w', ':w<CR>', { noremap = true })
-map('n', '<leader>q', ':q<CR>', { noremap = true })
-map('n', '<leader>e', ':Explore<CR>', { noremap = true })
-map('n', '<leader>E', ':tabedit<CR>:Explore<CR>', { noremap = true })
+set('n', '<leader>c', ':noh<CR>')
+set('n', '<leader><leader>', '<c-^>')
+set('n', '<leader>w', ':w<CR>')
+set('n', '<leader>q', ':q<CR>')
+set('n', '<leader>e', ':Explore<CR>')
+set('n', '<leader>E', ':tabedit<CR>:Explore<CR>')
 
--- Fzf
-map('', '<leader>f', ':FzfLua files<CR>', { noremap = false })
-map('n', '<leader>n', ':FzfLua buffers<CR>', { noremap = false })
-map('n', '<leader>s', ':FzfLua grep_project<CR>', { noremap = false })
-map('n', '<leader>d', ':FzfLua lsp_workspace_diagnostics<CR>', { noremap = false })
-map('n', '<leader>a', ':FzfLua lsp_code_actions<CR>', { noremap = false })
-map('n', '<leader>z', ':FzfLua ', { noremap = false })
-map('n', '<leader>h', ':FzfLua command_history<CR>', { noremap = false })
-map('n', '<leader>p', ':FzfLua search_history<CR>', { noremap = false })
+-- Delete into black hole register
+set({ 'n', 'v' }, '<leader>d', '"_d')
+
+-- Files
+set('n', '<leader>b', ':wa | sus<CR>')
+
+-- -- Fzf
+set('', '<leader>f', ':FzfLua files<CR>')
+set('n', '<leader>n', ':FzfLua buffers<CR>')
+set('n', '<leader>s', ':FzfLua grep_project<CR>')
+set('n', '<leader>d', ':FzfLua lsp_workspace_diagnostics<CR>')
+set('n', '<leader>a', ':FzfLua lsp_code_actions<CR>')
+set('n', '<leader>y', ':FzfLua command_history<CR>')
+set('n', '<leader>p', ':FzfLua search_history<CR>')
 
 -- Tabs
-map('n', '<leader>t', ':tabnew<CR>', { noremap = true })
-map('n', 't', ':tabn<CR>', { noremap = true })
-map('n', 'T', ':tabp<CR>', { noremap = true })
+set('n', '<leader>t', ':tabnew<CR>')
+set('n', 't', ':tabn<CR>')
+set('n', 'T', ':tabp<CR>')
 
 -- Lsp
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, silent_opts)
-vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, silent_opts)
-vim.keymap.set('n', 'gr', vim.lsp.buf.references, silent_opts)
-vim.keymap.set('n', '<leader>o', vim.lsp.buf.hover, silent_opts)
-vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, silent_opts)
-vim.keymap.set('n', 'ck', vim.diagnostic.goto_prev, silent_opts)
-vim.keymap.set('n', 'cj', vim.diagnostic.goto_next, silent_opts)
-vim.keymap.set('n', '<leader>x', vim.diagnostic.open_float, silent_opts)
+set('n', 'gd', vim.lsp.buf.definition)
+set('n', 'gi', vim.lsp.buf.implementation)
+set('n', 'gr', vim.lsp.buf.references)
+set('n', '<leader>o', vim.lsp.buf.hover)
+set('n', '<leader>r', vim.lsp.buf.rename)
+set('n', 'ck', vim.diagnostic.goto_prev)
+set('n', 'cj', vim.diagnostic.goto_next)
+set('n', '<leader>x', vim.diagnostic.open_float)

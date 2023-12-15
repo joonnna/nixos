@@ -18,6 +18,8 @@
     load-module module-switch-on-connect
     load-module module-bluetooth-policy
     load-module module-bluetooth-discover
+    load-module module-bluez5-device
+    load-module module-bluez5-discover
   ";
 
   services.blueman.enable = true;

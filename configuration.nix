@@ -40,6 +40,11 @@
     passwordAuthentication = true;
   };
 
+  security.pam.loginLimits = [
+    { domain = "*"; type = "-"; item = "nofile"; value = "unlimited"; }
+    { domain = "*"; type = "-"; item = "fsize"; value = "unlimited"; }
+  ];
+
   # Need for nvidia (installed on system level)
   nixpkgs.config.allowUnfree = true;
   virtualisation.docker.enable = true;

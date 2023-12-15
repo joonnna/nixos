@@ -67,6 +67,7 @@
       autorandr
       brightnessctl
       linuxKernel.packages.linux_6_5.perf
+      yubikey-manager-qt
 
       # cargo-subcommands
       cargo-expand
@@ -76,7 +77,7 @@
       eza
       du-dust
       tealdeer
-      lfs
+      dysk
       procs
       loc
       bottom

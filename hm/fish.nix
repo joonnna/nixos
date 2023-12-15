@@ -12,6 +12,7 @@
       ct = "cargo test";
       ctb = "cargo test build";
       cc = "cargo clippy";
+      cr = "cargo run";
       play = "nvim ~/workspace/play/play/src/main.rs";
 
       sp = "cargo sqlx prepare --workspace";
