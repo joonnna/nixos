@@ -40,6 +40,7 @@
           "${modifier}+s" = "layout stacking";
           "${modifier}+w" = "layout tabbed";
           "${modifier}+t" = "layout toggle split";
+          "${modifier}+h" = "kill";
         };
     };
   };

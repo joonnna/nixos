@@ -1,5 +1,4 @@
 local set = vim.keymap.set
-set('n', '<leader>z', ':FzfLua ')
 
 vim.g.mapleader = ' '
 
@@ -10,10 +9,7 @@ vim.g.mapleader = ' '
 set('v', '>', '>gv')
 set('v', '<', '<gv')
 
-set('n', '<C-s>', ':sus<CR>')
--- TODO: make i/v modes work
-set('i', '<C-s>', ':sus<CR>')
-set('v', '<C-s>', ':sus<CR>')
+set({ 'v', 'n', 'i' }, '<C-s>', ':wa | sus<CR>')
 
 set('n', 'j', 'gj')
 set('n', 'k', 'gk')
@@ -23,21 +19,29 @@ set('n', 'K', '10k')
 set('n', '<leader>c', ':noh<CR>')
 set('n', '<leader><leader>', '<c-^>')
 set('n', '<leader>w', ':w<CR>')
-set('n', '<leader>q', ':q<CR>')
-set('n', '<leader>e', ':Explore<CR>')
-set('n', '<leader>E', ':tabedit<CR>:Explore<CR>')
+set('n', '<leader>h', ':q<CR>')
+set('n', '<leader>q', ':wq<CR>')
+set('n', '<leader>o', ':Explore<CR>')
+set('n', '<leader>O', ':tabedit<CR>:Explore<CR>')
 
 -- Delete into black hole register
 set({ 'n', 'v' }, '<leader>d', '"_d')
 
--- Files
-set('n', '<leader>b', ':wa | sus<CR>')
+-- Search for selected text
+set('v', '/', "y/\\V<C-R>=escape(@\",'/\\')<CR><CR>")
+
+-- Execute previous command
+set('n', ';', ':<UP><CR>')
+
+-- Don't overwrite clipboard on visual paste
+set('v', 'p', '"_dp')
+set('v', 'P', '"_dP')
 
 -- -- Fzf
-set('', '<leader>f', ':FzfLua files<CR>')
+set('n', '<leader>f', ':FzfLua files<CR>')
 set('n', '<leader>n', ':FzfLua buffers<CR>')
 set('n', '<leader>s', ':FzfLua grep_project<CR>')
-set('n', '<leader>d', ':FzfLua lsp_workspace_diagnostics<CR>')
+set('n', '<leader>e', ':FzfLua lsp_workspace_diagnostics<CR>')
 set('n', '<leader>a', ':FzfLua lsp_code_actions<CR>')
 set('n', '<leader>y', ':FzfLua command_history<CR>')
 set('n', '<leader>p', ':FzfLua search_history<CR>')
@@ -51,7 +55,7 @@ set('n', 'T', ':tabp<CR>')
 set('n', 'gd', vim.lsp.buf.definition)
 set('n', 'gi', vim.lsp.buf.implementation)
 set('n', 'gr', vim.lsp.buf.references)
-set('n', '<leader>o', vim.lsp.buf.hover)
+set('n', '<leader>l', vim.lsp.buf.hover)
 set('n', '<leader>r', vim.lsp.buf.rename)
 set('n', 'ck', vim.diagnostic.goto_prev)
 set('n', 'cj', vim.diagnostic.goto_next)
