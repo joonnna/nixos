@@ -30,12 +30,8 @@ set({ 'n', 'v' }, '<leader>d', '"_d')
 -- Search for selected text
 set('v', '/', "y/\\V<C-R>=escape(@\",'/\\')<CR><CR>")
 
--- Execute previous command
-set('n', ';', ':<UP><CR>')
-
--- Don't overwrite clipboard on visual paste
-set('v', 'p', '"_dp')
-set('v', 'P', '"_dP')
+-- Dont overwrite clipboard on visual paste
+set('v', 'p', '"_dP')
 
 -- -- Fzf
 set('n', '<leader>f', ':FzfLua files<CR>')
