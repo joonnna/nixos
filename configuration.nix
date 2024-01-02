@@ -34,6 +34,10 @@
   #   enableSSHSupport = true;
   # };
 
+  systemd.services.bluetooth.serviceConfig.ExecStart = lib.mkForce [
+    ""
+    "${pkgs.bluez}/libexec/bluetooth/bluetoothd -f /etc/bluetooth/main.conf -E"
+  ];
 
   services.openssh = {
     enable = true;
