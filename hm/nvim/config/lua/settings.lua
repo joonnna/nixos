@@ -24,6 +24,7 @@ vim.g.omni_sql_no_default_maps = 1
 vim.cmd([[
 augroup autocmds
 autocmd!
+autocmd FileType terraform setlocal commentstring=//\ %s
 autocmd FileType sql setlocal commentstring=--!\ %s
 autocmd BufWritePre * %s/\s\+$//e
 highlight ExtraWhitespace ctermbg=red guibg=red
