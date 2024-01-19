@@ -59,6 +59,9 @@ require('lspconfig')['rust_analyzer'].setup {
     end,
     settings = {
         ["rust-analyzer"] = {
+            rust = {
+                analyzerTargetDir = '/home/jon/.cargo/target/rust-analyzer',
+            },
             cargo = {
                 allFeatures = true,
                 allTargets = true,
