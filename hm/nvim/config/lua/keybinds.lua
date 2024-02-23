@@ -28,7 +28,7 @@ set('n', '<leader>O', ':tabedit<CR>:Explore<CR>')
 set({ 'n', 'v' }, '<leader>d', '"_d')
 
 -- Dont overwrite clipoard with the deleted text when pasting
-set({ 'n', 'v' }, 'p', 'P')
+set('v', 'p', 'P')
 
 -- Search for selected text
 set('v', '/', "y/\\V<C-R>=escape(@\",'/\\')<CR><CR>")
