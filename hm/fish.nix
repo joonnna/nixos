@@ -43,8 +43,10 @@
       dc = "docker-compose";
       drd = "docker run -e POSTGRES_PASSWORD=test123 -p 0.0.0.0:5432:5432 -d postgis/postgis:13-3.2-alpine";
       rsmigdb = "docker-compose kill migration-db && docker-compose rm migration-db -f && docker-compose up -d migration-db";
+      rsposdb = "docker-compose kill postgres && docker-compose rm postgres -f && docker-compose up -d postgres";
+      rsposdb2 = "docker-compose kill postgres2 && docker-compose rm postgres2 -f && docker-compose up -d postgres2";
       rmposdb = "docker-compose kill postgres && docker-compose rm postgres -f";
-      rmdtdb = "docker kill postgres && docker rm postgres -f";
+      rmdtdb = "docker kill postgres && docker rm postgres";
 
       tf = "terraform";
 

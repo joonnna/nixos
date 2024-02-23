@@ -82,6 +82,8 @@
       loc
       bottom
       ripgrep
+      nvtop
+      auth0-cli
 
       # Language servers
       sumneko-lua-language-server

@@ -31,7 +31,7 @@ set({ 'n', 'v' }, '<leader>d', '"_d')
 set('v', '/', "y/\\V<C-R>=escape(@\",'/\\')<CR><CR>")
 
 -- Dont overwrite clipboard on visual paste
-set('v', 'p', '"_dP')
+set('v', 'p', '"_dp')
 
 -- -- Fzf
 set('n', '<leader>f', ':FzfLua files<CR>')

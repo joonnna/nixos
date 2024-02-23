@@ -19,8 +19,8 @@
           "${modifier}+Shift+l" = "exec i3lock";
           "${modifier}+b" = "exec vivaldi";
           "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_SINK@ toggle";
-          "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 0.1+";
-          "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 0.1-";
+          "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 0.05+";
+          "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 0.05-";
           "XF86AudioPlay" = "exec playerctl play-pause";
           "XF86AudioPause" = "exec playerctl play-pause";
           "XF86AudioNext" = "exec playerctl next";

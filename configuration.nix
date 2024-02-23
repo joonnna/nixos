@@ -31,6 +31,11 @@
     };
   };
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 8080 ];
+  };
+
   security.pam.loginLimits = [
     { domain = "*"; type = "-"; item = "nofile"; value = "unlimited"; }
     { domain = "*"; type = "-"; item = "fsize"; value = "unlimited"; }
