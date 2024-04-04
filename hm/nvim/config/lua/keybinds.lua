@@ -42,6 +42,10 @@ set('n', '<leader>a', ':FzfLua lsp_code_actions<CR>')
 set('n', '<leader>y', ':FzfLua command_history<CR>')
 set('n', '<leader>p', ':FzfLua search_history<CR>')
 
+-- Quickfix list
+set('n', '<C-j>', ':cnext<CR>zz')
+set('n', '<C-k>', ':cprev<CR>zz')
+
 -- Tabs
 set('n', '<leader>t', ':tabnew<CR>')
 set('n', 't', ':tabn<CR>')

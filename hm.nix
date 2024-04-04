@@ -66,8 +66,11 @@
       openapi-generator-cli
       autorandr
       brightnessctl
-      linuxKernel.packages.linux_6_5.perf
+      # linuxKernel.packages.linux_6_5.perf
       yubikey-manager-qt
+      cmake
+      wget
+      gnumake
 
       # cargo-subcommands
       cargo-expand
@@ -88,7 +91,9 @@
       # Language servers
       sumneko-lua-language-server
       deno
-      rnix-lsp
+      nil
+      # formatter for nil
+      nixpkgs-fmt
       rust-analyzer
       nodePackages.dockerfile-language-server-nodejs
       nodePackages.yaml-language-server

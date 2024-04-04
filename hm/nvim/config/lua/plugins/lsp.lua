@@ -113,10 +113,20 @@ require 'lspconfig'.denols.setup {
 -- https://github.com/mads-hartmann/bash-language-server
 require 'lspconfig'.bashls.setup {}
 
-require 'lspconfig'.rnix.setup {}
-
 require 'lspconfig'.taplo.setup {}
 
 require 'lspconfig'.terraformls.setup {}
 
 require 'lspconfig'.pyright.setup {}
+
+require 'lspconfig'.nil_ls.setup {
+    autostart = true,
+    settings = {
+        ['nil'] = {
+            formatting = {
+                command = { "nixpkgs-fmt" },
+            },
+        },
+    },
+
+}
