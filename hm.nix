@@ -30,83 +30,89 @@
     # need for vivaldi (installed on user level)
     nixpkgs.config.allowUnfree = true;
 
-    home.packages = with pkgs; [
-      (pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
-      playerctl
-      flameshot
-      gcc
-      docker
-      docker-compose
-      vivaldi
-      fzf
-      alacritty
-      xclip
-      fd
-      neofetch
-      tree-sitter
-      nodejs
-      dbeaver
-      k9s
-      azure-cli
-      kubectl
-      # sqlx-cli
-      postgresql
-      unzip
-      zip
-      libreoffice
-      terraform
-      heaptrack
-      chrysalis
-      coreutils
-      qmk
-      _1password-gui
-      killall
-      usbutils
-      jdk17
-      openapi-generator-cli
-      autorandr
-      brightnessctl
-      # linuxKernel.packages.linux_6_5.perf
-      yubikey-manager-qt
-      cmake
-      wget
-      gnumake
+    home.packages = with pkgs;
+      [
+        (pkgs.nerdfonts.override {
+          fonts = [ "Iosevka" ];
+        })
+        playerctl
+        flameshot
+        gcc
+        docker
+        docker-compose
+        vivaldi
+        fzf
+        alacritty
+        xclip
+        fd
+        neofetch
+        tree-sitter
+        nodejs
+        dbeaver
+        k9s
+        azure-cli
+        kubectl
+        # sqlx-cli
+        postgresql
+        unzip
+        zip
+        libreoffice
+        terraform
+        heaptrack
+        chrysalis
+        coreutils
+        qmk
+        _1password-gui
+        killall
+        usbutils
+        jdk17
+        openapi-generator-cli
+        autorandr
+        brightnessctl
+        linuxKernel.packages.linux_6_8.perf
+        yubikey-manager-qt
+        cmake
+        wget
+        gnumake
+        mold
+        tcpdump
+        wireshark
+        vagrant
 
-      # cargo-subcommands
-      cargo-expand
-      ttyper
+        # cargo-subcommands
+        cargo-expand
+        ttyper
 
-      # Rust-based linux command replacements
-      eza
-      du-dust
-      tealdeer
-      dysk
-      procs
-      loc
-      bottom
-      ripgrep
-      nvtop
-      auth0-cli
+        # Rust-based linux command replacements
+        eza
+        du-dust
+        tealdeer
+        dysk
+        procs
+        loc
+        bottom
+        ripgrep
+        nvtop
+        auth0-cli
 
-      # Language servers
-      sumneko-lua-language-server
-      deno
-      nil
-      # formatter for nil
-      nixpkgs-fmt
-      rust-analyzer
-      nodePackages.dockerfile-language-server-nodejs
-      nodePackages.yaml-language-server
-      nodePackages.bash-language-server
-      nodePackages.sql-formatter
-      nodePackages.pyright
-      nodePackages.prettier
-      taplo-lsp
-      terraform-ls
-      # For bash language server
-      shellcheck
-    ];
-
+        # Language servers
+        sumneko-lua-language-server
+        deno
+        nil
+        # formatter for nil
+        nixpkgs-fmt
+        rust-analyzer
+        nodePackages.dockerfile-language-server-nodejs
+        nodePackages.yaml-language-server
+        nodePackages.bash-language-server
+        nodePackages.sql-formatter
+        nodePackages.pyright
+        nodePackages.prettier
+        taplo-lsp
+        terraform-ls
+        # For bash language server
+        shellcheck
+      ];
 
     home.file."workspace/.envrc".text = ''
       use flake
@@ -130,6 +136,11 @@
       [build]
       target-dir = "/home/jon/rust-target"
     '';
+
+
+    # [target.x86_64-unknown-linux-gnu]
+    # linker = "clang"
+    # rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
 
     # Credentials to publish to private registries
     xdg.configFile."cargo/credentials".text = ''
