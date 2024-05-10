@@ -1,17 +1,16 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 
 let
   # installs a vim plugin from git with a given tag / branch
-  pluginGit = ref: repo: pkgs.vimUtils.buildVimPluginFrom2Nix {
+  pluginGit = ref: repo: pkgs.vimUtils.buildVimPlugin {
     pname = "${lib.strings.sanitizeDerivationName repo}";
     version = ref;
     src = builtins.fetchGit {
       url = "https://github.com/${repo}.git";
       ref = ref;
-      rev = "ea71eec742d835bb79f5cd3a5b4d71bbf74af796";
+      rev = "793e90b42671e510057d6a1f4cd1d514fcacd8be";
     };
   };
-
   # always installs latest version
   plugin = pluginGit "HEAD";
 in
@@ -31,7 +30,6 @@ in
       tokyonight-nvim
 
       playground
-
 
       vim-nix
       vim-fish

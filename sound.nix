@@ -1,16 +1,23 @@
-{ config, libs, pkgs, ... }:
-
+{ pkgs, lib, ... }:
 {
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
     settings = {
       General = {
-        Enable = "Source,Sink,Media,Socket";
+        Experimental = true;
+      };
+      Policy = {
+        AutoEnable = "true";
       };
     };
   };
 
+
+  systemd.services.bluetooth.serviceConfig.ExecStart = lib.mkForce [
+    ""
+    "${pkgs.bluez}/libexec/bluetooth/bluetoothd -f /etc/bluetooth/main.conf -E"
+  ];
 
   sound.enable = false;
 
@@ -23,7 +30,7 @@
     unload-module module-jackdbus-detect
   ";
 
-  services.blueman.enable = true;
+  # services.blueman.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

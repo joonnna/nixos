@@ -7,7 +7,17 @@
 {
   xsession.windowManager.i3 = {
     enable = true;
+
+    extraConfig = ''
+      default_border pixel 0
+      default_floating_border pixel 0
+    '';
+
+
     config = {
+      # removes all bars (default i3 bar)
+      bars = [ ];
+
       keybindings =
         let
           modifier = "Mod1";

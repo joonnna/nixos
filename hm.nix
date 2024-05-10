@@ -1,5 +1,4 @@
-{ config, lib, pkgs, nixpkgs, home-manager, ... }:
-
+{ config, home-manager, ... }:
 {
   imports = [
     home-manager.nixosModule
@@ -13,6 +12,7 @@
       ./hm/fish.nix
       ./hm/starship.nix
       ./hm/gh.nix
+      ./hm/polybar.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
@@ -32,7 +32,7 @@
 
     home.packages = with pkgs;
       [
-        (pkgs.nerdfonts.override {
+        (nerdfonts.override {
           fonts = [ "Iosevka" ];
         })
         playerctl
@@ -52,7 +52,6 @@
         k9s
         azure-cli
         kubectl
-        # sqlx-cli
         postgresql
         unzip
         zip
@@ -70,18 +69,15 @@
         autorandr
         brightnessctl
         linuxKernel.packages.linux_6_8.perf
-        yubikey-manager-qt
         cmake
         wget
         gnumake
-        mold
         tcpdump
         wireshark
         vagrant
-
-        # cargo-subcommands
-        cargo-expand
         ttyper
+        nvtopPackages.full
+        auth0-cli
 
         # Rust-based linux command replacements
         eza
@@ -92,8 +88,9 @@
         loc
         bottom
         ripgrep
-        nvtop
-        auth0-cli
+
+        # nix related commands
+        nix-tree
 
         # Language servers
         sumneko-lua-language-server
@@ -115,11 +112,33 @@
       ];
 
     home.file."workspace/.envrc".text = ''
-      use flake
+      use nix
     '';
 
     home.file.".git-credentials".text = ''
       https://jon-foss-mikalsen:0ebaa8eecc59492436e8012fe38fce24e4961518@dl.cloudsmith.io
+    '';
+
+    home.file."workspace/rust-toolchain.toml".text = ''
+      [toolchain]
+      profile = "default"
+      channel = "1.78.0"
+      components = ["rust-analyzer"]
+    '';
+
+    home.file."vivaldi-css/header.css".text = ''
+      #header {
+          display: none;
+      }
+    '';
+
+    home.file."workspace/default.nix".text = builtins.readFile ./shells/rust_workspace.nix;
+
+    home.file."workspace/config.toml".text = ''
+      [registries]
+      orcalabs-orcastrator = { index = "https://dl.cloudsmith.io/basic/orcalabs/orcastrator/cargo/index.git" }
+      [build]
+      target-dir = "/home/jon/rust-target"
     '';
 
     # 1password ssh keys
@@ -128,20 +147,6 @@
       IdentityAgent ~/.1password/agent.sock
     '';
 
-
-    # Private registries definitions
-    xdg.configFile."cargo/config".text = ''
-      [registries]
-      orcalabs-orcastrator = { index = "https://dl.cloudsmith.io/basic/orcalabs/orcastrator/cargo/index.git" }
-      [build]
-      target-dir = "/home/jon/rust-target"
-    '';
-
-
-    # [target.x86_64-unknown-linux-gnu]
-    # linker = "clang"
-    # rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
-
     # Credentials to publish to private registries
     xdg.configFile."cargo/credentials".text = ''
       [registries.orcalabs-orcastrator]
@@ -149,6 +154,3 @@
     '';
   };
 }
-
-
-

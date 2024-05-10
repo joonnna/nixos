@@ -20,9 +20,30 @@ set('n', '<leader>c', ':noh<CR>')
 set('n', '<leader><leader>', '<c-^>')
 set('n', '<leader>w', ':w<CR>')
 set('n', '<leader>h', ':q<CR>')
+set('n', '<leader>H', ':q!<CR>')
 set('n', '<leader>q', ':wq<CR>')
 set('n', '<leader>o', ':Explore<CR>')
 set('n', '<leader>O', ':tabedit<CR>:Explore<CR>')
+set('n', '<leader>v', function()
+    vim.ui.input({ prompt = "Enter filename: " }, function(input)
+        if input then
+            local cwd = vim.fn.expand('%:h')
+            vim.api.nvim_feedkeys(string.format(":vsp %s/%s", cwd, input), 'n', true)
+            vim.api.nvim_input("<CR>")
+        end
+    end)
+end
+)
+set('n', '<leader>V', function()
+    vim.ui.input({ prompt = "Enter directory name: " }, function(input)
+        if input then
+            local cwd = vim.fn.expand('%:h')
+            vim.api.nvim_feedkeys(string.format(":Mkdir %s/%s", cwd, input), 'n', true)
+            vim.api.nvim_input("<CR>")
+        end
+    end)
+end
+)
 
 -- Delete into black hole register
 set({ 'n', 'v' }, '<leader>d', '"_d')
