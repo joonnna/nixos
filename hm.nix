@@ -13,6 +13,7 @@
       ./hm/starship.nix
       ./hm/gh.nix
       ./hm/polybar.nix
+      ./hm/bottom.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
@@ -86,7 +87,6 @@
         dysk
         procs
         loc
-        bottom
         ripgrep
 
         # nix related commands

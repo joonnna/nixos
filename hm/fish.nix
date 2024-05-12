@@ -55,8 +55,8 @@
       ll = "eza -l";
       lll = "eza -la";
 
-      htop = "btm --enable_gpu_memory --mem_as_value";
-      top = "btm --enable_gpu_memory --mem_as_value";
+      htop = "btm";
+      top = "btm";
       du = "dust";
     };
   };
