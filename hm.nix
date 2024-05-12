@@ -12,7 +12,9 @@
       ./hm/fish.nix
       ./hm/starship.nix
       ./hm/gh.nix
-      ./hm/polybar.nix
+      # ./hm/polybar.nix
+      ./hm/waybar.nix
+      ./hm/hyperland.nix
       ./hm/bottom.nix
     ];
     programs.direnv.enable = true;
@@ -44,7 +46,7 @@
         vivaldi
         fzf
         alacritty
-        xclip
+        wl-clipboard
         fd
         neofetch
         tree-sitter
