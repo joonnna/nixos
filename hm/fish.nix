@@ -3,6 +3,7 @@
 {
   programs.fish = {
     enable = true;
+    loginShellInit = builtins.readFile ./login.fish;
     shellInit = builtins.readFile ./shell_init.fish;
     shellAbbrs = {
       vim = "nvim";
@@ -24,10 +25,13 @@
       enix = "nvim ~/nixos/configuration.nix";
       unix = "sudo nixos-rebuild switch --flake ~/nixos";
 
+
       gss = "git push -u origin HEAD";
       gp = "git pull";
       gc = "git checkout";
       gco = "git commit";
+
+
       gcoa = "git commit --amend --no-edit";
       gcm = "git checkout master";
       ga = "git add";

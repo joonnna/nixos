@@ -12,7 +12,9 @@
       ./hm/fish.nix
       ./hm/starship.nix
       ./hm/gh.nix
-      ./hm/polybar.nix
+      # ./hm/polybar.nix
+      ./hm/waybar.nix.nix
+      ./hm/hyperland.nix
       ./hm/bottom.nix
     ];
     programs.direnv.enable = true;
