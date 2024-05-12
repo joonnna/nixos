@@ -26,6 +26,7 @@ augroup autocmds
 autocmd!
 autocmd FileType terraform setlocal commentstring=//\ %s
 autocmd FileType sql setlocal commentstring=--!\ %s
+autocmd FileType yuck setlocal commentstring=;;\ %s
 autocmd BufWritePre * %s/\s\+$//e
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
