@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   networking.hostName = "jon";
   boot.loader.efi.canTouchEfiVariables = true;

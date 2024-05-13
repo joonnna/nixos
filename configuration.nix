@@ -7,7 +7,6 @@
       ./gui.nix
       ./sound.nix
       ./udev.nix
-      ./vagrant.nix
       ./ssh.nix
     ];
 

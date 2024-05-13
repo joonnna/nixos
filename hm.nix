@@ -12,7 +12,6 @@
       ./hm/fish.nix
       ./hm/starship.nix
       ./hm/gh.nix
-      # ./hm/polybar.nix
       ./hm/waybar.nix
       ./hm/hyperland.nix
       ./hm/bottom.nix
@@ -77,10 +76,10 @@
         gnumake
         tcpdump
         wireshark
-        vagrant
         ttyper
         nvtopPackages.full
         auth0-cli
+        tofi
 
         # Rust-based linux command replacements
         eza
@@ -134,7 +133,7 @@
       }
     '';
 
-    home.file."workspace/default.nix".text = builtins.readFile ./shells/rust_workspace.nix;
+    # home.file."workspace/default.nix".text = builtins.readFile ./shells/rust_workspace.nix;
 
     home.file."workspace/config.toml".text = ''
       [registries]

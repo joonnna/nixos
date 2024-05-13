@@ -1,9 +1,13 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    # https://1password.community/discussion/141663/i-cant-start-wayland-native-version-of-1password
+    #     xwayland = {
+    #       enable = false;
+    #     };
     settings = {
       monitor = [
-        ",prefferred, auto,1"
+        ",prefferred, auto,1.5"
       ];
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
@@ -12,6 +16,7 @@
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "NVD_BACKEND,direct"
         "WLR_NO_HARDWARE_CURSORS,1"
+        "ELECTRON_OZONE_PLATFORM_HINT,auto 1password"
       ];
 
       "$mod" = "ALT";
@@ -47,6 +52,7 @@
           "$mod, i, movefocus, u"
           "$mod, o, movefocus, r"
           "$mod, h, killactive,"
+          "$mod, d, exec, tofi-drun --drun-launch=true"
         ]
         ++ (
           # workspaces
