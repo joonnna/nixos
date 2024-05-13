@@ -34,8 +34,12 @@
       gds = "git diff --staged";
       yeet = "git push --force-with-lease";
       gfm = "git fetch origin master:master";
-      grm = "git rebase master";
       gdab = "git branch | grep -v \"master\" | xargs git branch -D";
+      gb = "git branch";
+      gr = "git rebase";
+      grc = "git rebase --continue";
+      grm = "git rebase master";
+
 
       dca = "docker kill (docker ps -q) && docker rm (docker ps -a -q) && docker volume rm (docker volume ls -q) && docker network prune -f";
       ds = "docker ps -a";
@@ -58,6 +62,9 @@
       htop = "btm";
       top = "btm";
       du = "dust";
+
+      copy = "xclip -sel c";
+      paste = "xclip -out -sel c";
     };
   };
 }
