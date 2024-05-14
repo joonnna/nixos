@@ -7,7 +7,7 @@
     #     };
     settings = {
       monitor = [
-        ",prefferred, auto,1.5"
+        ",prefferred, auto,1.067"
       ];
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
@@ -21,7 +21,6 @@
 
       "$mod" = "ALT";
       "general:no_border_on_floating" = true;
-      "general:col.active_border" = "#268290";
       "decoration:rounding" = 20;
       binde = [
         "$mod ctrl, n, resizeactive, -20 0"
