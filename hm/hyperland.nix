@@ -16,7 +16,7 @@
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "NVD_BACKEND,direct"
         "WLR_NO_HARDWARE_CURSORS,1"
-        "ELECTRON_OZONE_PLATFORM_HINT,auto 1password"
+        "ELECTRON_OZONE_PLATFORM_HINT,auto"
       ];
 
       "$mod" = "ALT";
