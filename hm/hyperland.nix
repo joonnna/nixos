@@ -7,7 +7,7 @@
     #     };
     settings = {
       monitor = [
-        ",prefferred, auto,1.067"
+        ",prefferred, auto,1.5"
       ];
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
@@ -17,6 +17,8 @@
         "NVD_BACKEND,direct"
         "WLR_NO_HARDWARE_CURSORS,1"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
+        # need for dbeaver scaling issue (https://github.com/dbeaver/dbeaver/issues/6581)
+        "GDK_BACKEND,x11"
       ];
 
       "$mod" = "ALT";
