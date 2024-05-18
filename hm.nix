@@ -12,7 +12,7 @@
       ./hm/fish.nix
       ./hm/starship.nix
       ./hm/gh.nix
-      ./hm/waybar.nix
+      # ./hm/waybar.nix
       ./hm/hyperland.nix
       ./hm/bottom.nix
     ];
@@ -35,7 +35,7 @@
     home.packages = with pkgs;
       [
         (nerdfonts.override {
-          fonts = [ "Iosevka" ];
+          fonts = [ "Iosevka" "JetBrainsMono" "FiraCode" "IosevkaTerm" "0xProto" ];
         })
         playerctl
         flameshot
@@ -90,6 +90,8 @@
         loc
         ripgrep
 
+
+        google-chrome
         # nix related commands
         nix-tree
 

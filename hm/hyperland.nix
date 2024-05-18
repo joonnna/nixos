@@ -7,7 +7,7 @@
     #     };
     settings = {
       monitor = [
-        ",prefferred, auto,1.5"
+        ",prefferred, auto,1.067"
       ];
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
@@ -23,7 +23,20 @@
 
       "$mod" = "ALT";
       "general:no_border_on_floating" = true;
+      "general:col.active_border" = "0x80f2d2";
+      "general:gaps_out" = 5;
+      "general:gaps_in" = 5;
+      "dwindle:no_gaps_when_only" = 1;
+
+
       "decoration:rounding" = 20;
+      "decoration:active_opacity" = 0.95;
+      "decoration:inactive_opacity" = 0.9;
+      "decoration:blur:enabled" = true;
+      "decoration:blur:size" = 10;
+      "decoration:blur:passes" = 3;
+      "decoration:blur:new_optimizations" = true;
+
       binde = [
         "$mod ctrl, n, resizeactive, -20 0"
         "$mod ctrl, e, resizeactive, 0 20"
