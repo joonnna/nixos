@@ -164,7 +164,7 @@ highlight({
     ['@field'] = { fg = c.white },
     --     ['@function.builtin'] = { link = 'Function' },
     --     ['@function.call'] = { link = 'Function' },
-    --     ['@function.macro'] = { link = 'Macro' },
+    ['@function.macro'] = { link = 'Macro' },
     --     ['@keyword.conditional'] = { link = 'Conditional' },
     --     ['@keyword.import'] = { link = 'Include' },
     --     ['@keyword.return'] = { fg = c.blue },
