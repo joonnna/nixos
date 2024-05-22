@@ -90,8 +90,10 @@
         loc
         ripgrep
 
+        xdg-desktop-portal
+        xdg-desktop-portal-hyprland
+        xdg-desktop-portal-gtk
 
-        google-chrome
         # nix related commands
         nix-tree
 
