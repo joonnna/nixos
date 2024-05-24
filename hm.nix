@@ -140,7 +140,7 @@
 
     # home.file."workspace/default.nix".text = builtins.readFile ./shells/rust_workspace.nix;
 
-    home.file."workspace/config.toml".text = ''
+    xdg.configFile."cargo/config.toml".text = ''
       [registries]
       orcalabs-orcastrator = { index = "https://dl.cloudsmith.io/basic/orcalabs/orcastrator/cargo/index.git" }
       [build]
