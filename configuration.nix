@@ -48,6 +48,51 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    polkit_gnome
+  ];
+
+
+
+  programs._1password = {
+    enable = true;
+  };
+
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "jon" ];
+  };
+
+
+  # https://nixos.wiki/wiki/1Password
+  # allows the desktop app to unlock 1password in vivaldi
+  environment.etc = {
+    "1password/custom_allowed_browsers" = {
+      text = ''
+        vivaldi-bin
+      '';
+      mode = "0755";
+    };
+  };
+
+  security.polkit.enable = true;
+
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+  };
+
   fonts.fontconfig.enable = true;
 
   fonts.packages = with pkgs; [

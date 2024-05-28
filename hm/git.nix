@@ -18,7 +18,7 @@
     };
   };
 
-  xdg.configFile."git/credentials".text = ''
-    https://jon-foss-mikalsen:0ebaa8eecc59492436e8012fe38fce24e4961518@dl.cloudsmith.io
-  '';
+  # xdg.configFile."git/credentials".text = ''
+  #   https://jon-foss-mikalsen:0ebaa8eecc59492436e8012fe38fce24e4961518@dl.cloudsmith.io
+  # '';
 }
