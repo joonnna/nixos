@@ -50,7 +50,7 @@
         neofetch
         tree-sitter
         nodejs
-        dbeaver
+        dbeaver-bin
         k9s
         azure-cli
         kubectl
@@ -63,7 +63,6 @@
         chrysalis
         coreutils
         qmk
-        _1password-gui
         killall
         usbutils
         jdk17
@@ -98,6 +97,10 @@
         # nix related commands
         nix-tree
 
+
+        # https://wiki.hyprland.org/Useful-Utilities/Must-have/
+        qt6.qtwayland
+
         # Language servers
         sumneko-lua-language-server
         deno
@@ -121,9 +124,9 @@
       use nix
     '';
 
-    home.file.".git-credentials".text = ''
-      https://jon-foss-mikalsen:0ebaa8eecc59492436e8012fe38fce24e4961518@dl.cloudsmith.io
-    '';
+    # home.file.".git-credentials".text = ''
+    #   https://jon-foss-mikalsen:0ebaa8eecc59492436e8012fe38fce24e4961518@dl.cloudsmith.io
+    # '';
 
     home.file."workspace/rust-toolchain.toml".text = ''
       [toolchain]
@@ -141,6 +144,8 @@
     # home.file."workspace/default.nix".text = builtins.readFile ./shells/rust_workspace.nix;
 
     xdg.configFile."cargo/config.toml".text = ''
+      [registry]
+      global-credential-providers = ["cargo-credential-1password --account https://start.1password.com"]
       [registries]
       orcalabs-orcastrator = { index = "https://dl.cloudsmith.io/basic/orcalabs/orcastrator/cargo/index.git" }
       [build]
@@ -153,10 +158,11 @@
       IdentityAgent ~/.1password/agent.sock
     '';
 
-    # Credentials to publish to private registries
-    xdg.configFile."cargo/credentials".text = ''
-      [registries.orcalabs-orcastrator]
-      token="0ebaa8eecc59492436e8012fe38fce24e4961518"
-    '';
+    # # Credentials to publish to private registries
+    # xdg.configFile."cargo/credentials".text = ''
+    #   [registries.orcalabs-orcastrator]
+    #   token="0ebaa8eecc59492436e8012fe38fce24e4961518"
+    # '';
+
   };
 }
