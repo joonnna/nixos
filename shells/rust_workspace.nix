@@ -8,6 +8,8 @@ let
     cudaPackages.cudnn
     cudaPackages.libcurand
     cudaPackages.libcufft
+    zlib
+    # glibc.static
   ];
 in
 pkgs.mkShell {
@@ -22,16 +24,30 @@ pkgs.mkShell {
     opencv4
     cudatoolkit
     cudaPackages.libcublas
-    cudaPackages.cudnn
+    # cudaPackages.cudnn
     cudaPackages.libcurand
     cudaPackages.libcufft
+    # linuxPackages.nvidia_x11
+    # cudaPackages.
+
+    # python
+    python310
+    python310Packages.pip
   ];
   RUSTC_VERSION = overrides.toolchain.channel;
   # https://github.com/rust-lang/rust-bindgen#environment-variables
   LIBCLANG_PATH = pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
+  LD_LIBRARY_PATH = libPath;
   shellHook = ''
+    export LD_LIBRARY_PATH=/run/opengl-driver/lib:/run/opengl-driver-32/lib:$LD_LIBRARY_PATH;
+    export LD_LIBRARY_PATH=${pkgs.stdenv.cc.cc.lib}/lib/:$LD_LIBRARY_PATH;
+
+    export ORT_DYLIB_PATH=/home/jon/workspace/onnxruntime-linux-x64-gpu-1.17.3/lib/libonnxruntime.so.1.17.3
+    export APP_ENVIRONMENT=local;
+
+    # export CUDA_HOME=${pkgs.cudatoolkit}
+
     export PATH=$PATH:''${CARGO_HOME:-~/.cargo}/bin
     export PATH=$PATH:''${RUSTUP_HOME:-~/.rustup}/toolchains/$RUSTC_VERSION-x86_64-unknown-linux-gnu/bin/
   '';
-  LD_LIBRARY_PATH = libPath;
 }

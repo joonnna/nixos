@@ -7,6 +7,7 @@
     shellAbbrs = {
       vim = "nvim";
       e = "nvim";
+      kav = "killall nvim";
 
       cb = "cargo build";
       ct = "cargo test";
