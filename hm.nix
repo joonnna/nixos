@@ -12,7 +12,8 @@
       ./hm/fish.nix
       ./hm/starship.nix
       ./hm/gh.nix
-      ./hm/polybar.nix
+      # ./hm/waybar.nix
+      ./hm/hyperland.nix
       ./hm/bottom.nix
     ];
     programs.direnv.enable = true;
@@ -34,7 +35,7 @@
     home.packages = with pkgs;
       [
         (nerdfonts.override {
-          fonts = [ "Iosevka" ];
+          fonts = [ "Iosevka" "JetBrainsMono" "FiraCode" "IosevkaTerm" "0xProto" ];
         })
         playerctl
         flameshot
@@ -44,7 +45,7 @@
         vivaldi
         fzf
         alacritty
-        xclip
+        wl-clipboard
         fd
         neofetch
         tree-sitter
@@ -75,10 +76,10 @@
         gnumake
         tcpdump
         wireshark
-        vagrant
         ttyper
         nvtopPackages.full
         auth0-cli
+        tofi
 
         # Rust-based linux command replacements
         eza
@@ -88,6 +89,11 @@
         procs
         loc
         ripgrep
+
+        xdg-utils
+        xdg-desktop-portal
+        xdg-desktop-portal-hyprland
+        xdg-desktop-portal-gtk
 
         # nix related commands
         nix-tree
@@ -132,9 +138,9 @@
       }
     '';
 
-    home.file."workspace/default.nix".text = builtins.readFile ./shells/rust_workspace.nix;
+    # home.file."workspace/default.nix".text = builtins.readFile ./shells/rust_workspace.nix;
 
-    home.file."workspace/config.toml".text = ''
+    xdg.configFile."cargo/config.toml".text = ''
       [registries]
       orcalabs-orcastrator = { index = "https://dl.cloudsmith.io/basic/orcalabs/orcastrator/cargo/index.git" }
       [build]

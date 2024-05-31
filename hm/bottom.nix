@@ -6,6 +6,7 @@
   xdg.configFile."bottom/bottom.toml".text = ''
     [flags]
     enable_gpu = true
+    enable_gpu_memory = true
     mem_as_value = true
 
     [[row]]

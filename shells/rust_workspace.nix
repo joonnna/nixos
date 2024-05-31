@@ -14,14 +14,16 @@ let
 in
 pkgs.mkShell {
   buildInputs = with pkgs; [
+    # glibc.static
     ffmpeg
     clang
     rustup
     pkg-config
+    yasm
     # openssl, ffmpeg, and opencv4 are found through pkg-config, and are not in LD_LIBRARY_PATH
     # The final pkg-config search path is defined by PKG_CONFIG_PATH_FOR_TARGET
+    (opencv4.override { enableUnfree = true; enableCuda = true; })
     openssl
-    opencv4
     cudatoolkit
     cudaPackages.libcublas
     # cudaPackages.cudnn
@@ -34,6 +36,7 @@ pkgs.mkShell {
     python310
     python310Packages.pip
   ];
+  APP_ENVIRONMENT = "local";
   RUSTC_VERSION = overrides.toolchain.channel;
   # https://github.com/rust-lang/rust-bindgen#environment-variables
   LIBCLANG_PATH = pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];

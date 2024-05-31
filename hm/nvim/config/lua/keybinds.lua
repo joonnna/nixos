@@ -83,3 +83,6 @@ set('n', '<leader>r', vim.lsp.buf.rename)
 set('n', 'ck', vim.diagnostic.goto_prev)
 set('n', 'cj', vim.diagnostic.goto_next)
 set('n', '<leader>x', vim.diagnostic.open_float)
+
+-- Treesitter
+set('n', '<leader>y', ':TSHighlightCapturesUnderCursor<CR>')
