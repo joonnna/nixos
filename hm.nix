@@ -12,7 +12,6 @@
       ./hm/fish.nix
       ./hm/starship.nix
       ./hm/gh.nix
-      # ./hm/waybar.nix
       ./hm/hyperland.nix
       ./hm/bottom.nix
     ];
@@ -97,6 +96,11 @@
         # nix related commands
         nix-tree
 
+        # (_1password-gui.override {
+        #   polkitPolicyOwners = [ "jon" ];
+        # })
+        # _1password
+
 
         # https://wiki.hyprland.org/Useful-Utilities/Must-have/
         qt6.qtwayland
@@ -124,10 +128,6 @@
       use nix
     '';
 
-    # home.file.".git-credentials".text = ''
-    #   https://jon-foss-mikalsen:0ebaa8eecc59492436e8012fe38fce24e4961518@dl.cloudsmith.io
-    # '';
-
     home.file."workspace/rust-toolchain.toml".text = ''
       [toolchain]
       profile = "default"
@@ -141,15 +141,19 @@
       }
     '';
 
-    # home.file."workspace/default.nix".text = builtins.readFile ./shells/rust_workspace.nix;
+    home.file."workspace/default.nix".text = builtins.readFile ./shells/rust_workspace.nix;
 
     xdg.configFile."cargo/config.toml".text = ''
+      # https://github.com/rust-lang/cargo/tree/master/credential/cargo-credential-1password
       [registry]
-      global-credential-providers = ["cargo-credential-1password --account https://start.1password.com"]
-      [registries]
-      orcalabs-orcastrator = { index = "https://dl.cloudsmith.io/basic/orcalabs/orcastrator/cargo/index.git" }
+      global-credential-providers = ["cargo-credential-1password --account my.1password.com"]
+
+      # https://help.cloudsmith.io/docs/cargo-registry#cargo--v174-http-sparse-registry
+      [registries.orcalabs-orcastrator]
+      index = "sparse+https://cargo.cloudsmith.io/orcalabs/orcastrator/"
+
       [build]
-      target-dir = "/home/jon/rust-target"
+      target-dir = "/home/jon/workspace/rust-target"
     '';
 
     # 1password ssh keys
@@ -158,11 +162,9 @@
       IdentityAgent ~/.1password/agent.sock
     '';
 
-    # # Credentials to publish to private registries
-    # xdg.configFile."cargo/credentials".text = ''
-    #   [registries.orcalabs-orcastrator]
-    #   token="0ebaa8eecc59492436e8012fe38fce24e4961518"
-    # '';
-
+    xdg.configFile."op/plugins.sh".text = ''
+      export OP_PLUGIN_ALIASES_SOURCED=1
+      alias cargo="op plugin run -- cargo"
+    '';
   };
 }

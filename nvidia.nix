@@ -1,8 +1,10 @@
+{ config, ... }:
 {
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
     nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
   hardware.opengl = {
     enable = true;

@@ -1,5 +1,3 @@
-{ config, lib, pkgs, ... }:
-
 {
   programs.fish = {
     enable = true;
@@ -9,6 +7,7 @@
       vim = "nvim";
       e = "nvim";
       kav = "killall nvim";
+      pwinit = "op inject -i ~/.git-credentials.ref -o ~/.git-credentials";
 
       cb = "cargo build";
       ct = "cargo test";

@@ -7,7 +7,7 @@
     #     };
     settings = {
       monitor = [
-        ",prefferred, auto,1.6"
+        ",prefferred, auto,1"
       ];
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
@@ -23,7 +23,9 @@
 
       "$mod" = "ALT";
       "general:no_border_on_floating" = true;
-      "general:col.active_border" = "0x80f2d2";
+
+      "general:col.active_border" = "0xFFFFFF";
+      # "general:col.active_border" = "0x80f2d2";
       "general:gaps_out" = 5;
       "general:gaps_in" = 5;
       "dwindle:no_gaps_when_only" = 1;

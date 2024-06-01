@@ -9,7 +9,6 @@ let
     cudaPackages.libcurand
     cudaPackages.libcufft
     zlib
-    # glibc.static
   ];
 in
 pkgs.mkShell {
@@ -36,7 +35,6 @@ pkgs.mkShell {
     python310
     python310Packages.pip
   ];
-  APP_ENVIRONMENT = "local";
   RUSTC_VERSION = overrides.toolchain.channel;
   # https://github.com/rust-lang/rust-bindgen#environment-variables
   LIBCLANG_PATH = pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];

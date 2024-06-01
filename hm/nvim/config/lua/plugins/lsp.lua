@@ -63,7 +63,7 @@ require('lspconfig')['rust_analyzer'].setup {
                 allFeatures = true,
                 allTargets = true,
                 extraEnv = {
-                    CARGO_TARGET_DIR = '/home/jon/rust-target'
+                    CARGO_TARGET_DIR = '/home/jon/workspace/rust-target'
                 },
             },
             check = {
