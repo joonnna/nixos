@@ -15,6 +15,7 @@
       cc = "cargo clippy";
       cr = "cargo run";
       crr = "cargo run --release";
+      cbr = "cargo build --release";
       play = "nvim ~/workspace/play/play/src/main.rs";
 
       sp = "cargo sqlx prepare --workspace";
