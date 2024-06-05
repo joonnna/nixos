@@ -8,6 +8,7 @@
     settings = {
       monitor = [
         ",prefferred, auto,1"
+        "Unknown-1,disable"
       ];
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
@@ -33,7 +34,7 @@
 
       "decoration:rounding" = 20;
       "decoration:active_opacity" = 0.95;
-      "decoration:inactive_opacity" = 0.9;
+      "decoration:inactive_opacity" = 0.88;
       "decoration:blur:enabled" = true;
       "decoration:blur:size" = 10;
       "decoration:blur:passes" = 3;
