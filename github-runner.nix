@@ -41,13 +41,13 @@
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "systemctl restart gengar-engine.service";
+      ExecStart = "systemctl --user restart gengar-engine.service";
     };
   };
 
-  systemd.user.paths.gengar-engine = {
+  systemd.user.paths.gengar-engine-restart = {
     pathConfig = {
-      PathChanged = "/home/jon/github-runner-workspace/rust_target/release/engine";
+      PathModified = "/home/jon/github-runner-workspace/rust_target/release/engine";
     };
   };
 }
