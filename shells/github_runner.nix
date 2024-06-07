@@ -1,16 +1,14 @@
 { pkgs ? (import <nixpkgs> { config.allowUnfree = true; }) }:
 let
-  overrides = (builtins.fromTOML (builtins.readFile ./rust-toolchain.toml));
+  # overrides = (builtins.fromTOML (builtins.readFile ./rust-toolchain.toml));
   libPath = with pkgs; lib.makeLibraryPath [
     # load external libraries that you need in your rust project here
     cudatoolkit
     cudaPackages.libcublas
-    # cudaPackages.cudnn
+    cudaPackages.cudnn
     cudaPackages.libcurand
     cudaPackages.libcufft
     zlib
-    libGl
-    glib
   ];
 in
 pkgs.mkShell {
@@ -37,7 +35,7 @@ pkgs.mkShell {
     python310
     python310Packages.pip
   ];
-  RUSTC_VERSION = overrides.toolchain.channel;
+  RUSTC_VERSION = "1.78.0";
   # https://github.com/rust-lang/rust-bindgen#environment-variables
   LIBCLANG_PATH = pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
   LD_LIBRARY_PATH = libPath;
@@ -52,5 +50,8 @@ pkgs.mkShell {
 
     export PATH=$PATH:''${CARGO_HOME:-~/.cargo}/bin
     export PATH=$PATH:''${RUSTUP_HOME:-~/.rustup}/toolchains/$RUSTC_VERSION-x86_64-unknown-linux-gnu/bin/
+
+    # export PATH=$PATH:''${/home/jon/test/.cargo}/bin
+    # export PATH=$PATH:''${/home/jon/test/.rustup}/toolchains/$RUSTC_VERSION-x86_64-unknown-linux-gnu/bin/
   '';
 }

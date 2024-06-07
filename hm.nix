@@ -141,7 +141,7 @@
       }
     '';
 
-    home.file."workspace/default.nix".text = builtins.readFile ./shells/rust_workspace.nix;
+    # home.file."workspace/default.nix".text = builtins.readFile ./shells/rust_workspace.nix;
 
     xdg.configFile."cargo/config.toml".text = ''
       # https://github.com/rust-lang/cargo/tree/master/credential/cargo-credential-1password
@@ -165,6 +165,10 @@
     xdg.configFile."op/plugins.sh".text = ''
       export OP_PLUGIN_ALIASES_SOURCED=1
       alias cargo="op plugin run -- cargo"
+    '';
+
+    home.file."scripts/update_secrets.sh".text = ''
+      op inject -i ~/secrets/git-credentials.ref -o ~/.git-credentials
     '';
   };
 }

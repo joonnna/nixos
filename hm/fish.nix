@@ -7,7 +7,7 @@
       vim = "nvim";
       e = "nvim";
       kav = "killall nvim";
-      pwinit = "op inject -i ~/.git-credentials.ref -o ~/.git-credentials";
+      sinit = "sh ~/scripts/update_secrets.sh";
 
       cb = "cargo build";
       ct = "cargo test";

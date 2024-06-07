@@ -19,7 +19,7 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       specialArgs = attrs;
-      modules = [ ./configuration.nix ./work-desktop/hardware-configuration.nix ./work-desktop/settings.nix ./nvidia.nix ];
+      modules = [ ./configuration.nix ./work-desktop/hardware-configuration.nix ./work-desktop/settings.nix ./nvidia.nix ./github-runner.nix ];
     };
 
     nixosConfigurations.jon-work-laptop = nixpkgs.lib.nixosSystem {

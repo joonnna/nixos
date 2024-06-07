@@ -16,7 +16,7 @@
     };
   };
 
-  home.file.".git-credentials.ref".text = ''
+  home.file."secrets/git-credentials.ref".text = ''
     https://jon-foss-mikalsen:{{ op://employee/cloudsmith-api-token/token }}@dl.cloudsmith.io
   '';
 }
