@@ -35,7 +35,7 @@ pkgs.mkShell {
     python310
     python310Packages.pip
   ];
-  RUSTC_VERSION = "1.78.0";
+  RUSTC_VERSION = "1.79.0";
   # https://github.com/rust-lang/rust-bindgen#environment-variables
   LIBCLANG_PATH = pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
   LD_LIBRARY_PATH = libPath;

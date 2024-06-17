@@ -114,9 +114,9 @@
         rust-analyzer
         nodePackages.dockerfile-language-server-nodejs
         nodePackages.yaml-language-server
-        nodePackages.bash-language-server
+        # nodePackages.bash-language-server
         nodePackages.sql-formatter
-        nodePackages.pyright
+        # nodePackages.pyright
         nodePackages.prettier
         taplo-lsp
         terraform-ls
@@ -131,7 +131,7 @@
     home.file."workspace/rust-toolchain.toml".text = ''
       [toolchain]
       profile = "default"
-      channel = "1.78.0"
+      channel = "stable"
       components = ["rust-analyzer"]
     '';
 
