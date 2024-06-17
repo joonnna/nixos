@@ -2,14 +2,10 @@
   wayland.windowManager.hyprland = {
     enable = true;
     # https://1password.community/discussion/141663/i-cant-start-wayland-native-version-of-1password
-    #     xwayland = {
-    #       enable = false;
-    #     };
+    # xwayland = {
+    #   enable = false;
+    # };
     settings = {
-      monitor = [
-        ",prefferred, auto,1"
-        "Unknown-1,disable"
-      ];
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
         "XDG_SESSION_TYPE,wayland"
@@ -25,7 +21,7 @@
       "$mod" = "ALT";
       "general:no_border_on_floating" = true;
 
-      "general:col.active_border" = "0xFFFFFF";
+      "general:col.active_border" = "0x00bfff";
       # "general:col.active_border" = "0x80f2d2";
       "general:gaps_out" = 5;
       "general:gaps_in" = 5;
@@ -57,8 +53,8 @@
           ",XF86AudioPrev, exec, playerctl previous"
           ",XF86MonBrightnessDown, exec, brightnessctl s 5%-"
           ",XF86MonBrightnessUp, exec, brightnessctl s +5%"
-          "$mod, l, exec, alacritty"
-          "$mod, u, exec, vivaldi"
+          "$mod, return, exec, alacritty"
+          "$mod, l, exec, vivaldi"
           "$mod shift, n, movewindow, l"
           "$mod shift, e, movewindow, d"
           "$mod shift, i, movewindow, u"
@@ -69,7 +65,7 @@
           "$mod, i, movefocus, u"
           "$mod, o, movefocus, r"
           "$mod, h, killactive,"
-          "$mod, d, exec, tofi-drun --drun-launch=true"
+          "$mod, d, exec, bemenu-run"
         ]
         ++ (
           # workspaces

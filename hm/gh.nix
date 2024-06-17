@@ -1,9 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.gh = {
     enable = true;
-
     extensions = [ pkgs.gh-actions-cache ];
   };
 

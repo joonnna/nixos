@@ -14,6 +14,7 @@
       ./hm/gh.nix
       ./hm/hyperland.nix
       ./hm/bottom.nix
+      ./hm/bemenu.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
@@ -77,7 +78,11 @@
         ttyper
         nvtopPackages.full
         auth0-cli
-        tofi
+
+        # tofi currently fails to open 1password which is installed on system lvl
+        # due to not searching all xdg_data_dir paths for desktop entries.
+        # For now using bemenu (see bemenu.nix)
+        # tofi
 
         # Rust-based linux command replacements
         eza

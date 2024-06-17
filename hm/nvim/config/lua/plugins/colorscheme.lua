@@ -36,8 +36,8 @@ local c = {
     teal = '#008080',
     red = '#fc5d7c',
     -- orange = '#fc8c03',
-    -- orange = '#d26939',
-    orange = '#FF8F40',
+    orange = '#d26939',
+    -- orange = '#FF8F40',
 
 
     dir = '#168791',
@@ -140,7 +140,7 @@ highlight({
     --     Label = { fg = c.red },
     Macro = { fg = c.bright_purple },
     --     Number = { fg = c.light_purple },
-    --     Operator = { fg = c.orange },
+    Operator = { fg = c.orange },
     --     PreCondit = { fg = c.red },
     --     PreProc = { fg = c.blue },
     --     Repeat = { fg = c.blue },

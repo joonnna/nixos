@@ -45,6 +45,8 @@
       "qemu-libvirtd"
       "libvirtd"
       "storage"
+      "onepassword-cli"
+      "onepassword"
     ];
   };
 

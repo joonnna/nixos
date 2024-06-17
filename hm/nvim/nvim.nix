@@ -35,7 +35,7 @@ in
       vim-fish
       csv-vim
 
-      # nvim-colorizer-lua
+      nvim-colorizer-lua
 
       cmp_luasnip
       luasnip
