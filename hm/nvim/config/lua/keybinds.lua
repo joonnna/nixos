@@ -15,6 +15,7 @@ set('n', 'j', 'gj')
 set('n', 'k', 'gk')
 set('n', 'J', '10j')
 set('n', 'K', '10k')
+set('n', '<BS>', 'ciw')
 
 set('n', '<leader>c', ':noh<CR>')
 set('n', '<leader><leader>', '<c-^>')
