@@ -1,11 +1,3 @@
--- require("tokyonight").setup({
---     styles = {
---         comments = "NONE",
---         keywords = "NONE",
---     }
--- })
--- vim.cmd([[colorscheme tokyonight-storm]])
-
 local highlight = function(colors)
     for name, opts in pairs(colors) do
         vim.api.nvim_set_hl(0, name, opts)

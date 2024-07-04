@@ -15,6 +15,7 @@
       ./hm/hyperland.nix
       ./hm/bottom.nix
       ./hm/bemenu.nix
+      ./hm/zoxide.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
@@ -86,6 +87,7 @@
 
         # Rust-based linux command replacements
         eza
+        bat
         du-dust
         tealdeer
         dysk
@@ -100,12 +102,6 @@
 
         # nix related commands
         nix-tree
-
-        # (_1password-gui.override {
-        #   polkitPolicyOwners = [ "jon" ];
-        # })
-        # _1password
-
 
         # https://wiki.hyprland.org/Useful-Utilities/Must-have/
         qt6.qtwayland

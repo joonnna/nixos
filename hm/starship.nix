@@ -38,12 +38,17 @@
   xdg.configFile."starship.toml".text = ''
     format = """
     $directory\
-    $cmd_duration\
+    $git_branch $cmd_duration\
     $line_break\
     $character"""
 
     [directory]
     style = "cyan"
+
+    [git_branch]
+    format = "[$symbol$branch]($style)"
+    symbol = " "
+    style = "green"
 
     [character]
     success_symbol = "[❯](green)"

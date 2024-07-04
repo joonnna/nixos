@@ -18,6 +18,9 @@
       cbr = "cargo build --release";
       play = "nvim ~/workspace/play/play/src/main.rs";
 
+      cd = "z";
+      cat = "bat";
+
       sp = "cargo sqlx prepare --workspace";
       sm = "cargo sqlx migrate run";
 

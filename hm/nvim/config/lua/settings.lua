@@ -11,7 +11,7 @@ o.swapfile = false
 o.clipboard = 'unnamedplus'
 o.termguicolors = true
 
-require 'colorizer'.setup()
+-- require 'colorizer'.setup()
 
 -- https://github.com/neovim/neovim/issues/14433
 vim.g.loaded_sql_completion = 0

@@ -1,6 +1,9 @@
 local cmp = require 'cmp'
 local opts = { noremap = true, silent = true }
 
+
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -17,26 +20,10 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        -- Next item in completion menu.
-        -- If on empty line or not adjacent to a word insert tab, else trigger completion
-        ['<Tab>'] = cmp.mapping(function(fallback)
-            local col = vim.fn.col('.') - 1
-            if cmp.visible() then
-                cmp.select_next_item(opts)
-            elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-                fallback()
-            else
-                cmp.complete()
-            end
-        end, { 'i', 's' }),
-        -- Previous item in completion menu.
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item(opts)
-            else
-                fallback()
-            end
-        end, { 'i', 's' }),
+        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<Tab>'] = nil,
+        ['<S-Tab>'] = nil,
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
@@ -50,8 +37,10 @@ cmp.setup({
     }
 })
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('lspconfig')['rust_analyzer'].setup {
+    capabilities = capabilities,
     on_attach = function(client, buffnr)
         if client.server_capabilities ~= nil then
             client.server_capabilities.semanticTokensProvider = nil
@@ -79,13 +68,17 @@ require('lspconfig')['rust_analyzer'].setup {
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bicep
 local bicep_lsp_bin = "/usr/local/bin/bicep-langserver/Bicep.LangServer.dll"
 require 'lspconfig'.bicep.setup {
+    capabilities = capabilities,
     cmd = { "dotnet", bicep_lsp_bin },
 }
 
-require 'lspconfig'.lua_ls.setup {}
+require 'lspconfig'.lua_ls.setup {
+    capabilities = capabilities,
+}
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
 require('lspconfig').yamlls.setup {
+    capabilities = capabilities,
     settings = {
         yaml = {
             trace = {
@@ -102,24 +95,36 @@ require('lspconfig').yamlls.setup {
 }
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls
-require 'lspconfig'.dockerls.setup {}
+require 'lspconfig'.dockerls.setup {
+    capabilities = capabilities,
+}
 
 -- https://github.com/denoland/deno
 require 'lspconfig'.denols.setup {
+    capabilities = capabilities,
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx",
         "markdown", "json" }
 }
 
 -- https://github.com/mads-hartmann/bash-language-server
-require 'lspconfig'.bashls.setup {}
+require 'lspconfig'.bashls.setup {
+    capabilities = capabilities,
+}
 
-require 'lspconfig'.taplo.setup {}
+require 'lspconfig'.taplo.setup {
+    capabilities = capabilities,
+}
 
-require 'lspconfig'.terraformls.setup {}
+require 'lspconfig'.terraformls.setup {
+    capabilities = capabilities,
+}
 
-require 'lspconfig'.pyright.setup {}
+require 'lspconfig'.pyright.setup {
+    capabilities = capabilities,
+}
 
 require 'lspconfig'.nil_ls.setup {
+    capabilities = capabilities,
     autostart = true,
     settings = {
         ['nil'] = {
