@@ -62,6 +62,8 @@
       rmdtdb = "docker kill postgres && docker rm postgres";
 
       tf = "terraform";
+      tfp = "terraform plan";
+      tfa = "terraform apply";
 
       l = "eza";
       ls = "eza";

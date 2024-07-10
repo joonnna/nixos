@@ -79,6 +79,7 @@
         ttyper
         nvtopPackages.full
         auth0-cli
+        sqlx-cli
 
         # tofi currently fails to open 1password which is installed on system lvl
         # due to not searching all xdg_data_dir paths for desktop entries.

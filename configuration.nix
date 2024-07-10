@@ -52,8 +52,11 @@
 
   environment.systemPackages = with pkgs; [
     polkit_gnome
+    man-pages
+    man-pages-posix
   ];
 
+  documentation.dev.enable = true;
 
   programs._1password = {
     enable = true;
