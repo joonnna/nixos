@@ -28,7 +28,6 @@
       "general:gaps_in" = 5;
       "dwindle:no_gaps_when_only" = 1;
 
-
       "decoration:rounding" = 20;
       "decoration:active_opacity" = 0.95;
       "decoration:inactive_opacity" = 0.88;
@@ -36,6 +35,19 @@
       "decoration:blur:size" = 10;
       "decoration:blur:passes" = 3;
       "decoration:blur:new_optimizations" = true;
+
+      # source: https://github.com/FlafyDev/nixos-config/blob/main/modules/display/hyprland/default.nix
+      windowrulev2 =
+        let
+          rulesForWindow = window: map (rule: "${rule},${window}");
+        in
+        [ ]
+        # Specific window rules
+        ++ (rulesForWindow "title:(1Password)" [ "float" "size 70% 70%" "center" ])
+        # General window rules
+        ++ (rulesForWindow "floating:0" [ "rounding 0" ])
+        ++ (rulesForWindow "floating:1" [ "rounding 5" ])
+        ++ (rulesForWindow "floating:0" [ "noshadow" ]);
 
       binde = [
         "$mod ctrl, n, resizeactive, -20 0"
