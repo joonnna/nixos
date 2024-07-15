@@ -27,7 +27,6 @@
   # Need for nvidia (installed on system level)
   nixpkgs.config.allowUnfree = true;
   virtualisation.docker.enable = true;
-  virtualisation.docker.enableNvidia = true;
 
   # Home-manager can only configure fish, but not set it as default login shell
   # as that requires root permissions
@@ -64,6 +63,13 @@
   programs._1password-gui = {
     enable = true;
     polkitPolicyOwners = [ "jon" ];
+  };
+
+
+  # OpenGL
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
   };
 
 

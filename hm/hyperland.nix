@@ -8,12 +8,7 @@
     settings = {
       env = [
         "BROWSER,vivaldi"
-        "LIBVA_DRIVER_NAME,nvidia"
         "XDG_SESSION_TYPE,wayland"
-        "GBM_BACKEND,nvidia-drm"
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-        "NVD_BACKEND,direct"
-        "WLR_NO_HARDWARE_CURSORS,1"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         # need for dbeaver scaling issue (https://github.com/dbeaver/dbeaver/issues/6581)
         "GDK_BACKEND,x11"
@@ -28,6 +23,8 @@
       "general:gaps_in" = 5;
       "dwindle:no_gaps_when_only" = 1;
 
+
+      "cursor:no_hardware_cursors" = true;
       "decoration:rounding" = 20;
       "decoration:active_opacity" = 0.95;
       "decoration:inactive_opacity" = 0.88;

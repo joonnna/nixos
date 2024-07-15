@@ -12,21 +12,21 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       specialArgs = attrs;
-      modules = [ ./configuration.nix ./home-desktop/hardware-configuration.nix ./home-desktop/settings.nix ./home-desktop/monitors.nix ./nvidia.nix ];
+      modules = [ ./configuration.nix ./home-desktop/hardware-configuration.nix ./home-desktop/settings.nix ./nvidia.nix ];
     };
 
     nixosConfigurations.jon-work-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       specialArgs = attrs;
-      modules = [ ./configuration.nix ./work-desktop/hardware-configuration.nix ./work-desktop/settings.nix ./work-desktop/monitors.nix ./nvidia.nix ./github-runner.nix ];
+      modules = [ ./configuration.nix ./work-desktop/hardware-configuration.nix ./work-desktop/settings.nix ./github-runner.nix ./nvidia.nix ];
     };
 
     nixosConfigurations.jon-work-laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       specialArgs = attrs;
-      modules = [ ./configuration.nix ./work-laptop/hardware-configuration.nix ./work-laptop/settings.nix ./work-desktop/monitors.nix ./intel_gpu_drivers.nix ];
+      modules = [ ./configuration.nix ./work-laptop/hardware-configuration.nix ./work-laptop/settings.nix ];
     };
   };
 }
