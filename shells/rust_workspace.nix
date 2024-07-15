@@ -5,11 +5,11 @@ let
     # load external libraries that you need in your rust project here
     cudatoolkit
     cudaPackages.libcublas
-    # cudaPackages.cudnn
+    cudaPackages.cudnn
     cudaPackages.libcurand
     cudaPackages.libcufft
     zlib
-    libGl
+    libGL
     glib
   ];
 in
@@ -27,9 +27,10 @@ pkgs.mkShell {
     openssl
     cudatoolkit
     cudaPackages.libcublas
-    # cudaPackages.cudnn
+    cudaPackages.cudnn
     cudaPackages.libcurand
     cudaPackages.libcufft
+    ffmpeg
     # linuxPackages.nvidia_x11
     # cudaPackages.
 
@@ -45,12 +46,11 @@ pkgs.mkShell {
     export LD_LIBRARY_PATH=/run/opengl-driver/lib:/run/opengl-driver-32/lib:$LD_LIBRARY_PATH;
     export LD_LIBRARY_PATH=${pkgs.stdenv.cc.cc.lib}/lib/:$LD_LIBRARY_PATH;
 
-    export ORT_DYLIB_PATH=/home/jon/workspace/onnxruntime-linux-x64-gpu-1.17.3/lib/libonnxruntime.so.1.17.3
+    export ORT_CUDNN_VERSION=8
     export APP_ENVIRONMENT=local;
-
-    # export CUDA_HOME=${pkgs.cudatoolkit}
 
     export PATH=$PATH:''${CARGO_HOME:-~/.cargo}/bin
     export PATH=$PATH:''${RUSTUP_HOME:-~/.rustup}/toolchains/$RUSTC_VERSION-x86_64-unknown-linux-gnu/bin/
   '';
 }
+
