@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -32,6 +33,8 @@
       "decoration:blur:size" = 10;
       "decoration:blur:passes" = 3;
       "decoration:blur:new_optimizations" = true;
+
+      exec-once = [ "${pkgs.hyprpaper}/bin/hyprpaper" ];
 
       # source: https://github.com/FlafyDev/nixos-config/blob/main/modules/display/hyprland/default.nix
       windowrulev2 =

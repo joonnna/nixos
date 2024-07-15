@@ -80,6 +80,7 @@
         nvtopPackages.full
         auth0-cli
         sqlx-cli
+        hyprpaper
 
         # tofi currently fails to open 1password which is installed on system lvl
         # due to not searching all xdg_data_dir paths for desktop entries.
@@ -171,6 +172,12 @@
 
     home.file."scripts/update_secrets.sh".text = ''
       op inject -i ~/secrets/git-credentials.ref -o ~/.git-credentials
+    '';
+
+    xdg.configFile."hypr/hyprpaper.conf".text = ''
+      preload = ~/nixos/wall.jpg
+      wallpaper = ,~/nixos/wall.jpg
+      ipc = off
     '';
   };
 }
