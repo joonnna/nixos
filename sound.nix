@@ -19,8 +19,6 @@
     "${pkgs.bluez}/libexec/bluetooth/bluetoothd -f /etc/bluetooth/main.conf -E"
   ];
 
-  sound.enable = false;
-
   # module list https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-bluetooth-discover
   hardware.pulseaudio.extraConfig = "
     load-module module-switch-on-connect
