@@ -19,8 +19,9 @@ in
     enable = true;
     plugins = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
+      nvim-treesitter-textobjects
+
       vim-commentary
-      vim-surround
       vim-eunuch
       vim-repeat
       fzf-lua
@@ -34,7 +35,11 @@ in
       vim-nix
       vim-fish
       csv-vim
+      flash-nvim
+      nvim-surround
+      lir-nvim
 
+      # nvim-web-devicons
       # nvim-colorizer-lua
 
       cmp_luasnip

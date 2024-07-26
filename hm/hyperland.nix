@@ -67,6 +67,7 @@
           ",XF86MonBrightnessDown, exec, brightnessctl s 5%-"
           ",XF86MonBrightnessUp, exec, brightnessctl s +5%"
           "$mod, return, exec, alacritty"
+          "$mod, p, exec, 1password"
           "$mod, l, exec, vivaldi"
           "$mod shift, n, movewindow, l"
           "$mod shift, e, movewindow, d"

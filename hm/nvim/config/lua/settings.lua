@@ -36,6 +36,6 @@ augroup END
 ]])
 
 -- Minimizes split bar between windows
-vim.cmd([[highlight VertSplit guifg=black guibg=black ctermfg=black ctermbg=black]])
+-- vim.cmd([[highlight VertSplit guifg=black guibg=black ctermfg=black ctermbg=black]])
 
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format { async = false }]]

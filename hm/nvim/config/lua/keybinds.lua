@@ -23,28 +23,9 @@ set('n', '<leader>w', ':w<CR>')
 set('n', '<leader>h', ':q<CR>')
 set('n', '<leader>H', ':q!<CR>')
 set('n', '<leader>q', ':wq<CR>')
-set('n', '<leader>o', ':Explore<CR>')
-set('n', '<leader>O', ':tabedit<CR>:Explore<CR>')
-set('n', '<leader>v', function()
-    vim.ui.input({ prompt = "Enter filename: " }, function(input)
-        if input then
-            local cwd = vim.fn.expand('%:h')
-            vim.api.nvim_feedkeys(string.format(":vsp %s/%s", cwd, input), 'n', true)
-            vim.api.nvim_input("<CR>")
-        end
-    end)
-end
-)
-set('n', '<leader>V', function()
-    vim.ui.input({ prompt = "Enter directory name: " }, function(input)
-        if input then
-            local cwd = vim.fn.expand('%:h')
-            vim.api.nvim_feedkeys(string.format(":Mkdir %s/%s", cwd, input), 'n', true)
-            vim.api.nvim_input("<CR>")
-        end
-    end)
-end
-)
+set('n', '<leader>o', ':lua require\'lir.float\'.toggle()<CR>')
+
+set('n', '<leader>mr', ':Rename ')
 
 -- Delete into black hole register
 set({ 'n', 'v' }, '<leader>d', '"_d')
@@ -59,10 +40,10 @@ set('v', '/', "y/\\V<C-R>=escape(@\",'/\\')<CR><CR>")
 set('n', '<leader>f', ':FzfLua files<CR>')
 set('n', '<leader>n', ':FzfLua buffers<CR>')
 set('n', '<leader>s', ':FzfLua grep_project<CR>')
-set('n', '<leader>i', ':FzfLua lsp_workspace_symbols<CR>')
+set('n', '<leader>i', ':FzfLua lsp_live_workspace_symbols<CR>')
 set('n', '<leader>e', ':FzfLua lsp_workspace_diagnostics<CR>')
 set('n', '<leader>a', ':FzfLua lsp_code_actions<CR>')
-set('n', '<leader>y', ':FzfLua command_history<CR>')
+set('n', '<leader>u', ':FzfLua command_history<CR>')
 set('n', '<leader>p', ':FzfLua search_history<CR>')
 
 local fzf_lua = require('fzf-lua')
@@ -79,6 +60,7 @@ fzf_lua.setup({
 -- Quickfix list
 set('n', '<C-j>', ':cnext<CR>zz')
 set('n', '<C-k>', ':cprev<CR>zz')
+
 
 -- Tabs
 set('n', '<leader>t', ':tabnew<CR>')
@@ -98,3 +80,4 @@ set('n', '<leader>x', vim.diagnostic.open_float)
 
 -- Treesitter
 set('n', '<leader>y', ':TSHighlightCapturesUnderCursor<CR>')
+set('n', '<leader>Y', ':TSPlaygroundToggle<CR>')

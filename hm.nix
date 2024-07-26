@@ -81,6 +81,7 @@
         auth0-cli
         sqlx-cli
         hyprpaper
+        gdb
 
         # tofi currently fails to open 1password which is installed on system lvl
         # due to not searching all xdg_data_dir paths for desktop entries.
