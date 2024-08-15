@@ -172,10 +172,6 @@
       alias gh="op plugin run -- gh"
     '';
 
-    home.file."scripts/update_secrets.sh".text = ''
-      op inject -i ~/secrets/git-credentials.ref -o ~/.git-credentials
-    '';
-
     xdg.configFile."hypr/hyprpaper.conf".text = ''
       preload = ~/nixos/wall.jpg
       wallpaper = ,~/nixos/wall.jpg
