@@ -11,7 +11,7 @@ require 'lir'.setup {
         ['<CR>']  = actions.edit,
         ['u']     = actions.up,
         ['<ESC>'] = actions.quit,
-        ['K']     = actions.mkdir,
+        ['T']     = actions.mkdir,
         ['N']     = actions.newfile,
         ['R']     = actions.rename,
         ['.']     = actions.toggle_show_hidden,

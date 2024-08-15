@@ -22,6 +22,7 @@
     extraEnvironment = {
       CUSTOM_RUNNER_ROOT = "/home/jon/github-runner-workspace";
       CUSTOM_RUNNER_WORK_DIR = "$CUSTOM_RUNNER_ROOT/repos";
+      SECRETS_PATH = "/home/jon/secrets";
     };
   };
 

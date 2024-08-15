@@ -26,6 +26,7 @@ set('n', '<leader>q', ':wq<CR>')
 set('n', '<leader>o', ':lua require\'lir.float\'.toggle()<CR>')
 
 set('n', '<leader>mr', ':Rename ')
+set('n', '<leader>md', ':Delete!')
 
 -- Delete into black hole register
 set({ 'n', 'v' }, '<leader>d', '"_d')

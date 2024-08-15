@@ -169,6 +169,7 @@
     xdg.configFile."op/plugins.sh".text = ''
       export OP_PLUGIN_ALIASES_SOURCED=1
       alias cargo="op plugin run -- cargo"
+      alias gh="op plugin run -- gh"
     '';
 
     home.file."scripts/update_secrets.sh".text = ''
