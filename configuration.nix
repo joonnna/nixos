@@ -28,6 +28,7 @@
 
   # Need for nvidia (installed on system level)
   nixpkgs.config.allowUnfree = true;
+  virtualisation.docker.enable = true;
   hardware.nvidia-container-toolkit.enable = true;
 
   # Home-manager can only configure fish, but not set it as default login shell

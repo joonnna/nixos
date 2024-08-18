@@ -11,8 +11,6 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  virtualisation.docker.enableNvidia = true;
-
   home-manager.users.jon = { pkgs, lib, ... }: {
     wayland.windowManager.hyprland = {
       enable = true;
