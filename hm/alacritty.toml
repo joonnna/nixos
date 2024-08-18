@@ -71,6 +71,6 @@ cyan = '#42fff2'
 white = '#d3ebe9'
 
 [[keyboard.bindings]]
+key = "Escape"
+mode = "Vi"
 action = "ToggleViMode"
-key = "n"
-mods = "Control"
