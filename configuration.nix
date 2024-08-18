@@ -10,6 +10,8 @@
       ./ssh.nix
     ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Oslo";
@@ -26,7 +28,7 @@
 
   # Need for nvidia (installed on system level)
   nixpkgs.config.allowUnfree = true;
-  virtualisation.docker.enable = true;
+  hardware.nvidia-container-toolkit.enable = true;
 
   # Home-manager can only configure fish, but not set it as default login shell
   # as that requires root permissions

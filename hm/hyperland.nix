@@ -26,6 +26,7 @@
 
 
       "cursor:no_hardware_cursors" = true;
+      # "cursor:allow_dumb_copy" = true;
       "decoration:rounding" = 20;
       "decoration:active_opacity" = 0.95;
       "decoration:inactive_opacity" = 0.88;

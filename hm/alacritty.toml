@@ -69,3 +69,8 @@ blue = '#29cad9'
 magenta = '#d5eb34'
 cyan = '#42fff2'
 white = '#d3ebe9'
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "n"
+mods = "Control"
