@@ -1,1 +1,3 @@
--- require('fzf-lua').lsp_workspace_symbols("rg")
+require('fzf-lua').setup({
+    fzf_colors = true
+})
