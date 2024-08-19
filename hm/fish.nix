@@ -65,6 +65,8 @@
       tfp = "terraform plan";
       tfa = "terraform apply";
 
+      ns = "nix-search";
+
       l = "eza";
       ls = "eza";
       ll = "eza -l";

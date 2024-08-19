@@ -1,18 +1,14 @@
 { pkgs, lib, ... }:
 
 let
-  # installs a vim plugin from git with a given tag / branch
-  pluginGit = ref: repo: pkgs.vimUtils.buildVimPlugin {
+  pluginGit = repo: rev: version: pkgs.vimUtils.buildVimPlugin {
     pname = "${lib.strings.sanitizeDerivationName repo}";
-    version = ref;
+    version = version;
     src = builtins.fetchGit {
       url = "https://github.com/${repo}.git";
-      ref = ref;
-      rev = "793e90b42671e510057d6a1f4cd1d514fcacd8be";
+      rev = rev;
     };
   };
-  # always installs latest version
-  plugin = pluginGit "HEAD";
 in
 {
   programs.neovim = {
@@ -37,7 +33,7 @@ in
       csv-vim
       flash-nvim
       nvim-surround
-      lir-nvim
+      oil-nvim
 
       # nvim-web-devicons
       # nvim-colorizer-lua
@@ -54,7 +50,7 @@ in
       lualine-lsp-progress
 
       plenary-nvim
-      (plugin "seblj/nvim-formatter")
+      (pluginGit "seblj/nvim-formatter" "793e90b42671e510057d6a1f4cd1d514fcacd8be" "HEAD")
     ];
   };
 

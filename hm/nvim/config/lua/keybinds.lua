@@ -23,7 +23,6 @@ set('n', '<leader>w', ':w<CR>')
 set('n', '<leader>h', ':q<CR>')
 set('n', '<leader>H', ':q!<CR>')
 set('n', '<leader>q', ':wq<CR>')
-set('n', '<leader>o', ':lua require\'lir.float\'.toggle()<CR>')
 
 set('n', '<leader>mr', ':Rename ')
 set('n', '<leader>md', ':Delete!')
@@ -46,6 +45,10 @@ set('n', '<leader>e', ':FzfLua lsp_workspace_diagnostics<CR>')
 set('n', '<leader>a', ':FzfLua lsp_code_actions<CR>')
 set('n', '<leader>u', ':FzfLua command_history<CR>')
 set('n', '<leader>p', ':FzfLua search_history<CR>')
+set('n', '<leader>k', ':FzfLua keymaps<CR>')
+
+set("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Open file explorer" })
+
 
 local fzf_lua = require('fzf-lua')
 
