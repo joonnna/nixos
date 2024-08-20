@@ -35,6 +35,8 @@ in
       nvim-surround
       oil-nvim
 
+      diffview-nvim
+
       # nvim-web-devicons
       # nvim-colorizer-lua
 

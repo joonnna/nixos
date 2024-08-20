@@ -15,4 +15,13 @@ local set = vim.keymap.set
 --  },
 --}
 
+require('flash').setup({
+    modes = {
+        char = {
+            enabled = true, -- enabling the expanded find mode
+        },
+    },
+})
+
+
 set('n', 's', '<cmd>lua require("flash").jump()<CR>')
