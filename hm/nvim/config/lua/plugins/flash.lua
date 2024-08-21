@@ -19,10 +19,7 @@ require('flash').setup({
     modes = {
         char = {
             enabled = true, -- enabling the expanded find mode
-            keys = {
-                t = false,
-                T = false,
-            }
+            keys = { 'f', 'F' }
         },
     },
 })

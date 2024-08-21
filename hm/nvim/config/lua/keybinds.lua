@@ -21,7 +21,7 @@ set('n', '<leader>c', ':noh<CR>')
 set('n', '<leader><leader>', '<c-^>')
 set('n', '<leader>w', ':w<CR>')
 set('n', '<leader>h', ':q<CR>')
-set('n', '<leader>H', ':q!<CR>')
+set('n', '<leader>H', ':qa!<CR>')
 
 -- Delete into black hole register
 set({ 'n', 'v' }, '<leader>d', '"_d')
@@ -43,12 +43,7 @@ set('n', '<leader>u', ':FzfLua command_history<CR>')
 set('n', '<leader>p', ':FzfLua search_history<CR>')
 set('n', '<leader>k', ':FzfLua keymaps<CR>')
 
-set('n', '<leader>gf', ':DiffviewOpen')
-set('n', '<leader>go', ':DiffviewOpen<CR>')
-set('n', '<leader>gg', ':DiffviewFileHistory<CR>')
-set('n', '<leader>gh', ':DiffviewFileHistory %<CR>')
-set('n', '<leader>gc', ':DiffviewClose<CR>')
-
+set('n', '<leader>g', ':LazyGit<CR>')
 set("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Open file explorer" })
 
 
@@ -66,7 +61,6 @@ fzf_lua.setup({
 -- Quickfix list
 set('n', '<C-j>', ':cnext<CR>zz')
 set('n', '<C-k>', ':cprev<CR>zz')
-
 
 -- Tabs
 set('n', '<leader>t', ':tabnew<CR>')

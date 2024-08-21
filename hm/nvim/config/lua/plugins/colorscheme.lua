@@ -31,6 +31,8 @@ local c = {
     orange = '#d26939',
     -- orange = '#FF8F40',
 
+    -- pink = '#C199E5',
+    -- orange = '#DF9050',
 
     dir = '#168791',
 
