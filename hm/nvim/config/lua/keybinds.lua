@@ -43,20 +43,9 @@ set('n', '<leader>u', ':FzfLua command_history<CR>')
 set('n', '<leader>p', ':FzfLua search_history<CR>')
 set('n', '<leader>k', ':FzfLua keymaps<CR>')
 
-set('n', '<leader>g', ':LazyGit<CR>')
+set('n', '<leader>gg', ':LazyGit<CR>')
 set("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Open file explorer" })
 
-
-local fzf_lua = require('fzf-lua')
-
-fzf_lua.setup({
-    keymap = {
-        builtin = {
-            ['<C-d>'] = 'preview-page-down',
-            ['<C-u>'] = 'preview-page-up',
-        },
-    },
-})
 
 -- Quickfix list
 set('n', '<C-j>', ':cnext<CR>zz')
