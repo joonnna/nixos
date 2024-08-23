@@ -34,6 +34,7 @@ in
       flash-nvim
       nvim-surround
       oil-nvim
+      nui-nvim
 
       lazygit-nvim
 
@@ -53,6 +54,7 @@ in
 
       plenary-nvim
       (pluginGit "seblj/nvim-formatter" "793e90b42671e510057d6a1f4cd1d514fcacd8be" "HEAD")
+      (pluginGit "crnvl96/lazydocker.nvim" "f6b5af40085b151fdbe2d50c2670b8f8ed604006" "v1.4.0")
     ];
   };
 
