@@ -35,6 +35,8 @@ in
       nvim-surround
       oil-nvim
       nui-nvim
+      # might need to run install nvim --headless "+call firenvim#install(0) | q"
+      firenvim
 
       lazygit-nvim
 

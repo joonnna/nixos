@@ -20,6 +20,7 @@ set('n', '<BS>', 'ciw')
 set('n', '<leader>c', ':noh<CR>')
 set('n', '<leader><leader>', '<c-^>')
 set('n', '<leader>w', ':w<CR>')
+set('n', '<leader>W', ':wq<CR>')
 set('n', '<leader>h', ':q<CR>')
 set('n', '<leader>H', ':qa!<CR>')
 
@@ -46,7 +47,6 @@ set('n', '<leader>k', ':FzfLua keymaps<CR>')
 set('n', '<leader>m', ':LazyDocker<CR>')
 set('n', '<leader>gg', ':LazyGit<CR>')
 set("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Open file explorer" })
-
 
 -- Quickfix list
 set('n', '<C-j>', ':cnext<CR>zz')

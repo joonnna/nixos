@@ -49,6 +49,9 @@
       grc = "git rebase --continue";
       grm = "git rebase master";
 
+      rsp = "systemctl --user restart pipewire.service";
+      rsh = "bluetoothctl connect 78:2B:64:A0:5D:F9";
+
 
       dca = "docker kill (docker ps -q) && docker rm (docker ps -a -q) && docker volume rm (docker volume ls -q) && docker network prune -f";
       ds = "docker ps -a";
