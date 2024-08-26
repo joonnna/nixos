@@ -12,4 +12,5 @@ else
     require('plugins/fzf')
     require('plugins/oil')
     require('plugins/lazydocker')
+    require('plugins/crates')
 end

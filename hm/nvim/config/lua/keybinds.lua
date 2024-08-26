@@ -1,5 +1,7 @@
 local set = vim.keymap.set
 
+local crates = require("crates")
+
 vim.g.mapleader = ' '
 
 -- local silent_opts = { noremap = true, silent = true }
@@ -33,6 +35,16 @@ set('v', 'p', 'P')
 -- Search for selected text
 set('v', '/', "y/\\V<C-R>=escape(@\",'/\\')<CR><CR>")
 
+-- Crates
+set("n", "<leader>mr", crates.open_repository, { desc = "Open crate repository" })
+set("n", "<leader>md", crates.open_documentation, { desc = "Open crate documentation" })
+set("n", "<leader>mf", crates.show_features_popup, { desc = "Show crate features" })
+set("n", "<leader>mv", crates.show_versions_popup, { desc = "Show crate versions" })
+set("n", "<leader>mp", crates.show_dependencies_popup, { desc = "Show crate dependencies" })
+set("n", "<leader>mu", crates.upgrade_crate, { desc = "Upgrade crate" })
+set("n", "<leader>mU", crates.upgrade_crates, { desc = "Upgrade all crates" })
+
+
 -- -- Fzf
 set('n', '<leader>f', ':FzfLua files<CR>')
 set('n', '<leader>n', ':FzfLua buffers<CR>')
@@ -44,8 +56,8 @@ set('n', '<leader>u', ':FzfLua command_history<CR>')
 set('n', '<leader>p', ':FzfLua search_history<CR>')
 set('n', '<leader>k', ':FzfLua keymaps<CR>')
 
-set('n', '<leader>m', ':LazyDocker<CR>')
-set('n', '<leader>gg', ':LazyGit<CR>')
+set('n', '<leader>gl', ':LazyDocker<CR>', { desc = "Lazy docker" })
+set('n', '<leader>gg', ':LazyGit<CR>', { desc = "Lazy git" })
 set("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Open file explorer" })
 
 -- Quickfix list

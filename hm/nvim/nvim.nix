@@ -37,6 +37,7 @@ in
       nui-nvim
       # might need to run install nvim --headless "+call firenvim#install(0) | q"
       firenvim
+      crates-nvim
 
       lazygit-nvim
 

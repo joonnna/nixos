@@ -31,6 +31,7 @@ cmp.setup({
         { name = 'nvim_lsp_signature_help' },
         { name = 'buffer' },
         { name = 'path' },
+        { name = 'crates' },
     }),
     completion = {
         completeopt = 'menu,menuone,noinsert',
