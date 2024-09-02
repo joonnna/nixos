@@ -40,6 +40,7 @@ in
       crates-nvim
 
       lazygit-nvim
+      rustaceanvim
 
       # nvim-web-devicons
       # nvim-colorizer-lua

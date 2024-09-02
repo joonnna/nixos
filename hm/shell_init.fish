@@ -14,3 +14,5 @@ set -x OP_BIOMETRIC_UNLOCK_ENABLED true
 set -x CLOUDSMITH_API_KEY "op://Employee/cloudsmith-api-token/token"
 source /home/jon/.config/op/plugins.sh
 fish_vi_key_bindings
+
+set fish_cursor_insert line

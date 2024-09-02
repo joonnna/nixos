@@ -19,7 +19,6 @@ set('n', 'J', '10j')
 set('n', 'K', '10k')
 set('n', '<BS>', 'ciw')
 
-set('n', '<leader>c', ':noh<CR>')
 set('n', '<leader><leader>', '<c-^>')
 set('n', '<leader>w', ':w<CR>')
 set('n', '<leader>W', ':wq<CR>')
@@ -79,6 +78,11 @@ set('n', '<leader>r', vim.lsp.buf.rename)
 set('n', 'ck', vim.diagnostic.goto_prev)
 set('n', 'cj', vim.diagnostic.goto_next)
 set('n', '<leader>x', vim.diagnostic.open_float)
+
+set('n', '<leader>c', ':noh<CR>')
+set('n', '<leader>gc', function() vim.cmd.RustLsp('openCargo') end)
+set('n', '<leader>gp', function() vim.cmd.RustLsp('parentModule') end)
+
 
 -- Treesitter
 set('n', '<leader>y', ':TSHighlightCapturesUnderCursor<CR>')

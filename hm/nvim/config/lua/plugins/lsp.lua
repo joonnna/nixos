@@ -40,30 +40,40 @@ cmp.setup({
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig')['rust_analyzer'].setup {
-    capabilities = capabilities,
-    on_attach = function(client, buffnr)
-        if client.server_capabilities ~= nil then
-            client.server_capabilities.semanticTokensProvider = nil
-        end
-    end,
-    settings = {
-        ["rust-analyzer"] = {
-            cargo = {
-                allFeatures = true,
-                allTargets = true,
-                extraEnv = {
-                    CARGO_TARGET_DIR = '/home/jon/workspace/rust-target'
+vim.g.rustaceanvim = {
+    -- DAP configuration
+    dap = {
+    },
+    -- Plugin configuration
+    tools = {
+    },
+    -- LSP configuration
+    server = {
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+            if client.server_capabilities ~= nil then
+                client.server_capabilities.semanticTokensProvider = nil
+            end
+        end,
+        default_settings = {
+            -- rust-analyzer language server configuration
+            ['rust-analyzer'] = {
+                cargo = {
+                    allFeatures = true,
+                    allTargets = true,
+                    extraEnv = {
+                        CARGO_TARGET_DIR = '/home/jon/workspace/rust-target'
+                    },
                 },
+                check = {
+                    command = "clippy",
+                    allTargets = true,
+                    allFeatures = true,
+                    extraArgs = { "--tests" }
+                }
             },
-            check = {
-                command = "clippy",
-                allTargets = true,
-                allFeatures = true,
-                extraArgs = { "--tests" }
-            }
-        }
-    }
+        },
+    },
 }
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bicep
