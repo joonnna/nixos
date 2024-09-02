@@ -52,6 +52,12 @@
       rsp = "systemctl --user restart pipewire.service";
       rsh = "bluetoothctl connect 78:2B:64:A0:5D:F9";
 
+      volu = "wpctl set-volume @DEFAULT_SINK@ 0.05+";
+      vold = "wpctl set-volume @DEFAULT_SINK@ 0.05-";
+      volm = "set-mute @DEFAULT_SINK@ toggle";
+
+      bru = "brightnessctl s +5%";
+      brd = "brightnessctl s 5%-";
 
       dca = "docker kill (docker ps -q) && docker rm (docker ps -a -q) && docker volume rm (docker volume ls -q) && docker network prune -f";
       ds = "docker ps -a";
