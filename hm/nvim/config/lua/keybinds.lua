@@ -11,6 +11,10 @@ vim.g.mapleader = ' '
 set('v', '>', '>gv')
 set('v', '<', '<gv')
 
+-- Don't go to next word when highlighting
+set('n', '*', ':execute "normal! *N"<CR>')
+set('n', '#', ':execute "normal! #N"<CR>')
+
 set({ 'v', 'n', 'i' }, '<C-s>', ':wa | sus<CR>')
 
 set('n', 'j', 'gj')
