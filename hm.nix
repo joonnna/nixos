@@ -28,6 +28,7 @@
       NIX_PATH = "/etc/nix/path";
     };
 
+
     fonts.fontconfig.enable = true;
 
     # need for vivaldi (installed on user level)
@@ -103,10 +104,7 @@
         loc
         ripgrep
 
-        xdg-utils
-        xdg-desktop-portal
-        xdg-desktop-portal-hyprland
-        xdg-desktop-portal-gtk
+        # xdg-utils
 
         # nix related commands
         nix-tree
