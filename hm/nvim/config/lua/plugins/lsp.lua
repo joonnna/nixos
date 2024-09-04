@@ -62,7 +62,7 @@ vim.g.rustaceanvim = {
                     allFeatures = true,
                     allTargets = true,
                     extraEnv = {
-                        CARGO_TARGET_DIR = '/home/jon/workspace/rust-target'
+                        CARGO_TARGET_DIR = '/home/jon/workspace/rust-analyzer-target'
                     },
                 },
                 check = {
@@ -74,13 +74,6 @@ vim.g.rustaceanvim = {
             },
         },
     },
-}
-
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bicep
-local bicep_lsp_bin = "/usr/local/bin/bicep-langserver/Bicep.LangServer.dll"
-require 'lspconfig'.bicep.setup {
-    capabilities = capabilities,
-    cmd = { "dotnet", bicep_lsp_bin },
 }
 
 require 'lspconfig'.lua_ls.setup {

@@ -37,7 +37,7 @@
     home.packages = with pkgs;
       [
         (nerdfonts.override {
-          fonts = [ "Iosevka" "JetBrainsMono" "FiraCode" "IosevkaTerm" "0xProto" ];
+          fonts = [ "Iosevka" ];
         })
         playerctl
         flameshot
@@ -75,9 +75,6 @@
         cmake
         wget
         gnumake
-        tcpdump
-        wireshark
-        ttyper
         nvtopPackages.full
         auth0-cli
         sqlx-cli
@@ -85,6 +82,8 @@
         gdb
         nix-search-cli
         hyprpicker
+
+        pavucontrol
 
         lazygit
         lazydocker
@@ -104,9 +103,7 @@
         loc
         ripgrep
 
-        # xdg-utils
-
-        # nix related commands
+        # Nix related commands
         nix-tree
 
         # https://wiki.hyprland.org/Useful-Utilities/Must-have/
@@ -115,6 +112,7 @@
         # Language servers
         sumneko-lua-language-server
         deno
+        # Nix
         nil
         # formatter for nil
         nixpkgs-fmt
@@ -124,10 +122,12 @@
         # nodePackages.bash-language-server
         nodePackages.sql-formatter
         # nodePackages.pyright
+        # Formatter
         nodePackages.prettier
+        # TOML
         taplo-lsp
         terraform-ls
-        # For bash language server
+        # Bash language server dependency
         shellcheck
       ];
 
