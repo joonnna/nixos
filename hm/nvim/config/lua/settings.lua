@@ -1,5 +1,7 @@
 local o = vim.o
 
+o.showcmd = false
+o.ruler = false
 o.tabstop = 4
 o.shiftwidth = 4
 o.expandtab = true

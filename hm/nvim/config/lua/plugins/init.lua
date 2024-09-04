@@ -7,10 +7,10 @@ if vim.g.started_by_firenvim then
     require('plugins/firenvim')
 else
     require('plugins/lsp')
-    require('plugins/lualine')
     require('plugins/formatter')
     require('plugins/fzf')
     require('plugins/oil')
     require('plugins/lazydocker')
     require('plugins/crates')
+    require('plugins/fidget')
 end

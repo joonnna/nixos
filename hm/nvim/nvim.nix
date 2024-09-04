@@ -27,12 +27,11 @@ in
       # Enables lsp configuration
       nvim-lspconfig
 
-      # Status bar
-      lualine-nvim
-      lualine-lsp-progress
-
       # Treesitter playground
       playground
+
+      # Lsp progress
+      fidget-nvim
 
       # Motion plugin
       flash-nvim
