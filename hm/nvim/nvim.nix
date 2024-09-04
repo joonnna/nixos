@@ -36,9 +36,8 @@ in
       # Motion plugin
       flash-nvim
 
-      # Syntax highlighting for nix
-      vim-nix
       # Syntax highlighting for fish
+      # TODO: use lsp https://github.com/ndonfris/fish-lsp
       vim-fish
 
       # Filesystem management
