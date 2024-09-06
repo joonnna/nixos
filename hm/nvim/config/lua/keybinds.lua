@@ -89,5 +89,6 @@ set('n', '<leader>gp', function() vim.cmd.RustLsp('parentModule') end)
 
 
 -- Treesitter
-set('n', '<leader>y', ':TSHighlightCapturesUnderCursor<CR>')
-set('n', '<leader>Y', ':TSPlaygroundToggle<CR>')
+-- set('n', '<leader>y', ':TSHighlightCapturesUnderCursor<CR>')
+-- set('n', '<leader>Y', ':TSPlaygroundToggle<CR>')
+set('n', '<leader>y', ':Inspect<CR>')

@@ -1,6 +1,7 @@
 require 'nvim-treesitter.configs'.setup {
     -- NixOS installs all parsers
     ensure_installed = {},
+    auto_install = false,
     highlight = { enable = true },
 }
 

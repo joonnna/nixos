@@ -14,6 +14,10 @@ in
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
+      # Adding playground disables all nix installed parsers,
+      # see https://github.com/NixOS/nixpkgs/issues/282927#issuecomment-2329559505 for details
+      # Treesitter playground
+      # playground
       nvim-treesitter.withAllGrammars
       nvim-treesitter-textobjects
 
@@ -27,8 +31,6 @@ in
       # Enables lsp configuration
       nvim-lspconfig
 
-      # Treesitter playground
-      playground
 
       # Lsp progress
       fidget-nvim

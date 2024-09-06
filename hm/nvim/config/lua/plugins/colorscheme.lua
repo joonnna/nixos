@@ -149,6 +149,7 @@ highlight({
     --     ['@text.note'] = { fg = c.blue, italic = true, bold = true },
     --     ['@text.warning'] = { fg = c.dark_yellow, italic = true, bold = true },
     Type = { fg = c.sky_blue },
+    -- Identifier = { fg = c.sky_blue },
     --     Underlined = { underline = true },
 
     --     ---------- TREESITTER ----------
@@ -185,7 +186,11 @@ highlight({
 
     --     ---------- RUST ----------
     ['@variable.member.rust'] = { link = '@field' },
+    -- rustSelf = { link = 'Function' },
     ['@variable.member.parameter'] = { fg = c.blue },
+    -- ['@lsp.type.macro'] = { link = 'Macro' },
+    -- ['@lsp.type.selfKeyword'] = { fg = c.orange },
+    -- ['@lsp.mod.defaultLibrary'] = { fg = c.yellow },
 
     --     ---------- TYPESCRIPT ----------
     --     typescriptParenExp = { link = '@punctBracket' },
