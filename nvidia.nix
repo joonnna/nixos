@@ -9,6 +9,7 @@
     modesetting.enable = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+    open = false;
   };
 
   home-manager.users.jon = { pkgs, lib, ... }: {
