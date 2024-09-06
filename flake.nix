@@ -26,7 +26,7 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       specialArgs = attrs;
-      modules = [ ./configuration.nix ./work-laptop/hardware-configuration.nix ./work-laptop/settings.nix ];
+      modules = [ ./configuration.nix ./work-laptop/hardware-configuration.nix ./work-laptop/settings.nix ./intel-integrated-gpu.nix ];
     };
   };
 }
