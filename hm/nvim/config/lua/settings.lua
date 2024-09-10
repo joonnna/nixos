@@ -40,4 +40,15 @@ augroup END
 -- Minimizes split bar between windows
 -- vim.cmd([[highlight VertSplit guifg=black guibg=black ctermfg=black ctermbg=black]])
 
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format { async = false }]]
+vim.cmd [[autocmd BufWritePre * lua  { async = false }]]
+
+
+local formatting = vim.api.nvim_create_augroup("BufFormatting", {})
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    group = formatting,
+    callback = function()
+        vim.lsp.buf.format {
+            filter = function(client) return client.name ~= "tsserver" end
+        }
+    end,
+})

@@ -3,6 +3,16 @@ local autocmd = vim.api.nvim_create_autocmd
 
 require("formatter").setup({
     filetype = {
+        javascript = 'prettier --stdin-filepath .js',
+        typescript = 'prettier --stdin-filepath .ts',
+        typescriptreact = 'prettier --stdin-filepath .tsx',
+        javascriptreact = 'prettier --stdin-filepath .jsx',
+        html = 'prettier --stdin-filepath .html',
+        css = 'prettier --stdin-filepath .css',
+        scss = 'prettier --stdin-filepath .scss',
+        json = 'prettier --stdin-filepath .json',
+        markdown = 'prettier --stdin-filepath .md',
+        yaml = 'prettier --stdin-filepath .yaml',
         sql = function()
             local config = reverse_find_file('.sql-formatter.json')
             return {
@@ -24,6 +34,16 @@ local group2 = augroup("Formatter2", {})
 autocmd("BufWritePost", {
     pattern = {
         "*.sql",
+        "*.ts",
+        "*.tsx",
+        "*.css",
+        "*.scss",
+        "*.html",
+        "*.js",
+        "*.json",
+        "*.yaml",
+        "*.jsx",
+        "*.md",
     },
     group = group2,
     callback = function()

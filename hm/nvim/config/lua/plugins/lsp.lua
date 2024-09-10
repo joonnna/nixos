@@ -4,6 +4,13 @@ local opts = { noremap = true, silent = true }
 
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
+
+local on_attach = function(client, bufnr)
+    if client.server_capabilities ~= nil then
+        client.server_capabilities.semanticTokensProvider = nil
+    end
+end
+
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -78,11 +85,13 @@ vim.g.rustaceanvim = {
 
 require 'lspconfig'.lua_ls.setup {
     capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
 require('lspconfig').yamlls.setup {
     capabilities = capabilities,
+    on_attach = on_attach,
     settings = {
         yaml = {
             trace = {
@@ -101,11 +110,12 @@ require('lspconfig').yamlls.setup {
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls
 require 'lspconfig'.dockerls.setup {
     capabilities = capabilities,
+    on_attach = on_attach,
 }
 
--- https://github.com/denoland/deno
-require 'lspconfig'.denols.setup {
+require 'lspconfig'.tsserver.setup {
     capabilities = capabilities,
+    on_attach = on_attach,
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx",
         "markdown", "json" }
 }
@@ -113,22 +123,27 @@ require 'lspconfig'.denols.setup {
 -- https://github.com/mads-hartmann/bash-language-server
 require 'lspconfig'.bashls.setup {
     capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 require 'lspconfig'.taplo.setup {
     capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 require 'lspconfig'.terraformls.setup {
     capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 require 'lspconfig'.pyright.setup {
     capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 require 'lspconfig'.nil_ls.setup {
     capabilities = capabilities,
+    on_attach = on_attach,
     autostart = true,
     settings = {
         ['nil'] = {
