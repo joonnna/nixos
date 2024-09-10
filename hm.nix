@@ -109,9 +109,12 @@
         # https://wiki.hyprland.org/Useful-Utilities/Must-have/
         qt6.qtwayland
 
+        # Javascrip hell
+        nodePackages.prettier
+        nodePackages.typescript-language-server
+
         # Language servers
         sumneko-lua-language-server
-        deno
         # Nix
         nil
         # formatter for nil
@@ -122,8 +125,6 @@
         nodePackages.bash-language-server
         nodePackages.sql-formatter
         pyright
-        # Formatter
-        nodePackages.prettier
         # TOML
         taplo-lsp
         terraform-ls
