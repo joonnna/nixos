@@ -21,8 +21,8 @@
           "GBM_BACKEND,nvidia-drm"
           "__GLX_VENDOR_LIBRARY_NAME,nvidia"
           "NVD_BACKEND,direct"
-          "DRI_PRIME,pci-0000_01_00_0"
-          "__VK_LAYER_NV_optimus,NVIDIA_only"
+          # "DRI_PRIME,pci-0000_01_00_0"
+          # "__VK_LAYER_NV_optimus,NVIDIA_only"
         ];
       };
     };
