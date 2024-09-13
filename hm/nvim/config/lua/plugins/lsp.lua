@@ -128,7 +128,6 @@ require 'lspconfig'.bashls.setup {
 
 require 'lspconfig'.taplo.setup {
     capabilities = capabilities,
-    on_attach = on_attach,
 }
 
 require 'lspconfig'.terraformls.setup {

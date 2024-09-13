@@ -9,6 +9,7 @@
       kav = "killall nvim";
       sinit = "sh ~/scripts/update_secrets.sh";
 
+      ch = "cargo check";
       cb = "cargo build";
       ct = "cargo test";
       ctb = "cargo test build";

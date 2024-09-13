@@ -37,11 +37,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 augroup END
 ]])
 
--- Minimizes split bar between windows
--- vim.cmd([[highlight VertSplit guifg=black guibg=black ctermfg=black ctermbg=black]])
-
-vim.cmd [[autocmd BufWritePre * lua  { async = false }]]
-
 
 local formatting = vim.api.nvim_create_augroup("BufFormatting", {})
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
