@@ -31,7 +31,6 @@ in
       # Enables lsp configuration
       nvim-lspconfig
 
-
       # Lsp progress
       fidget-nvim
 
@@ -60,22 +59,22 @@ in
       # Adds additional rust lsp features
       rustaceanvim
 
-      lazygit-nvim
-
       # Used when changing colors in colorscheme
       # nvim-colorizer-lua
 
       # Autocompletion stack
-      cmp_luasnip
       luasnip
-      nvim-cmp
-      cmp-nvim-lsp
-      cmp-nvim-lsp-signature-help
-      cmp-path
-      cmp-buffer
 
+      # cmp_luasnip
+      # nvim-cmp
+      # cmp-nvim-lsp
+      # cmp-nvim-lsp-signature-help
+      # cmp-path
+      # cmp-buffer
+      #
       (pluginGit "seblj/nvim-formatter" "793e90b42671e510057d6a1f4cd1d514fcacd8be" "HEAD")
       (pluginGit "crnvl96/lazydocker.nvim" "f6b5af40085b151fdbe2d50c2670b8f8ed604006" "v1.4.0")
+      (pluginGit "saghen/blink.cmp" "2f9f1679418d29f801e89f04d057d23a83b1fc2b" "v0.3.1")
     ];
   };
 

@@ -1,8 +1,6 @@
-local cmp = require 'cmp'
+-- local cmp = require 'cmp'
 local opts = { noremap = true, silent = true }
 
-
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 
 local on_attach = function(client, bufnr)
@@ -11,41 +9,47 @@ local on_attach = function(client, bufnr)
     end
 end
 
-cmp.setup({
-    snippet = {
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-        end,
-    },
-    window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
-    },
-    mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<Tab>'] = nil,
-        ['<S-Tab>'] = nil,
-    }),
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-        { name = 'nvim_lsp_signature_help' },
-        { name = 'buffer' },
-        { name = 'path' },
-        { name = 'crates' },
-    }),
-    completion = {
-        completeopt = 'menu,menuone,noinsert',
-    }
+
+require 'blink.cmp'.setup({
+    version = 'v0.*',
+    dependencies = 'rafamadriz/friendly-snippets',
 })
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- cmp.setup({
+--     snippet = {
+--         expand = function(args)
+--             require('luasnip').lsp_expand(args.body)
+--         end,
+--     },
+--     window = {
+--         -- completion = cmp.config.window.bordered(),
+--         -- documentation = cmp.config.window.bordered(),
+--     },
+--     mapping = cmp.mapping.preset.insert({
+--         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+--         ['<C-f>'] = cmp.mapping.scroll_docs(4),
+--         ['<C-Space>'] = cmp.mapping.complete(),
+--         ['<C-e>'] = cmp.mapping.abort(),
+--         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+--         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+--         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+--         ['<Tab>'] = nil,
+--         ['<S-Tab>'] = nil,
+--     }),
+--     sources = cmp.config.sources({
+--         { name = 'nvim_lsp' },
+--         { name = 'luasnip' },
+--         { name = 'nvim_lsp_signature_help' },
+--         { name = 'buffer' },
+--         { name = 'path' },
+--         { name = 'crates' },
+--     }),
+--     completion = {
+--         completeopt = 'menu,menuone,noinsert',
+--     }
+-- })
+--
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.g.rustaceanvim = {
     -- DAP configuration
@@ -56,7 +60,7 @@ vim.g.rustaceanvim = {
     },
     -- LSP configuration
     server = {
-        capabilities = capabilities,
+        -- capabilities = capabilities,
         on_attach = function(client, bufnr)
             if client.server_capabilities ~= nil then
                 client.server_capabilities.semanticTokensProvider = nil
@@ -84,13 +88,13 @@ vim.g.rustaceanvim = {
 }
 
 require 'lspconfig'.lua_ls.setup {
-    capabilities = capabilities,
+    -- capabilities = capabilities,
     on_attach = on_attach,
 }
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
 require('lspconfig').yamlls.setup {
-    capabilities = capabilities,
+    -- capabilities = capabilities,
     on_attach = on_attach,
     settings = {
         yaml = {
@@ -110,7 +114,7 @@ require('lspconfig').yamlls.setup {
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls
 require 'lspconfig'.dockerls.setup {
-    capabilities = capabilities,
+    -- capabilities = capabilities,
     on_attach = on_attach,
 }
 
@@ -123,16 +127,16 @@ require 'lspconfig'.denols.setup {
 
 -- https://github.com/mads-hartmann/bash-language-server
 require 'lspconfig'.bashls.setup {
-    capabilities = capabilities,
+    -- capabilities = capabilities,
     on_attach = on_attach,
 }
 
 require 'lspconfig'.taplo.setup {
-    capabilities = capabilities,
+    -- capabilities = capabilities,
 }
 
 require 'lspconfig'.terraformls.setup {
-    capabilities = capabilities,
+    -- capabilities = capabilities,
     on_attach = on_attach,
 }
 
@@ -142,7 +146,7 @@ require 'lspconfig'.ruff.setup {
 }
 
 require 'lspconfig'.nil_ls.setup {
-    capabilities = capabilities,
+    -- capabilities = capabilities,
     on_attach = on_attach,
     autostart = true,
     settings = {
