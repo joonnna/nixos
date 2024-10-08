@@ -57,7 +57,7 @@ set('n', '<leader>e', ':FzfLua lsp_workspace_diagnostics<CR>')
 set('n', '<leader>a', ':FzfLua lsp_code_actions<CR>')
 set('n', '<leader>u', ':FzfLua command_history<CR>')
 set('n', '<leader>p', ':FzfLua search_history<CR>')
-set('n', '<leader>k', ':FzfLua keymaps<CR>')
+set('n', '<leader>gk', ':FzfLua keymaps<CR>')
 
 set('n', '<leader>gl', ':LazyDocker<CR>', { desc = "Lazy docker" })
 set('n', '<leader>gg', ':LazyGit<CR>', { desc = "Lazy git" })
@@ -71,6 +71,8 @@ set('n', '<C-k>', ':cprev<CR>zz')
 set('n', '<leader>t', ':tabnew<CR>')
 set('n', 't', ':tabn<CR>')
 set('n', 'T', ':tabp<CR>')
+set('n', '<leader>ys', ':norm ysiw)idbg!<CR>')
+set('n', '<leader>yt', ':norm ysiw<Option<CR>')
 
 -- Lsp
 set('n', 'gt', function() require('fzf-lua').lsp_typedefs() end)
@@ -91,4 +93,4 @@ set('n', '<leader>gp', function() vim.cmd.RustLsp('parentModule') end)
 -- Treesitter
 -- set('n', '<leader>y', ':TSHighlightCapturesUnderCursor<CR>')
 -- set('n', '<leader>Y', ':TSPlaygroundToggle<CR>')
-set('n', '<leader>y', ':Inspect<CR>')
+-- set('n', '<leader>y', ':Inspect<CR>')
