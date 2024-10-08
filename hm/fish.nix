@@ -52,6 +52,7 @@
 
       rsp = "systemctl --user restart pipewire.service";
       rsh = "bluetoothctl connect 78:2B:64:A0:5D:F9";
+      rsk = "bluetoothctl connect FE:64:7E:54:D9:C6";
 
       volu = "wpctl set-volume @DEFAULT_SINK@ 0.05+";
       vold = "wpctl set-volume @DEFAULT_SINK@ 0.05-";
