@@ -82,6 +82,9 @@
         gdb
         nix-search-cli
         hyprpicker
+        ttyper
+        nushell
+        hyperfine
 
         pavucontrol
 
