@@ -113,7 +113,7 @@ require 'lspconfig'.dockerls.setup {
     on_attach = on_attach,
 }
 
-require 'lspconfig'.ts_ls.setup {
+require 'lspconfig'.tsserver.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx",

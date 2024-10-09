@@ -114,6 +114,7 @@
 
         # Javascrip hell
         nodePackages.prettier
+        # https://github.com/neovim/nvim-lspconfig/pull/3232#issuecomment-2331025714
         nodePackages.typescript-language-server
 
         # Language servers
