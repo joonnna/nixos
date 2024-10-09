@@ -7,54 +7,72 @@
       vim = "nvim";
       e = "nvim";
       kav = "killall nvim";
-      sinit = "sh ~/scripts/update_secrets.sh";
 
-      ch = "cargo check";
-      cb = "cargo build";
       ct = "cargo test";
       ctb = "cargo test build";
-      cc = "cargo clippy";
+
+      cb = "cargo build";
+      cbr = "cargo build --release";
+
       cr = "cargo run";
       crr = "cargo run --release";
-      cbr = "cargo build --release";
+
+      ch = "cargo check";
+      cc = "cargo clippy";
+
       play = "nvim ~/workspace/play/play/src/main.rs";
 
       cat = "bat";
 
       rf = "rainfrog";
       rfgl = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5432";
+      rfgm = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5433";
+      rfgt = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5434";
       rfgd = "rainfrog --url postgresql://postgres:$DB_PASSWORD@orca-postgres-dev.postgres.database.azure.com:5432/gengar_dev";
 
-      rfkl = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5433";
+      rfkl = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5532";
+      rfkm = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5533";
+      rfkt = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5534";
       rfkd = "rainfrog --url postgresql://postgres:$DB_PASSWORD@orca-postgres-dev.postgres.database.azure.com:5432/kyogre";
 
       sp = "cargo sqlx prepare --workspace";
       sm = "cargo sqlx migrate run";
 
-      gs = "git status";
-      gl = "git ol";
-
       enix = "nvim ~/nixos/configuration.nix";
       unix = "sudo nixos-rebuild switch --flake ~/nixos";
 
+      gs = "git status";
+      gst = "git stash";
+      gsp = "git stash pop";
 
-      gss = "git push -u origin HEAD";
-      gp = "git pull";
       gc = "git checkout";
-      gco = "git commit";
-
-
-      gcoa = "git commit --amend --no-edit";
       gcm = "git checkout master";
-      ga = "git add";
-      gds = "git diff --staged";
-      yeet = "git push --force-with-lease";
-      gfm = "git fetch origin master:master";
-      gdab = "git branch | grep -v \"master\" | xargs git branch -D";
-      gb = "git branch";
+      gco = "git commit";
+      gcoa = "git commit --amend --no-edit";
+      gcoan = "git commit --amend --no-edit";
+
+      gp = "git pull";
+      gpr = "git pull --rebase";
+      gpu = "git push";
+      gpun = "git push -u origin HEAD";
+
       gr = "git rebase";
       grc = "git rebase --continue";
       grm = "git rebase master";
+
+      gb = "git branch";
+      gbr = "git branch -m ";
+      gdab = "git branch | grep -v \"master\" | xargs git branch -D";
+
+      gf = "git fetch";
+      gfm = "git fetch origin master:master";
+
+      gd = "git diff";
+      gds = "git diff --staged";
+
+      gl = "git ol";
+      ga = "git add";
+      yeet = "git push --force-with-lease";
 
       rsp = "systemctl --user restart pipewire.service";
       rsh = "bluetoothctl connect 78:2B:64:A0:5D:F9";
@@ -93,8 +111,8 @@
       top = "btm";
       du = "dust";
 
-      copy = "xclip -sel c";
-      paste = "xclip -out -sel c";
+      copy = "wl-copy";
+      paste = "wl-paste";
     };
   };
 }
