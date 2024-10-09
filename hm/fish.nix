@@ -21,6 +21,13 @@
 
       cat = "bat";
 
+      rf = "rainfrog";
+      rfgl = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5432";
+      rfgd = "rainfrog --url postgresql://postgres:$DB_PASSWORD@orca-postgres-dev.postgres.database.azure.com:5432/gengar_dev";
+
+      rfkl = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5433";
+      rfkd = "rainfrog --url postgresql://postgres:$DB_PASSWORD@orca-postgres-dev.postgres.database.azure.com:5432/kyogre";
+
       sp = "cargo sqlx prepare --workspace";
       sm = "cargo sqlx migrate run";
 

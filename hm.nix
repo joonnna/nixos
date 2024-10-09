@@ -15,6 +15,7 @@
       ./hm/hyperland.nix
       ./hm/bottom.nix
       ./hm/bemenu.nix
+      ./hm/rainfrog.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
