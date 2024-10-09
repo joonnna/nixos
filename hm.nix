@@ -36,6 +36,16 @@
 
     home.packages = with pkgs;
       [
+        # Hyprland specific packages
+
+        # Wallpaper
+        hyprpaper
+        # Pickers (files etc)
+        hyprpicker
+        # Clipboard support
+        wl-clipboard-rs
+
+
         (nerdfonts.override {
           fonts = [ "Iosevka" ];
         })
@@ -47,7 +57,6 @@
         vivaldi
         fzf
         alacritty
-        wl-clipboard
         fd
         neofetch
         tree-sitter
@@ -78,10 +87,8 @@
         nvtopPackages.full
         auth0-cli
         sqlx-cli
-        hyprpaper
         gdb
         nix-search-cli
-        hyprpicker
         ttyper
         nushell
         hyperfine
