@@ -88,6 +88,8 @@
 
         pavucontrol
 
+        egl-wayland
+
         lazygit
         lazydocker
 
