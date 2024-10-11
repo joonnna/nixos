@@ -137,7 +137,10 @@
         nodePackages.yaml-language-server
         nodePackages.bash-language-server
         nodePackages.sql-formatter
-        pyright
+
+        # Python lsp
+        ruff
+
         # TOML
         taplo-lsp
         terraform-ls

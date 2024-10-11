@@ -135,7 +135,7 @@ require 'lspconfig'.terraformls.setup {
     on_attach = on_attach,
 }
 
-require 'lspconfig'.pyright.setup {
+require 'lspconfig'.ruff.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
