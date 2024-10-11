@@ -8,6 +8,8 @@
       e = "nvim";
       kav = "killall nvim";
 
+      c = "cargo";
+
       ct = "cargo test";
       ctb = "cargo test build";
 
@@ -48,7 +50,7 @@
       gc = "git checkout";
       gcm = "git checkout master";
       gco = "git commit";
-      gcoa = "git commit --amend --no-edit";
+      gcoa = "git commit --amend";
       gcoan = "git commit --amend --no-edit";
 
       gp = "git pull";
@@ -75,8 +77,9 @@
       yeet = "git push --force-with-lease";
 
       rsp = "systemctl --user restart pipewire.service";
-      rsh = "bluetoothctl connect 78:2B:64:A0:5D:F9";
-      rsk = "bluetoothctl connect FE:64:7E:54:D9:C6";
+
+      bch = "bluetoothctl connect 78:2B:64:A0:5D:F9";
+      bck = "bluetoothctl connect FE:64:7E:54:D9:C6";
 
       volu = "wpctl set-volume @DEFAULT_SINK@ 0.05+";
       vold = "wpctl set-volume @DEFAULT_SINK@ 0.05-";
@@ -85,20 +88,34 @@
       bru = "brightnessctl s +5%";
       brd = "brightnessctl s 5%-";
 
-      dca = "docker kill (docker ps -q) && docker rm (docker ps -a -q) && docker volume rm (docker volume ls -q) && docker network prune -f";
+      d = "docker";
+
       ds = "docker ps -a";
-      dcu = "docker-compose up";
+
       dc = "docker-compose";
-      drd = "docker run -e POSTGRES_PASSWORD=test123 -p 0.0.0.0:5432:5432 -d postgis/postgis:13-3.2-alpine";
-      rsmigdb = "docker-compose kill migration-db && docker-compose rm migration-db -f && docker-compose up -d migration-db";
-      rsposdb = "docker-compose kill postgres && docker-compose rm postgres -f && docker-compose up -d postgres";
-      rsposdb2 = "docker-compose kill postgres2 && docker-compose rm postgres2 -f && docker-compose up -d postgres2";
-      rmposdb = "docker-compose kill postgres && docker-compose rm postgres -f";
-      rmdtdb = "docker kill postgres && docker rm postgres";
+      dcu = "docker-compose up";
+      dcud = "docker-compose up -d";
+      dcd = "docker-compose down";
+
+      dp = "docker prune";
+      dpc = "docker container prune -f";
+      dpv = "docker volume prune -f";
+      dpn = "docker network prune -f";
+
+      dka = "docker kill (docker ps -q)";
+
+      dnuke = "docker kill (docker ps -q) && docker container prune -f && docker volume prune -f && docker network prune -f";
+
+      rsmdb = "docker-compose kill migration-db && docker-compose rm migration-db -f && docker-compose up -d migration-db";
+      rsldb = "docker-compose kill postgres && docker-compose rm postgres -f && docker-compose up -d postgres";
+
+      rmldb = "docker-compose kill postgres && docker-compose rm postgres -f";
+      rmtdb = "docker kill postgres && docker rm postgres";
 
       tf = "terraform";
       tfp = "terraform plan";
       tfa = "terraform apply";
+      tfi = "terraform init";
 
       ns = "nix-search";
 
