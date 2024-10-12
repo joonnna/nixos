@@ -43,6 +43,7 @@
       enix = "nvim ~/nixos/configuration.nix";
       unix = "sudo nixos-rebuild switch --flake ~/nixos";
 
+
       gs = "git status";
       gst = "git stash";
       gsp = "git stash pop";
@@ -75,6 +76,8 @@
       gl = "git ol";
       ga = "git add";
       yeet = "git push --force-with-lease";
+
+      ghrc = "gh repo clone";
 
       rsp = "systemctl --user restart pipewire.service";
 

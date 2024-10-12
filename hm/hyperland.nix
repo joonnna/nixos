@@ -81,6 +81,7 @@
           "$mod, o, movefocus, r"
           "$mod, h, killactive,"
           "$mod, r, exec, bemenu-run"
+          "$mod, w, focuswindow, floating"
         ]
         ++ (
           # workspaces
