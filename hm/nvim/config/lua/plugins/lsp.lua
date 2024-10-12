@@ -99,7 +99,8 @@ require('lspconfig').yamlls.setup {
             },
             schemas = {
                 ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-                kubernetes = "/*.yaml",
+                -- Re-enable if we ever start working with kubernetes again
+                -- kubernetes = "/*.yaml",
             },
             schemaDownload = { enable = true },
             validate = true
@@ -113,11 +114,11 @@ require 'lspconfig'.dockerls.setup {
     on_attach = on_attach,
 }
 
-require 'lspconfig'.tsserver.setup {
+require 'lspconfig'.denols.setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx",
-        "markdown", "json" }
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript",
+        "typescriptreact", "typescript.tsx", "markdown", "json" }
 }
 
 -- https://github.com/mads-hartmann/bash-language-server

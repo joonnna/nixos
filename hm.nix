@@ -36,8 +36,7 @@
 
     home.packages = with pkgs;
       [
-        # Hyprland specific packages
-
+        ### Hyprland specific packages
         # Wallpaper
         hyprpaper
         # Pickers (files etc)
@@ -93,11 +92,11 @@
         nushell
         hyperfine
 
+        # GUI to sanity check audio status
         pavucontrol
 
         egl-wayland
 
-        lazygit
         lazydocker
 
         # tofi currently fails to open 1password which is installed on system lvl
@@ -121,17 +120,24 @@
         # https://wiki.hyprland.org/Useful-Utilities/Must-have/
         qt6.qtwayland
 
-        # Javascrip hell
         nodePackages.prettier
-        # https://github.com/neovim/nvim-lspconfig/pull/3232#issuecomment-2331025714
-        nodePackages.typescript-language-server
 
-        # Language servers
+        ### Language servers
+
+        # Javascript runtime and lsp written in rust, not compatible formatting with everyone not using deno (see lsp.lua for all filetypes deno provides lsp/formatting for)
+        deno
+
+        # Javascript hell (use this if we want to be compliant with everyone not using deno)
+        # https://github.com/neovim/nvim-lspconfig/pull/3232#issuecomment-2331025714
+        # nodePackages.typescript-language-server
+
         sumneko-lua-language-server
+
         # Nix
         nil
         # formatter for nil
         nixpkgs-fmt
+
         rust-analyzer
         nodePackages.dockerfile-language-server-nodejs
         nodePackages.yaml-language-server
