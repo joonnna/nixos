@@ -29,6 +29,7 @@ set('n', '<leader>W', ':wq<CR>')
 set('n', '<leader>h', ':q<CR>')
 set('n', '<leader>H', ':qa!<CR>')
 
+
 -- Delete into black hole register
 set({ 'n', 'v' }, '<leader>d', '"_d')
 
@@ -59,20 +60,21 @@ set('n', '<leader>u', ':FzfLua command_history<CR>')
 set('n', '<leader>p', ':FzfLua search_history<CR>')
 set('n', '<leader>gk', ':FzfLua keymaps<CR>')
 
-set('n', '<leader>gl', ':LazyDocker<CR>', { desc = "Lazy docker" })
-set('n', '<leader>gg', ':LazyGit<CR>', { desc = "Lazy git" })
+set('n', '<leader>gg', ':LazyDocker<CR>', { desc = "Lazy docker" })
 set("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Open file explorer" })
 
 -- Quickfix list
-set('n', '<C-j>', ':cnext<CR>zz')
-set('n', '<C-k>', ':cprev<CR>zz')
+set('n', '<C-n>', ':cnext<CR>zz')
+set('n', '<C-p>', ':cprev<CR>zz')
 
 -- Tabs
 set('n', '<leader>t', ':tabnew<CR>')
 set('n', 't', ':tabn<CR>')
 set('n', 'T', ':tabp<CR>')
-set('n', '<leader>ys', ':norm ysiw)idbg!<CR>')
+
 set('n', '<leader>yt', ':norm ysiw<Option<CR>')
+set('n', '<leader>ys', ':norm ysiw)idbg!<CR>')
+set('n', '<leader>yr', ':norm ysiw<Result<CR>')
 
 -- Lsp
 set('n', 'gt', function() require('fzf-lua').lsp_typedefs() end)
@@ -81,10 +83,11 @@ set('n', 'gi', vim.lsp.buf.implementation)
 set('n', 'gr', vim.lsp.buf.references)
 set('n', '<leader>l', vim.lsp.buf.hover)
 set('n', '<leader>r', vim.lsp.buf.rename)
-set('n', 'ck', vim.diagnostic.goto_prev)
-set('n', 'cj', vim.diagnostic.goto_next)
+set('n', 'cp', vim.diagnostic.goto_prev)
+set('n', 'cn', vim.diagnostic.goto_next)
 set('n', '<leader>x', vim.diagnostic.open_float)
 
+set('n', '<leader><CR>', '<C-w-w>')
 set('n', '<leader>c', ':noh<CR>')
 set('n', '<leader>gc', function() vim.cmd.RustLsp('openCargo') end)
 set('n', '<leader>gp', function() vim.cmd.RustLsp('parentModule') end)
