@@ -78,6 +78,7 @@
       yeet = "git push --force-with-lease";
 
       ghrc = "gh repo clone";
+      ghrn = "gh repo create --clone";
 
       rsp = "systemctl --user restart pipewire.service";
 

@@ -70,7 +70,6 @@
         libreoffice
         terraform
         heaptrack
-        chrysalis
         coreutils
         qmk
         killall
