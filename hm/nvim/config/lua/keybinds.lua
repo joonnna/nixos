@@ -72,9 +72,9 @@ set('n', '<leader>t', ':tabnew<CR>')
 set('n', 't', ':tabn<CR>')
 set('n', 'T', ':tabp<CR>')
 
-set('n', '<leader>yt', ':norm ysiw<Option<CR>')
+set('n', '<leader>yt', ':norm ysiw<iOption<CR>')
 set('n', '<leader>ys', ':norm ysiw)idbg!<CR>')
-set('n', '<leader>yr', ':norm ysiw<Result<CR>')
+set('n', '<leader>yr', ':norm ysiw<iResult<CR>')
 
 -- Lsp
 set('n', 'gt', function() require('fzf-lua').lsp_typedefs() end)
