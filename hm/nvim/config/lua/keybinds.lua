@@ -64,8 +64,8 @@ set('n', '<leader>gg', ':LazyDocker<CR>', { desc = "Lazy docker" })
 set("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Open file explorer" })
 
 -- Quickfix list
-set('n', '<C-n>', ':cnext<CR>zz')
-set('n', '<C-p>', ':cprev<CR>zz')
+set('n', '<C-j>', ':cnext<CR>zz')
+set('n', '<C-k>', ':cprev<CR>zz')
 
 -- Tabs
 set('n', '<leader>t', ':tabnew<CR>')
@@ -83,12 +83,10 @@ set('n', 'gi', vim.lsp.buf.implementation)
 set('n', 'gr', vim.lsp.buf.references)
 set('n', '<leader>l', vim.lsp.buf.hover)
 set('n', '<leader>r', vim.lsp.buf.rename)
-set('n', 'cp', vim.diagnostic.goto_prev)
-set('n', 'cn', vim.diagnostic.goto_next)
+set('n', 'cj', vim.diagnostic.goto_prev)
+set('n', 'ck', vim.diagnostic.goto_next)
 set('n', '<leader>x', vim.diagnostic.open_float)
 
-set('n', '<leader><CR>', '<C-w-s>')
-set('n', '<leader><BS>', '<C-w-w>')
 set('n', '<leader>c', ':noh<CR>')
 set('n', '<leader>gc', function() vim.cmd.RustLsp('openCargo') end)
 set('n', '<leader>gp', function() vim.cmd.RustLsp('parentModule') end)
