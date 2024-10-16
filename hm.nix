@@ -16,6 +16,7 @@
       ./hm/bottom.nix
       ./hm/bemenu.nix
       ./hm/rainfrog.nix
+      ./hm/nushell.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
@@ -88,8 +89,9 @@
         gdb
         nix-search-cli
         ttyper
-        nushell
         hyperfine
+
+        nushellPlugins.polars
 
         # GUI to sanity check audio status
         pavucontrol

@@ -154,3 +154,5 @@ require 'lspconfig'.nil_ls.setup {
     },
 
 }
+
+require 'lspconfig'.nushell.setup {}
