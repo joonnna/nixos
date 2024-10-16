@@ -60,7 +60,7 @@ in
       # Adds additional rust lsp features
       rustaceanvim
 
-      lazygit-nvim
+      nvim-spectre
 
       # Used when changing colors in colorscheme
       # nvim-colorizer-lua

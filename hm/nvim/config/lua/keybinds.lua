@@ -29,6 +29,8 @@ set('n', '<leader>W', ':wq<CR>')
 set('n', '<leader>h', ':q<CR>')
 set('n', '<leader>H', ':qa!<CR>')
 
+-- Execute previous command
+set('n', ';', ':<UP><CR>')
 
 -- Delete into black hole register
 set({ 'n', 'v' }, '<leader>d', '"_d')
@@ -48,6 +50,7 @@ set("n", "<leader>mp", crates.show_dependencies_popup, { desc = "Show crate depe
 set("n", "<leader>mu", crates.upgrade_crate, { desc = "Upgrade crate" })
 set("n", "<leader>mU", crates.upgrade_crates, { desc = "Upgrade all crates" })
 
+set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', { desc = "Toggle Spectre" })
 
 -- -- Fzf
 set('n', '<leader>f', ':FzfLua files<CR>')
@@ -90,6 +93,7 @@ set('n', '<leader>x', vim.diagnostic.open_float)
 set('n', '<leader>c', ':noh<CR>')
 set('n', '<leader>gc', function() vim.cmd.RustLsp('openCargo') end)
 set('n', '<leader>gp', function() vim.cmd.RustLsp('parentModule') end)
+
 
 
 -- Treesitter
