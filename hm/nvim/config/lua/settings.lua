@@ -21,10 +21,12 @@ vim.g.omni_sql_default_compl_type = 'syntax'
 vim.g.omni_sql_no_default_maps = 1
 
 -- In-order:
+-- vim-commentary add terraform filetype
 -- vim-commentary add sql filetype
 -- Remove trailing whitespaces
 -- Highlights trailing whitespaces (hightlight and match command)
 -- Remembers last edit line of file
+-- Highlights yanked text
 vim.cmd([[
 augroup autocmds
 autocmd!
@@ -34,6 +36,7 @@ autocmd BufWritePre * %s/\s\+$//e
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=1000 }
 augroup END
 ]])
 

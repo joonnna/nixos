@@ -23,14 +23,12 @@ in
 
       fzf-lua
       vim-rooter
-      vim-highlightedyank
 
       # Lua version of Tpope surround + extra features
       nvim-surround
 
       # Enables lsp configuration
       nvim-lspconfig
-
 
       # Lsp progress
       fidget-nvim
@@ -48,9 +46,6 @@ in
       # Dependency of several plugins (atleast nvim-formatter)
       plenary-nvim
 
-      # Dependency of lazydocker
-      nui-nvim
-
       # Connects with browser plugin firenvim to enable nvim in text field in browser
       # Might need to run install nvim --headless "+call firenvim#install(0) | q"
       firenvim
@@ -60,6 +55,7 @@ in
       # Adds additional rust lsp features
       rustaceanvim
 
+      # Search and replace across files
       nvim-spectre
 
       # Used when changing colors in colorscheme
@@ -75,7 +71,6 @@ in
       cmp-buffer
 
       (pluginGit "seblj/nvim-formatter" "793e90b42671e510057d6a1f4cd1d514fcacd8be" "HEAD")
-      (pluginGit "crnvl96/lazydocker.nvim" "f6b5af40085b151fdbe2d50c2670b8f8ed604006" "v1.4.0")
     ];
   };
 
