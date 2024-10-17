@@ -11,6 +11,7 @@
       c = "cargo";
 
       ct = "cargo test";
+      cth = "cargo test check";
       ctb = "cargo test build";
 
       cb = "cargo build";
@@ -100,6 +101,9 @@
       dcu = "docker-compose up";
       dcud = "docker-compose up -d";
       dcd = "docker-compose down";
+
+      dl = "docker logs";
+      dlf = "docker logs -f ";
 
       dp = "docker prune";
       dpc = "docker container prune -f";
