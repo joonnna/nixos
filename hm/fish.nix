@@ -23,6 +23,11 @@
       ch = "cargo check";
       cc = "cargo clippy";
 
+      cdk = "cd ~/workspace/kyogre";
+      cdg = "cd ~/workspace/gengar";
+      cdo = "cd ~/workspace/orcastrator";
+      cdn = "cd ~/nixos";
+
       play = "nvim ~/workspace/play/play/src/main.rs";
 
       cat = "bat";

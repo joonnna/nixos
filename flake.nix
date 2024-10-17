@@ -12,7 +12,7 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       specialArgs = attrs;
-      modules = [ ./configuration.nix ./home-desktop/hardware-configuration.nix ./home-desktop/settings.nix ./nvidia-1080.nix ];
+      modules = [ ./configuration.nix ./home-desktop/hardware-configuration.nix ./home-desktop/settings.nix ./nvidia-4090.nix ];
     };
 
     nixosConfigurations.jon-work-desktop = nixpkgs.lib.nixosSystem {
