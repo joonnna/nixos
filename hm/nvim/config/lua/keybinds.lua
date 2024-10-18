@@ -22,8 +22,8 @@ set('n', 'j', 'gj')
 set('n', 'k', 'gk')
 set('n', 'J', '10j')
 set('n', 'K', '10k')
-set('n', '<C-n>', '<C-d>')
-set('n', '<C-e>', '<C-u>')
+-- set('n', '<C-n>', '<C-d>')
+-- set('n', '<C-e>', '<C-u>')
 
 set('n', '<BS>', 'ciw')
 
@@ -70,8 +70,8 @@ set('n', '<leader>gk', ':FzfLua keymaps<CR>')
 set("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Open file explorer" })
 
 -- Quickfix list
-set('n', '<C-j>', ':cnext<CR>zz')
-set('n', '<C-k>', ':cprev<CR>zz')
+set('n', '<C-n>', ':cnext<CR>zz')
+set('n', '<C-p>', ':cprev<CR>zz')
 set('n', '<leader>q', ':cclose<CR>')
 
 -- Tabs
