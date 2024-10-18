@@ -73,7 +73,7 @@ vim.g.rustaceanvim = {
                     },
                 },
                 check = {
-                    command = "clippy",
+                    command = "check",
                     allTargets = true,
                     allFeatures = true,
                     extraArgs = { "--tests" }
