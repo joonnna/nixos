@@ -6,7 +6,9 @@ require('fzf-lua').setup({
             ['<C-u>'] = 'preview-page-up',
         },
         fzf = {
-            ['ctrl-a'] = 'select-all+accept',
+            ['ctrl-o'] = 'select-all+accept',
+            ['ctrl-n'] = 'down',
+            ['ctrl-e'] = 'up',
         }
     },
 })

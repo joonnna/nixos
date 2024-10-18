@@ -5,7 +5,7 @@ local crates = require("crates")
 vim.g.mapleader = ' '
 
 -- local silent_opts = { noremap = true, silent = true }
--- local opts = { noremap = true}
+-- local opts = { noremap = true }
 
 -- Keep visual selection when indenting/outdenting
 set('v', '>', '>gv')
@@ -17,15 +17,19 @@ set('n', '#', ':execute "normal! #N"<CR>')
 
 set({ 'v', 'n', 'i' }, '<C-s>', ':wa | sus<CR>')
 
+-- Navigation
 set('n', 'j', 'gj')
 set('n', 'k', 'gk')
 set('n', 'J', '10j')
 set('n', 'K', '10k')
+set('n', '<C-n>', '<C-d>')
+set('n', '<C-e>', '<C-u>')
+
 set('n', '<BS>', 'ciw')
 
 set('n', '<leader><leader>', '<c-^>')
 set('n', '<leader>w', ':w<CR>')
-set('n', '<leader>W', ':wq<CR>')
+set('n', '<leader>W', ':wqa<CR>')
 set('n', '<leader>h', ':q<CR>')
 set('n', '<leader>H', ':qa!<CR>')
 
@@ -66,8 +70,8 @@ set('n', '<leader>gk', ':FzfLua keymaps<CR>')
 set("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Open file explorer" })
 
 -- Quickfix list
-set('n', '<C-n>', ':cnext<CR>zz')
-set('n', '<C-p>', ':cprev<CR>zz')
+set('n', '<C-j>', ':cnext<CR>zz')
+set('n', '<C-k>', ':cprev<CR>zz')
 set('n', '<leader>q', ':cclose<CR>')
 
 -- Tabs
