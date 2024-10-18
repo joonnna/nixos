@@ -27,6 +27,7 @@
       cdg = "cd ~/workspace/gengar";
       cdo = "cd ~/workspace/orcastrator";
       cdn = "cd ~/nixos";
+      cdi = "cd ~/workspace/infrastructure";
 
       play = "nvim ~/workspace/play/play/src/main.rs";
 
