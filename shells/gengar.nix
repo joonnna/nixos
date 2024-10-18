@@ -1,6 +1,7 @@
 { pkgs ? (import <nixpkgs> { config.allowUnfree = true; }) }:
 let
-  overrides = (builtins.fromTOML (builtins.readFile ./rust-toolchain.toml));
+  python = pkgs.python310;
+  pythonPackages = python.pkgs;
   libPath = with pkgs; lib.makeLibraryPath [
     # load external libraries that you need in your rust project here
     cudatoolkit
@@ -13,17 +14,12 @@ let
     glib
   ];
 in
-pkgs.mkShell {
-  nativeBuildInputs = with pkgs; [ pkg-config ];
-  buildInputs = with pkgs; [
-    # glibc.static
-    ffmpeg
-    clang
-    rustup
-    pkg-config
-    yasm
-    # openssl, ffmpeg, and opencv4 are found through pkg-config, and are not in LD_LIBRARY_PATH
-    # The final pkg-config search path is defined by PKG_CONFIG_PATH_FOR_TARGET
+with pkgs; mkShell {
+  packages = [
+    pythonPackages.venvShellHook
+  ];
+
+  buildInputs = [
     (opencv4.override { enableUnfree = true; enableCuda = true; })
     openssl
     cudatoolkit
@@ -31,31 +27,44 @@ pkgs.mkShell {
     cudaPackages.cudnn
     cudaPackages.libcurand
     cudaPackages.libcufft
-    # linuxPackages.nvidia_x11
-    # cudaPackages.
-
     protobuf
+    ffmpeg
+    clang
+    rustup
+    pkg-config
+    yasm
 
-    # python
+    # zlib
+    # libGL
+    # glib
+    #
     python310
     python310Packages.pip
-    python310Packages.xgboost
-    python310Packages.pandas
-    python310Packages.scikit-learn
-    # python310Packages.protobuf
-    # python310Packages.ultralytics
-    # python310Packages.lapx
   ];
-  RUSTC_VERSION = overrides.toolchain.channel;
-  # https://github.com/rust-lang/rust-bindgen#environment-variables
-  LIBCLANG_PATH = pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
+
   LD_LIBRARY_PATH = libPath;
+  LIBCLANG_PATH = pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
+
   shellHook = ''
+    SOURCE_DATE_EPOCH=$(date +%s)
+    VENV=.venv
+
     export LD_LIBRARY_PATH=/run/opengl-driver/lib:/run/opengl-driver-32/lib:$LD_LIBRARY_PATH;
     export LD_LIBRARY_PATH=${pkgs.stdenv.cc.cc.lib}/lib/:$LD_LIBRARY_PATH;
+
+    if test ! -d $VENV; then
+      python -m venv $VENV
+    fi
+
+    source ./$VENV/bin/activate
+    export PYTHONPATH=`pwd`/$VENV/${python.sitePackages}/:$PYTHONPATH
+    pip install -r yolo/python/requirements.txt
 
     export PATH=$PATH:''${CARGO_HOME:-~/.cargo}/bin
     export PATH=$PATH:''${RUSTUP_HOME:-~/.rustup}/toolchains/$RUSTC_VERSION-x86_64-unknown-linux-gnu/bin/
   '';
-}
 
+  postShellHook = ''
+    ln -sf ${python.sitePackages}/* ./.venv/lib/python3.10/site-packages
+  '';
+}
