@@ -27,7 +27,7 @@
   };
 
 
-  systemd.user.services.gengar-engine = {
+  systemd.user.services.gengar-engine-re = {
     enable = true;
     path = [ pkgs.nix ];
     script = ''
@@ -47,17 +47,17 @@
     };
   };
 
-  systemd.user.services.gengar-engine-restart = {
+  systemd.user.services.gengar-engine-restart-re = {
     enable = true;
     path = [ pkgs.nix ];
     wantedBy = [ "default.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "systemctl --user restart gengar-engine.service";
+      ExecStart = "systemctl --user restart gengar-engine-re.service";
     };
   };
 
-  systemd.user.paths.gengar-engine-restart = {
+  systemd.user.paths.gengar-engine-restart-re = {
     enable = true;
     wantedBy = [ "default.target" ];
     pathConfig = {
