@@ -10,8 +10,8 @@
     "q" = "AbortQuery"
     "<Ctrl-t>" = "FocusMenu"
     "<Ctrl-s>" = "FocusEditor"
-    "<Ctrl-n>" = "FocusData"
-    "<Ctrl-h>" = "FocusHistory"
+    "<Ctrl-r>" = "FocusData"
+    "<Ctrl-a>" = "FocusHistory"
     "<Tab>" = "CycleFocusForwards"
     "<Backtab>" = "CycleFocusBackwards"
 
@@ -20,8 +20,8 @@
     "<Ctrl-Enter>" = "SubmitEditorQuery"
     "<Ctrl-t>" = "FocusMenu"
     "<Ctrl-s>" = "FocusEditor"
-    "<Ctrl-n>" = "FocusData"
-    "<Ctrl-h>" = "FocusHistory"
+    "<Ctrl-r>" = "FocusData"
+    "<Ctrl-a>" = "FocusHistory"
     "<Backtab>" = "CycleFocusBackwards"
 
     [keybindings.History]
@@ -29,8 +29,8 @@
     "q" = "AbortQuery"
     "<Ctrl-t>" = "FocusMenu"
     "<Ctrl-s>" = "FocusEditor"
-    "<Ctrl-n>" = "FocusData"
-    "<Ctrl-h>" = "FocusHistory"
+    "<Ctrl-r>" = "FocusData"
+    "<Ctrl-a>" = "FocusHistory"
     "<Tab>" = "CycleFocusForwards"
     "<Backtab>" = "CycleFocusBackwards"
 
@@ -39,8 +39,8 @@
     "q" = "AbortQuery"
     "<Ctrl-t>" = "FocusMenu"
     "<Ctrl-s>" = "FocusEditor"
-    "<Ctrl-n>" = "FocusData"
-    "<Ctrl-h>" = "FocusHistory"
+    "<Ctrl-r>" = "FocusData"
+    "<Ctrl-a>" = "FocusHistory"
 
     "<Tab>" = "CycleFocusForwards"
     "<Backtab>" = "CycleFocusBackwards"
