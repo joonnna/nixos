@@ -74,7 +74,7 @@
           "$mod shift, e, movewindow, d"
           "$mod shift, i, movewindow, u"
           "$mod shift, o, movewindow, r"
-          "$mod, f, fullscreen, 1"
+          "$mod, s, fullscreen, 1"
           "$mod, n, movefocus, l"
           "$mod, e, movefocus, d"
           "$mod, i, movefocus, u"

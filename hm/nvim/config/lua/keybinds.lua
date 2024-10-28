@@ -11,6 +11,9 @@ vim.g.mapleader = ' '
 set('v', '>', '>gv')
 set('v', '<', '<gv')
 
+set('n', '<C-t>', '<C-w>w')
+set('n', '<C-g>', '<C-w>v')
+
 -- Don't go to next word when highlighting
 set('n', '*', ':execute "normal! *N"<CR>')
 set('n', '#', ':execute "normal! #N"<CR>')
@@ -22,14 +25,18 @@ set('n', 'j', 'gj')
 set('n', 'k', 'gk')
 set('n', 'J', '10j')
 set('n', 'K', '10k')
+set('n', '<C-n>', 'h')
+set('n', '<C-i>', 'k')
+set('n', '<C-e>', 'j')
+set('n', '<C-o>', 'l')
 -- set('n', '<C-n>', '<C-d>')
 -- set('n', '<C-e>', '<C-u>')
 
 set('n', '<BS>', 'ciw')
 
 set('n', '<leader><leader>', '<c-^>')
-set('n', '<leader>w', ':w<CR>')
-set('n', '<leader>W', ':wqa<CR>')
+set('n', '<leader>,', ':w<CR>')
+set('n', '<leader><', ':wqa<CR>')
 set('n', '<leader>h', ':q<CR>')
 set('n', '<leader>H', ':qa!<CR>')
 
@@ -57,12 +64,12 @@ set("n", "<leader>mU", crates.upgrade_crates, { desc = "Upgrade all crates" })
 set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', { desc = "Toggle Spectre" })
 
 -- -- Fzf
-set('n', '<leader>f', ':FzfLua files<CR>')
+set('n', '<leader>a', ':FzfLua lsp_code_actions<CR>')
+set('n', '<leader>t', ':FzfLua files<CR>')
 set('n', '<leader>n', ':FzfLua buffers<CR>')
 set('n', '<leader>s', ':FzfLua grep_project<CR>')
 set('n', '<leader>i', ':FzfLua lsp_live_workspace_symbols<CR>')
 set('n', '<leader>e', ':FzfLua lsp_workspace_diagnostics<CR>')
-set('n', '<leader>a', ':FzfLua lsp_code_actions<CR>')
 set('n', '<leader>u', ':FzfLua command_history<CR>')
 set('n', '<leader>p', ':FzfLua search_history<CR>')
 set('n', '<leader>gk', ':FzfLua keymaps<CR>')
@@ -70,9 +77,9 @@ set('n', '<leader>gk', ':FzfLua keymaps<CR>')
 set("n", "<leader>o", "<cmd>Oil --float<cr>", { desc = "Open file explorer" })
 
 -- Quickfix list
-set('n', '<C-n>', ':cnext<CR>zz')
-set('n', '<C-p>', ':cprev<CR>zz')
-set('n', '<leader>q', ':cclose<CR>')
+set('n', '<C-k>', ':cnext<CR>zz')
+set('n', '<C-j>', ':cprev<CR>zz')
+set('n', '<leader>z', ':cclose<CR>')
 
 -- Tabs
 -- set('n', '<leader>t', ':tabnew<CR>')

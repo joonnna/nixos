@@ -1,8 +1,7 @@
 function fish_user_key_bindings
     for mode in insert default visual
-        bind -M $mode \cf forward-char
+        bind -M $mode \cn forward-char
     end
-
     bind yy fish_clipboard_copy
     bind Y fish_clipboard_copy
     bind p fish_clipboard_paste

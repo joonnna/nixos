@@ -7,6 +7,8 @@ require('fzf-lua').setup({
         },
         fzf = {
             ['ctrl-a'] = 'select-all+accept',
+            ['ctrl-e'] = 'down',
+            ['ctrl-i'] = 'up',
         }
     },
 })
