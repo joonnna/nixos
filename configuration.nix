@@ -89,7 +89,7 @@
     polkitPolicyOwners = [ "jon" ];
   };
 
-
+  #
   # OpenGL
   hardware.graphics = {
     enable = true;
