@@ -18,17 +18,17 @@ set('n', '<C-g>', '<C-w>v')
 set('n', '*', ':execute "normal! *N"<CR>')
 set('n', '#', ':execute "normal! #N"<CR>')
 
-set({ 'v', 'n', 'i' }, '<C-s>', ':wa | sus<CR>')
+set('n', '<C-s>', ':wa | sus<CR>')
 
 -- Navigation
 set('n', 'j', 'gj')
 set('n', 'k', 'gk')
 set('n', 'J', '10j')
 set('n', 'K', '10k')
-set('n', '<C-n>', 'h')
-set('n', '<C-i>', 'k')
-set('n', '<C-e>', 'j')
-set('n', '<C-o>', 'l')
+set('n', '(', ')')
+set('n', '{', '}')
+set('n', ')', '(')
+set('n', '}', '{')
 -- set('n', '<C-n>', '<C-d>')
 -- set('n', '<C-e>', '<C-u>')
 
