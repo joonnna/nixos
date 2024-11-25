@@ -44,7 +44,7 @@
       rfkt = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5534";
       rfkd = "rainfrog --url postgresql://psqladmin:$DB_PASSWORD@kyogre-dev.postgres.database.azure.com:5432/kyogre";
 
-      sp = "cargo sqlx prepare --workspace";
+      sp = "cargo sqlx prepare --workspace -- --all-features --all-targets";
       sm = "cargo sqlx migrate run";
 
       enix = "nvim ~/nixos/configuration.nix";
@@ -101,6 +101,9 @@
 
       d = "docker";
 
+      dr = "docker rm";
+      di = "docker imags";
+
       ds = "docker ps -a";
 
       dc = "docker-compose";
@@ -125,6 +128,7 @@
 
       rmldb = "docker-compose kill postgres && docker-compose rm postgres -f";
       rmtdb = "docker kill postgres && docker rm postgres";
+      rmmdb = "docker kill postgres-master && docker rm postgres-master";
 
       tf = "terraform";
       tfp = "terraform plan";
