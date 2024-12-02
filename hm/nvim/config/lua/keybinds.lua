@@ -20,6 +20,14 @@ set('n', '#', ':execute "normal! #N"<CR>')
 
 set('n', '<C-s>', ':wa | sus<CR>')
 
+-- -- Move line up/down
+-- set('n', '<A-j>', ':m.+1<CR>==', { silent = true })
+-- set('v', '<A-j>', ":m '>+1<CR>gv=gv", { silent = true })
+-- set('i', '<A-j>', '<Esc>:m .+1<CR>==gi', { silent = true })
+-- set('n', 'K', ':m.-2<CR>==', { silent = true })
+-- set('v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
+-- set('i', 'K', '<Esc>:m .-2<CR>==gi', { silent = tru
+--
 -- Navigation
 set('n', 'j', 'gj')
 set('n', 'k', 'gk')

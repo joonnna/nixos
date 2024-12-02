@@ -31,26 +31,6 @@
   virtualisation.docker.enable = true;
   hardware.nvidia-container-toolkit.enable = true;
 
-  # environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
-
-  xdg = {
-    portal = {
-      xdgOpenUsePortal = true;
-      enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
-      config = {
-        common = {
-          default = [
-            "hyprland"
-            "gtk"
-          ];
-          "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-        };
-      };
-    };
-  };
-
-
   # Home-manager can only configure fish, but not set it as default login shell
   # as that requires root permissions
   programs.fish.enable = true;
@@ -89,7 +69,7 @@
     polkitPolicyOwners = [ "jon" ];
   };
 
-  #
+
   # OpenGL
   hardware.graphics = {
     enable = true;

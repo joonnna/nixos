@@ -1,1 +1,1 @@
-exec Hyprland &
+exec i3 &

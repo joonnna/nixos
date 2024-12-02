@@ -1,23 +1,24 @@
-{ home-manager, ... }:
+{ home-manager, lib, ... }:
 {
-  imports = [
-    home-manager.nixosModule
-  ];
 
   networking.hostName = "jon-work-desktop";
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.device = "nodev";
 
+
+  imports = [
+    home-manager.nixosModule
+  ];
+
   home-manager.users.jon = { pkgs, lib, ... }: {
-    wayland.windowManager.hyprland = {
-      enable = true;
-      settings = {
-        monitor = [
-          ",prefferred, auto,1.6"
-          "Unknown-1,disable"
-        ];
-      };
+    xsession.windowManager.i3 = {
+      extraConfig = ''
+        workspace 1 output DP-0
+        workspace 2 output DP-2
+        workspace 3 output DP-4
+      '';
     };
   };
 }
+

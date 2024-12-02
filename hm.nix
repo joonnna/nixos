@@ -12,7 +12,6 @@
       ./hm/fish.nix
       ./hm/starship.nix
       ./hm/gh.nix
-      ./hm/hyperland.nix
       ./hm/bottom.nix
       ./hm/bemenu.nix
       ./hm/rainfrog.nix
@@ -37,14 +36,9 @@
 
     home.packages = with pkgs;
       [
-        ### Hyprland specific packages
-        # Wallpaper
-        hyprpaper
-        # Pickers (files etc)
-        hyprpicker
-        # Clipboard support
-        wl-clipboard-rs
 
+        # # Clipboard support
+        xclip
 
         (nerdfonts.override {
           fonts = [ "Iosevka" ];
@@ -91,12 +85,14 @@
         ttyper
         hyperfine
 
+        slack
+
         nushellPlugins.polars
 
         # GUI to sanity check audio status
         pavucontrol
 
-        egl-wayland
+        # egl-wayland
 
         lazydocker
 
@@ -117,11 +113,10 @@
         loc
         ripgrep
 
+        rofi
+
         # Nix related commands
         nix-tree
-
-        # https://wiki.hyprland.org/Useful-Utilities/Must-have/
-        qt6.qtwayland
 
         nodePackages.prettier
 
@@ -201,10 +196,5 @@
       alias gh="op plugin run -- gh"
     '';
 
-    xdg.configFile."hypr/hyprpaper.conf".text = ''
-      preload = ~/nixos/wall.jpg
-      wallpaper = ,~/nixos/wall.jpg
-      ipc = off
-    '';
   };
 }

@@ -1,7 +1,7 @@
 {
   programs.fish = {
     enable = true;
-    loginShellInit = builtins.readFile ./login.fish;
+    # loginShellInit = builtins.readFile ./login.fish;
     shellInit = builtins.readFile ./shell_init.fish;
     shellAbbrs = {
       vim = "nvim";
