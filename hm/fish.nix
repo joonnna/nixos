@@ -36,12 +36,12 @@
       rf = "rainfrog";
       rfgl = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5432";
       rfgm = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5433";
-      rfgt = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5434";
+      rfgt = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5434/test";
       rfgd = "rainfrog --url postgresql://psqladmin:$DB_PASSWORD@kyogre-dev.postgres.database.azure.com:5432/gengar_dev";
 
       rfkl = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5532";
       rfkm = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5533";
-      rfkt = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5534";
+      rfkt = "rainfrog --url postgresql://postgres:test123@127.0.0.1:5534/test";
       rfkd = "rainfrog --url postgresql://psqladmin:$DB_PASSWORD@kyogre-dev.postgres.database.azure.com:5432/kyogre";
 
       sp = "cargo sqlx prepare --workspace -- --all-features --all-targets";
