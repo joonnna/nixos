@@ -3,6 +3,11 @@
   services.displayManager = {
     defaultSession = "none+i3";
   };
+
+  # services.libinput = {
+  #   enable = true;
+  # };
+  #
   services.xserver =
     {
       enable = true;
@@ -16,10 +21,6 @@
       xkb = {
         layout = "us,no";
         options = "grp:alt_space_toggle";
-      };
-
-      libinput = {
-        enable = true;
       };
 
       windowManager.i3 = {

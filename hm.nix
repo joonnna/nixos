@@ -40,6 +40,7 @@
         # # Clipboard support
         xclip
 
+        # nerd-fonts.iosevka
         (nerdfonts.override {
           fonts = [ "Iosevka" ];
         })
@@ -86,6 +87,7 @@
         hyperfine
 
         slack
+        # bluetui
 
         nushellPlugins.polars
 

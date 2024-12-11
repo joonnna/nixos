@@ -113,6 +113,7 @@
     # unifont
     # font-awesome
     openmoji-color
+    # nerd-fonts.iosevka
     # terminus
   ];
 
