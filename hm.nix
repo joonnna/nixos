@@ -87,7 +87,8 @@
         hyperfine
 
         slack
-        # bluetui
+        bluetui
+        impala
 
         nushellPlugins.polars
 

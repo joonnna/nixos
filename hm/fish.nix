@@ -89,6 +89,7 @@
 
       rsp = "systemctl --user restart pipewire.service";
 
+      blu = "bluetui";
       bch = "bluetoothctl connect 78:2B:64:A0:5D:F9";
       bck = "bluetoothctl connect FE:64:7E:54:D9:C6";
 
