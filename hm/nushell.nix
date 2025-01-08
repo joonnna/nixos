@@ -10,9 +10,9 @@
         prepend /home/jon/.apps |
         append /usr/bin/env
         )
+
+        edit_mode = "vi";
       '';
     };
-
   };
-
 }

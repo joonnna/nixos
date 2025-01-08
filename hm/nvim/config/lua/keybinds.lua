@@ -23,9 +23,9 @@ set('n', '<C-s>', ':wa | sus<CR>')
 -- -- Move line up/down
 set('n', 'J', ':m.+1<CR>==', { silent = true })
 set('v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
-set('i', 'J', '<Esc>:m .+1<CR>==gi', { silent = true })
+-- set('i', 'J', '<Esc>:m .+1<CR>==gi', { silent = true })
 set('n', 'K', ':m.-2<CR>==', { silent = true })
-set('i', 'K', '<Esc>:m .-2<CR>==gi', { silent = true })
+-- set('i', 'K', '<Esc>:m .-2<CR>==gi', { silent = true })
 set('v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
 --
 -- Navigation

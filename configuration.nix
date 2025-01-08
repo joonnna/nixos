@@ -78,7 +78,7 @@
 
 
   # https://nixos.wiki/wiki/1Password
-  # allows the desktop app to unlock 1password in vivaldi
+  # Allows the desktop app to unlock 1password in vivaldi
   environment.etc = {
     "1password/custom_allowed_browsers" = {
       text = ''
@@ -113,7 +113,7 @@
     # unifont
     # font-awesome
     openmoji-color
-    # nerd-fonts.iosevka
+    nerd-fonts.iosevka
     # terminus
   ];
 
