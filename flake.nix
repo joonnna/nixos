@@ -2,8 +2,8 @@
   # See https://discourse.nixos.org/t/problems-after-switching-to-flake-system/24093/7 for details
   inputs =
     {
-      nixpkgs.url = "nixpkgs/nixos-24.11";
-      home-manager.url = "github:nix-community/home-manager/release-24.11";
+      nixpkgs.url = "nixpkgs/nixos-unstable";
+      home-manager.url = "github:nix-community/home-manager";
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
 

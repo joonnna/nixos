@@ -34,16 +34,33 @@
     # need for vivaldi (installed on user level)
     nixpkgs.config.allowUnfree = true;
 
+
+    # fonts.packages = [
+    #   pkgs.nerd-fonts.iosevka
+    # ];
+    #
+    #
+    #
+    #
     home.packages = with pkgs;
       [
-
         # # Clipboard support
         xclip
 
+        nerd-fonts.iosevka
+
         # nerd-fonts.iosevka
-        (nerdfonts.override {
-          fonts = [ "Iosevka" ];
-        })
+        # (nerdfonts.override {
+        #   fonts = [ "Iosevka" ];
+        # })
+
+        # fonts.packages = [
+        #            nerd-fonts._0xproto
+        #            nerd-fonts.Iosevka
+        #          ]
+
+
+
         playerctl
         flameshot
         gcc
@@ -198,6 +215,5 @@
       alias cargo="op plugin run -- cargo"
       alias gh="op plugin run -- gh"
     '';
-
   };
 }
