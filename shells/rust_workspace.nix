@@ -42,6 +42,8 @@ pkgs.mkShell {
     python310Packages.xgboost
     python310Packages.pandas
     python310Packages.scikit-learn
+    python310Packages.dbutils
+    python310Packages.pyspark
     # python310Packages.protobuf
     # python310Packages.ultralytics
     # python310Packages.lapx
