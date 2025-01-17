@@ -22,6 +22,7 @@
 
       ch = "cargo check";
       cc = "cargo clippy";
+      ce = "cargo clean";
 
       cdk = "cd ~/workspace/kyogre";
       cdg = "cd ~/workspace/gengar";
