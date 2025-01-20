@@ -108,6 +108,7 @@
         slack
         bluetui
         impala
+        gitui
 
         nushellPlugins.polars
 
