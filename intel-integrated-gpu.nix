@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  services.xserver.videoDrivers = [ "intel" ];
+  services.xserver.videoDrivers = [ "modesetting" ];
 
   # OpenGL
   hardware.graphics = {

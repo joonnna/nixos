@@ -6,6 +6,10 @@ vim.g.mapleader = ' '
 
 -- local silent_opts = { noremap = true, silent = true }
 -- local opts = { noremap = true }
+--
+--
+-- E in insert mode seems to be bound by nvim-cmp, remove this
+set('i', 'E', 'E', { noremap = false })
 
 -- Keep visual selection when indenting/outdenting
 set('v', '>', '>gv')
@@ -17,6 +21,15 @@ set('n', '<C-g>', '<C-w>v')
 -- Don't go to next word when highlighting
 set('n', '*', ':execute "normal! *N"<CR>')
 set('n', '#', ':execute "normal! #N"<CR>')
+
+set("n", "<leader>*", function() require("fzf-lua").live_grep({ search = vim.fn.expand("<cword>") }) end)
+set("v", "<leader>*", function()
+    local fzf_lua = require("fzf-lua")
+    -- Get selected text
+    vim.cmd('noau normal! "vy')            -- Yank selection into register "v"
+    local search_text = vim.fn.getreg("v") -- Retrieve yanked text
+    fzf_lua.live_grep({ search = search_text })
+end)
 
 set('n', '<C-s>', ':wa | sus<CR>')
 
@@ -46,7 +59,7 @@ set('n', '<leader><leader>', '<c-^>')
 set('n', '<leader>,', ':w<CR>')
 set('n', '<leader><', ':wqa<CR>')
 set('n', '<leader>h', ':q<CR>')
-set('n', '<leader>H', ':qa!<CR>')
+set('n', '<leader>H', ':q!<CR>')
 
 -- Execute previous command
 set('n', ';', ':<UP><CR>')
@@ -95,8 +108,13 @@ set('n', '<leader>z', ':cclose<CR>')
 -- set('n', 'T', ':tabp<CR>')
 
 set('n', '<leader>yt', ':norm ysiw<iOption<CR>')
-set('n', '<leader>ys', ':norm ysiw)idbg!<CR>')
+set('n', '<leader>yd', ':norm ysiw)idbg!<CR>')
 set('n', '<leader>yr', ':norm ysiw<iResult<CR>')
+set('n', '<leader>yo', ':norm ysiw(iOk<CR>')
+set('n', '<leader>ye', ':norm ysiw(iErr<CR>')
+
+-- set("v", "<leader>yd", function() vim.cmd('normal! Sdbg!()') end)
+
 
 -- Lsp
 set('n', 'gt', function() require('fzf-lua').lsp_typedefs() end)
