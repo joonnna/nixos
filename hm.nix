@@ -133,7 +133,7 @@
         tealdeer
         dysk
         procs
-        loc
+        tokei
         ripgrep
 
         rofi
