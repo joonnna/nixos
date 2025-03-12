@@ -34,33 +34,14 @@
     # need for vivaldi (installed on user level)
     nixpkgs.config.allowUnfree = true;
 
-
-    # fonts.packages = [
-    #   pkgs.nerd-fonts.iosevka
-    # ];
-    #
-    #
-    #
-    #
     home.packages = with pkgs;
       [
-        # # Clipboard support
+        # Clipboard support
         xclip
         # To completley rebuild the font cache run `fc-cache -rv`
         # Might also need to manually clear `~/.cache/fontconfig`
         # See issue for details: https://github.com/nix-community/home-manager/issues/6160
         nerd-fonts.iosevka
-
-        # nerd-fonts.iosevka
-        # (nerdfonts.override {
-        #   fonts = [ "Iosevka" ];
-        # })
-
-        # fonts.packages = [
-        #            nerd-fonts._0xproto
-        #            nerd-fonts.Iosevka
-        #          ]
-
 
 
         playerctl
@@ -104,6 +85,7 @@
         nix-search-cli
         ttyper
         hyperfine
+        pgcopydb
 
         slack
         bluetui
