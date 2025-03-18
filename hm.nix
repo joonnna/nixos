@@ -74,7 +74,7 @@
         openapi-generator-cli
         autorandr
         brightnessctl
-        # linuxKernel.packages.linux_6_10.perf
+        linuxKernel.packages.linux_6_13.perf
         cmake
         wget
         gnumake
