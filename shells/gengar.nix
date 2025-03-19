@@ -33,6 +33,7 @@ with pkgs; mkShell {
     rustup
     pkg-config
     yasm
+    # flamegraph
 
     # zlib
     # libGL
@@ -58,7 +59,7 @@ with pkgs; mkShell {
 
     source ./$VENV/bin/activate
     export PYTHONPATH=`pwd`/$VENV/${python.sitePackages}/:$PYTHONPATH
-    pip install -r yolo/python/requirements.txt
+    pip install -r src/yolo/python/requirements.txt
 
     export PATH=$PATH:''${CARGO_HOME:-~/.cargo}/bin
     export PATH=$PATH:''${RUSTUP_HOME:-~/.rustup}/toolchains/$RUSTC_VERSION-x86_64-unknown-linux-gnu/bin/
@@ -68,3 +69,4 @@ with pkgs; mkShell {
     ln -sf ${python.sitePackages}/* ./.venv/lib/python3.10/site-packages
   '';
 }
+

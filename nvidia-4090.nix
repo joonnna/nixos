@@ -1,7 +1,7 @@
 { config, home-manager, ... }:
 {
   imports = [
-    home-manager.nixosModule
+    home-manager.nixosModules.home-manager
   ];
 
   services.xserver.videoDrivers = [ "nvidia" ];

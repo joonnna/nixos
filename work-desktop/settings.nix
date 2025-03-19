@@ -8,7 +8,7 @@
 
 
   imports = [
-    home-manager.nixosModule
+    home-manager.nixosModules.home-manager
   ];
 
   home-manager.users.jon = { pkgs, lib, ... }: {

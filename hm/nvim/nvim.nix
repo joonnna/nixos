@@ -51,7 +51,7 @@ in
       firenvim
 
       # Integrates with Cargo.toml files in rust projects
-      crates-nvim
+      # crates-nvim
       # Adds additional rust lsp features
       rustaceanvim
 
@@ -70,6 +70,8 @@ in
       cmp-path
       cmp-buffer
 
+      # TODO: use nixpkgs version when its updated
+      # (pluginGit "saecki/crates.nvim" "403a0abef0e2aec12749a534dc468d6fd50c6741" "HEAD")
       (pluginGit "seblj/nvim-formatter" "793e90b42671e510057d6a1f4cd1d514fcacd8be" "HEAD")
     ];
   };

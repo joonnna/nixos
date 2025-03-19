@@ -47,6 +47,18 @@
     # "<Ctrl-r>" = "FocusData"
     # "<Ctrl-a>" = "FocusHistory"
 
+    [keybindings.Favorites]
+    "<Ctrl-H>" = "Quit"
+    "<Ctrl-c>" = "AbortQuery"
+    # "<Ctrl-t>" = "FocusMenu"
+    # "<Ctrl-s>" = "FocusEditor"
+    # "<Ctrl-r>" = "FocusData"
+    # "<Ctrl-a>" = "FocusHistory"
+    # "<Tab>" = "CycleFocusForwards"
+    # "<Backtab>" = "CycleFocusBackwards"
+    "<Ctrl-n>" = "CycleFocusForwards"
+    "<Ctrl-t>" = "CycleFocusBackwards"
+
     # "<Tab>" = "CycleFocusForwards"
     # "<Backtab>" = "CycleFocusBackwards"
     #
