@@ -8,14 +8,16 @@ else
   cp -r /etc/nixos/* ~/nixos-backup/
 fi
 
-if [ ! -L /etc/nixos ]; then
-  echo "Symbolic link does not exist, linking"
-  ln -s ~/nixos /etc/nixos
-fi
-
 mkdir -p ~/nixos/"$HOSTNAME"
 
 if ! test -f ~/nixos/"$HOSTNAME"/hardware-configuration.nix; then
   echo "Copying hardware-configuration"
   cp ~/nixos-backup/hardware-configuration.nix ~/nixos/"$HOSTNAME"
 fi
+
+if [ ! -L /etc/nixos ]; then
+  echo "Symbolic link does not exist, linking"
+  sudo rm -rf /etc/nixos
+  sudo ln -s ~/nixos /etc/nixos
+fi
+
