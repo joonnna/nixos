@@ -10,6 +10,8 @@
 
       c = "cargo";
 
+      ps = "procs";
+
       ct = "cargo test";
       cth = "cargo test check";
       ctb = "cargo test build";

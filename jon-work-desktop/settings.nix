@@ -1,6 +1,5 @@
-{ home-manager, lib, ... }:
+{ home-manager, ... }:
 {
-
   networking.hostName = "jon-work-desktop";
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

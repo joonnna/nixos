@@ -46,6 +46,8 @@
     # "<Ctrl-s>" = "FocusEditor"
     # "<Ctrl-r>" = "FocusData"
     # "<Ctrl-a>" = "FocusHistory"
+    "<Ctrl-n>" = "CycleFocusForwards"
+    "<Ctrl-t>" = "CycleFocusBackwards"
 
     [keybindings.Favorites]
     "<Ctrl-H>" = "Quit"
@@ -62,8 +64,6 @@
     # "<Tab>" = "CycleFocusForwards"
     # "<Backtab>" = "CycleFocusBackwards"
     #
-    "<Ctrl-n>" = "CycleFocusForwards"
-    "<Ctrl-t>" = "CycleFocusBackwards"
 
     [keybindings.PopUp]
     "<Ctrl-c>" = "Quit"

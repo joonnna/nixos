@@ -8,6 +8,7 @@ let
     cudaPackages.cudnn
     cudaPackages.libcurand
     cudaPackages.libcufft
+    openssl
     zlib
     libGL
     glib

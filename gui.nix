@@ -14,6 +14,7 @@
       desktopManager = {
         xterm.enable = false;
       };
+
       videoDrivers = [ "nvidia" ];
 
       exportConfiguration = true; # link /usr/share/X11/ properly

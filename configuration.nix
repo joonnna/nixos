@@ -25,6 +25,8 @@
   nix.settings.experimental-features = "nix-command flakes";
   environment.etc."nix/path/nixpkgs".source = nixpkgs;
 
+  # See: https://discourse.nixos.org/t/slow-build-at-building-man-cache/52365
+  documentation.man.generateCaches = false;
 
   # Need for nvidia (installed on system level)
   nixpkgs.config.allowUnfree = true;

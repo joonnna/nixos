@@ -1,8 +1,6 @@
-{ config, home-manager, ... }:
+{ config, ... }:
 {
-  imports = [
-    home-manager.nixosModules.home-manager
-  ];
+
   home-manager.users.jon = { pkgs, lib, ... }: {
     imports = [
       ./hm/i3.nix
@@ -26,8 +24,8 @@
       TERMINAL = "alacritty";
       SHELL = "fish";
       NIX_PATH = "/etc/nix/path";
+      BROWSER = "vivaldi";
     };
-
 
     fonts.fontconfig.enable = true;
 
@@ -42,7 +40,6 @@
         # Might also need to manually clear `~/.cache/fontconfig`
         # See issue for details: https://github.com/nix-community/home-manager/issues/6160
         nerd-fonts.iosevka
-
 
         playerctl
         flameshot
@@ -90,7 +87,6 @@
         slack
         bluetui
         impala
-        gitui
 
         nushellPlugins.polars
 
@@ -98,8 +94,6 @@
         pavucontrol
 
         # egl-wayland
-
-        lazydocker
 
         vial
 

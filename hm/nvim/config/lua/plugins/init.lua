@@ -10,7 +10,7 @@ else
     require('plugins/formatter')
     require('plugins/fzf')
     require('plugins/oil')
-    require('plugins/crates')
+    -- require('plugins/crates')
     require('plugins/fidget')
     require('plugins/spectre')
 end
