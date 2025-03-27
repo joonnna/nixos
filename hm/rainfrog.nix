@@ -6,67 +6,70 @@
     mouse_mode = true
 
     [keybindings.Menu]
-    "<Ctrl-H>" = "Quit"
+    "q" = "Quit"
     "<Ctrl-c>" = "AbortQuery"
-    # "<Ctrl-t>" = "FocusMenu"
-    # "<Ctrl-s>" = "FocusEditor"
-    # "<Ctrl-r>" = "FocusData"
-    # "<Ctrl-a>" = "FocusHistory"
-    "<Ctrl-n>" = "CycleFocusForwards"
-    "<Ctrl-t>" = "CycleFocusBackwards"
+    "<Ctrl-m>" = "FocusMenu"
+    "<Ctrl-e>" = "FocusEditor"
+    "<Ctrl-r>" = "FocusData"
+    "<Ctrl-h>" = "FocusHistory"
+    "<Tab>" = "CycleFocusForwards"
+    "<Backtab>" = "CycleFocusBackwards"
 
     [keybindings.Editor]
+    "q" = "Quit"
     "<Ctrl-c>" = "AbortQuery"
+    "<Ctrl-m>" = "FocusMenu"
+    "<Ctrl-e>" = "FocusEditor"
+    "<Ctrl-r>" = "FocusData"
+    "<Ctrl-h>" = "FocusHistory"
+    "<Ctrl-t>" = "FocusFavorites"
+    "<Tab>" = "CycleFocusForwards"
+    "<Backtab>" = "CycleFocusBackwards"
     "<Ctrl-s>" = "SubmitEditorQuery"
-    # "<Ctrl-m>" = "FocusMenu"
-    # "<Ctrl-s>" = "FocusEditor"
-    # "<Ctrl-r>" = "FocusData"
-    # "<Ctrl-a>" = "FocusHistory"
-    # "<Backtab>" = "CycleFocusBackwards"
-
-    "<Ctrl-n>" = "CycleFocusForwards"
-    "<Ctrl-t>" = "CycleFocusBackwards"
 
     [keybindings.History]
-    "<Ctrl-H>" = "Quit"
+    "q" = "Quit"
     "<Ctrl-c>" = "AbortQuery"
-    # "<Ctrl-t>" = "FocusMenu"
-    # "<Ctrl-s>" = "FocusEditor"
-    # "<Ctrl-r>" = "FocusData"
-    # "<Ctrl-a>" = "FocusHistory"
-    # "<Tab>" = "CycleFocusForwards"
-    # "<Backtab>" = "CycleFocusBackwards"
-    "<Ctrl-n>" = "CycleFocusForwards"
-    "<Ctrl-t>" = "CycleFocusBackwards"
+    "<Ctrl-m>" = "FocusMenu"
+    "<Ctrl-e>" = "FocusEditor"
+    "<Ctrl-r>" = "FocusData"
+    "<Ctrl-h>" = "FocusHistory"
+    "<Ctrl-t>" = "FocusFavorites"
+    "<Tab>" = "CycleFocusForwards"
+    "<Backtab>" = "CycleFocusBackwards"
 
     [keybindings.Data]
-    "<Ctrl-H>" = "Quit"
+    "q" = "Quit"
     "<Ctrl-c>" = "AbortQuery"
-    # "<Ctrl-t>" = "FocusMenu"
-    # "<Ctrl-s>" = "FocusEditor"
-    # "<Ctrl-r>" = "FocusData"
-    # "<Ctrl-a>" = "FocusHistory"
-    "<Ctrl-n>" = "CycleFocusForwards"
-    "<Ctrl-t>" = "CycleFocusBackwards"
+    "<Ctrl-m>" = "FocusMenu"
+    "<Ctrl-e>" = "FocusEditor"
+    "<Ctrl-r>" = "FocusData"
+    "<Ctrl-h>" = "FocusHistory"
+    "<Ctrl-t>" = "FocusFavorites"
+    "<Tab>" = "CycleFocusForwards"
+    "<Backtab>" = "CycleFocusBackwards"
 
     [keybindings.Favorites]
-    "<Ctrl-H>" = "Quit"
+    "q" = "Quit"
     "<Ctrl-c>" = "AbortQuery"
-    # "<Ctrl-t>" = "FocusMenu"
-    # "<Ctrl-s>" = "FocusEditor"
-    # "<Ctrl-r>" = "FocusData"
-    # "<Ctrl-a>" = "FocusHistory"
-    # "<Tab>" = "CycleFocusForwards"
-    # "<Backtab>" = "CycleFocusBackwards"
-    "<Ctrl-n>" = "CycleFocusForwards"
-    "<Ctrl-t>" = "CycleFocusBackwards"
+    "<Ctrl-m>" = "FocusMenu"
+    "<Ctrl-e>" = "FocusEditor"
+    "<Ctrl-r>" = "FocusData"
+    "<Ctrl-h>" = "FocusHistory"
+    "<Ctrl-t>" = "FocusFavorites"
+    "<Tab>" = "CycleFocusForwards"
+    "<Backtab>" = "CycleFocusBackwards"
 
-    # "<Tab>" = "CycleFocusForwards"
-    # "<Backtab>" = "CycleFocusBackwards"
-    #
 
     [keybindings.PopUp]
     "<Ctrl-c>" = "Quit"
+
+    [db]
+    kyogre-test = { connection_string = "postgresql://postgres:test123@127.0.0.1:5534/test", driver = "postgres" }
+    kyogre-local = { connection_string = "postgresql://postgres:test123@127.0.0.1:5532", driver = "postgres" }
+    kyogre-dev = { host = "kyogre-dev.postgres.database.azure.com", driver = "postgres", port = 5432, database = "kyogre" }
+    gengar-local = { host = "localhost", driver = "postgres", port = 5432, database = "postgres", username = "postgres" }
+    gengar-migration = { connection_string = "postgresql://postgres:test123@127.0.0.1:5432", driver = "postgres" }
   '';
 
 }
