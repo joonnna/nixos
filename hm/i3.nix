@@ -16,7 +16,7 @@
 
     config = {
       # removes all bars (default i3 bar)
-      bars = [ ];
+      # bars = [ ];
 
       keybindings =
         let
