@@ -5,7 +5,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.device = "nodev";
 
-
   imports = [
     home-manager.nixosModules.home-manager
   ];

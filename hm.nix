@@ -1,5 +1,9 @@
-{ config, ... }:
+{ config, home-manager, ... }:
 {
+
+  imports = [
+    home-manager.nixosModules.home-manager
+  ];
 
   home-manager.users.jon = { pkgs, lib, ... }: {
     imports = [
