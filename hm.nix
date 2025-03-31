@@ -130,12 +130,12 @@
 
         sumneko-lua-language-server
 
+
         # Nix
         nil
         # formatter for nil
         nixpkgs-fmt
 
-        rust-analyzer
         nodePackages.dockerfile-language-server-nodejs
         nodePackages.yaml-language-server
         nodePackages.bash-language-server
@@ -173,7 +173,7 @@
     xdg.configFile."cargo/config.toml".text = ''
       # https://github.com/rust-lang/cargo/tree/master/credential/cargo-credential-1password
       [registry]
-      global-credential-providers = ["cargo-credential-1password --account my.1password.com"]
+      global-credential-providers = ["cargo-credential-1password --account orcalabs.1password.com"]
 
       # https://help.cloudsmith.io/docs/cargo-registry#cargo--v174-http-sparse-registry
       [registries.orcalabs-orcastrator]

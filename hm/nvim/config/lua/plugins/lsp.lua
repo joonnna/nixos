@@ -138,7 +138,6 @@ require 'lspconfig'.terraformls.setup {
 
 require 'lspconfig'.ruff.setup {
     capabilities = capabilities,
-    on_attach = on_attach,
 }
 
 require 'lspconfig'.nil_ls.setup {

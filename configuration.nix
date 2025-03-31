@@ -1,6 +1,12 @@
 { pkgs, nixpkgs, ... }:
 
 {
+  # TODO:
+  #  - declarative browser setup
+  #  - set file permission for '~/.config/op' dir to 600 declarative
+  #  - declarative op plugin setup config (links between cargo plugin wrapper and which credential to use
+  #  - figure out build time issue
+
   imports =
     [
       ./hm.nix

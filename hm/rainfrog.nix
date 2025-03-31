@@ -67,7 +67,6 @@
     [db]
     kyogre-test = { connection_string = "postgresql://postgres:test123@127.0.0.1:5534/test", driver = "postgres" }
     kyogre-local = { connection_string = "postgresql://postgres:test123@127.0.0.1:5532", driver = "postgres" }
-    kyogre-dev = { host = "kyogre-dev.postgres.database.azure.com", driver = "postgres", port = 5432, database = "kyogre" }
     gengar-local = { host = "localhost", driver = "postgres", port = 5432, database = "postgres", username = "postgres" }
     gengar-migration = { connection_string = "postgresql://postgres:test123@127.0.0.1:5432", driver = "postgres" }
   '';
