@@ -133,10 +133,9 @@
   };
 
   security.pam.loginLimits = [
-    { domain = "*"; type = "-"; item = "nofile"; value = "unlimited"; }
+    { domain = "*"; type = "-"; item = "nofile"; value = "65536"; }
     { domain = "*"; type = "-"; item = "fsize"; value = "unlimited"; }
   ];
-
 
   # Does nothing, only metadata from initial config generation during installation
   system.stateVersion = "22.05";
