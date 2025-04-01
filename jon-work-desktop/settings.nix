@@ -9,7 +9,11 @@
     home-manager.nixosModules.home-manager
   ];
 
+
   home-manager.users.jon = { pkgs, lib, ... }: {
+    home.file.".xprofile".text = ''
+      autorandr horizontal
+    '';
     xsession.windowManager.i3 = {
       extraConfig = ''
         workspace 1 output DP-0
