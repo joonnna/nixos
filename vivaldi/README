@@ -1,4 +1,12 @@
-Currently I've not found a way to declaratively configure vivaldi keybinds and sync does not support keybinds as of now.
+Currently I've not found a way to declaratively configure vivaldi keybinds/settings and sync does not support either as of now (2025.04.02).
+
+Manual steps required:
+- Enable custom css in 'vivaldi://experiments'
+- Set the custom css path to '/home/jon/vivaldi-css' under 'Appearance' in settings.
+- Set hide status bar under Appearance
+- Set theme
+- Set default search engine to Google under Search
+- Set address bar to bottom under Address Bar
 
 See the images in this directory for keybinds in vivaldi
 
