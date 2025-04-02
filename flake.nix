@@ -29,7 +29,6 @@
       modules = [ ./configuration.nix ./work-node/hardware-configuration.nix ./work-node/settings.nix ./github-runner.nix ./nvidia-4090.nix ];
     };
 
-
     nixosConfigurations.jon-work-laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       lib = nixpkgs.lib;
