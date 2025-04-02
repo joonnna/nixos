@@ -1,6 +1,6 @@
 { pkgs ? (import <nixpkgs> { config.allowUnfree = true; }) }:
 let
-  python = pkgs.python310;
+  python = pkgs.python311;
   pythonPackages = python.pkgs;
   libPath = with pkgs; lib.makeLibraryPath [
     # load external libraries that you need in your rust project here
@@ -39,8 +39,8 @@ with pkgs; mkShell {
     # libGL
     # glib
     #
-    python310
-    python310Packages.pip
+    python311
+    python311Packages.pip
   ];
 
   LD_LIBRARY_PATH = libPath;

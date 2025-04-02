@@ -38,13 +38,13 @@ pkgs.mkShell {
     protobuf
 
     # python
-    python310
-    python310Packages.pip
-    python310Packages.xgboost
-    python310Packages.pandas
-    python310Packages.scikit-learn
-    python310Packages.dbutils
-    python310Packages.pyspark
+    python311
+    python311Packages.pip
+    python311Packages.xgboost
+    python311Packages.pandas
+    python311Packages.scikit-learn
+    python311Packages.dbutils
+    python311Packages.pyspark
     # python310Packages.protobuf
     # python310Packages.ultralytics
     # python310Packages.lapx
