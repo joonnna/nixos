@@ -83,8 +83,6 @@
       rsp = "systemctl --user restart pipewire.service";
 
       blu = "bluetui";
-      bch = "bluetoothctl connect 78:2B:64:A0:5D:F9";
-      bck = "bluetoothctl connect FE:64:7E:54:D9:C6";
 
       volu = "wpctl set-volume @DEFAULT_SINK@ 0.05+";
       vold = "wpctl set-volume @DEFAULT_SINK@ 0.05-";
@@ -131,10 +129,10 @@
 
       ns = "nix-search";
 
-      l = "eza";
+      n = "eza";
       ls = "eza";
-      ll = "eza -l";
-      lll = "eza -la";
+      nn = "eza -l";
+      nnn = "eza -la";
 
       htop = "btm";
       top = "btm";

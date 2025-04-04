@@ -21,6 +21,8 @@
 
   time.timeZone = "Europe/Oslo";
 
+  programs.nix-ld.enable = true;
+
   nix.nixPath = [ "/etc/nix/path" ];
   nix.registry.nixpkgs.flake = nixpkgs;
   nix.extraOptions = ''
