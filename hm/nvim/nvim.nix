@@ -46,10 +46,6 @@ in
       # Dependency of several plugins (atleast nvim-formatter)
       plenary-nvim
 
-      # Connects with browser plugin firenvim to enable nvim in text field in browser
-      # Might need to run install nvim --headless "+call firenvim#install(0) | q"
-      firenvim
-
       # Integrates with Cargo.toml files in rust projects
       # crates-nvim
       # Adds additional rust lsp features
@@ -71,7 +67,7 @@ in
       cmp-buffer
 
       # TODO: use nixpkgs version when its updated
-      # (pluginGit "saecki/crates.nvim" "403a0abef0e2aec12749a534dc468d6fd50c6741" "HEAD")
+      # (pluginGit "saecki/crates.nvim" "a63681f36d06cf733ccbd296481957fb1efa6d09" "HEAD")
       (pluginGit "seblj/nvim-formatter" "793e90b42671e510057d6a1f4cd1d514fcacd8be" "HEAD")
     ];
   };
