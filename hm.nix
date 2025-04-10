@@ -146,7 +146,8 @@
         nodePackages.sql-formatter
 
         # Python lsp
-        ruff
+        # ruff
+        pyright
 
         # TOML
         taplo-lsp

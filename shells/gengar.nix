@@ -9,6 +9,9 @@ let
     cudaPackages.cudnn
     cudaPackages.libcurand
     cudaPackages.libcufft
+    xorg.libXcursor
+    xorg.libXrandr
+    xorg.libXi
     zlib
     libGL
     glib
@@ -33,6 +36,7 @@ with pkgs; mkShell {
     rustup
     pkg-config
     yasm
+    fontconfig
     # flamegraph
 
     # zlib
