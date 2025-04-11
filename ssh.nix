@@ -12,6 +12,8 @@
     enable = true;
     settings = {
       PasswordAuthentication = true;
+      X11Forwarding = true;
+      X11UseLocalhost = false;
     };
   };
 }

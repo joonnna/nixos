@@ -7,7 +7,7 @@
     user = "jon";
     group = "users";
     name = "local-live-game-streamer";
-    tokenFile = "/home/jon/github-runner-pat.token";
+    tokenFile = "/home/jon/secrets/github-runner-pat.token";
     url = "https://github.com/orcalabs/gengar";
     replace = true;
     extraLabels = [ "gengar-gpu" ];
