@@ -1,38 +1,8 @@
-# [colors.bright]
-# black = "#686868"
-# blue = "#65bddb"
-# cyan = "#9debcf"
-# green = "#58c49c"
-# magenta = "#f17676"
-# red = "#f58c7d"
-# white = "#ffffff"
-# yellow = "#ffd165"
-
-# [colors.normal]
-# black = "#212733"
-# blue = "#60b8d6"
-# cyan = "#98e6ca"
-# green = "#53bf97"
-# magenta = "#ec7171"
-# red = "#f08778"
-# white = "#fafafa"
-# yellow = "#fdcc60"
-
-# [colors.primary]
-# background = "#1f2430"
-# bright_foreground = "#f28779"
-# foreground = "#cbccc6"
-
 [font]
 size = 12.0
 
 [font.normal]
 family = "Iosevka Nerd Font"
-# family = "Iosevka Nerd Font"
-# family = "JetBrains Mono Nerd Font"
-# family = "FiraCode Nerd Font"
-# family = "Iosevka Term Slab Nerd Font"
-# family = "0xProto Nerd Font"
 style = "Regular"
 
 [window]
@@ -49,9 +19,7 @@ black = '#0a0f14'
 red = '#c33027'
 green = '#39FF14'
 yellow = '#edb54b'
-# blue = '#207087'
 blue = '#168791'
-# magenta = '#4e5165'
 magenta = '#d5eb34'
 cyan = '#42fff2'
 white = '#98d1ce'
@@ -61,11 +29,8 @@ white = '#98d1ce'
 black = '#10151b'
 red = '#d26939'
 green = '#39FF14'
-# yellow = '#245361'
 yellow = '#d5eb34'
 blue = '#29cad9'
-# blue = '#3496eb'
-# magenta = '#888ba5'
 magenta = '#d5eb34'
 cyan = '#42fff2'
 white = '#d3ebe9'
