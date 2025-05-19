@@ -65,6 +65,8 @@ in
       cmp-nvim-lsp-signature-help
       cmp-path
       cmp-buffer
+      # Auto closes brackets etc
+      autoclose-nvim
 
       # TODO: use nixpkgs version when its updated
       # (pluginGit "saecki/crates.nvim" "a63681f36d06cf733ccbd296481957fb1efa6d09" "HEAD")
