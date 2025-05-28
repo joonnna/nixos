@@ -37,10 +37,15 @@
   # 1password ssh keys
   xdg.configFile."starship.toml".text = ''
     format = """
+    $hostname\
     $directory\
     $git_branch $cmd_duration\
     $line_break\
     $character"""
+
+    [hostname]
+    ssh_only = true          # Show only when connected via SSH
+    format = "[$hostname](bold yellow) "  # Customize appearance
 
     [directory]
     style = "cyan"
