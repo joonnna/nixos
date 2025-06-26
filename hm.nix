@@ -123,6 +123,7 @@
         procs
         tokei
         ripgrep
+        csvlens
 
         rofi
 

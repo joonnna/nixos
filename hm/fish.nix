@@ -129,6 +129,8 @@
 
       ns = "nix-search";
 
+      cv = "csvlens";
+
       n = "eza";
       ls = "eza";
       nn = "eza -l";
