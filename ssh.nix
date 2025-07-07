@@ -1,6 +1,6 @@
 {
   services.gnome.gnome-keyring.enable = true;
-  programs.ssh.startAgent = true;
+  # programs.ssh.startAgent = true;
 
   # Need to enable 1password to store 2FA code on unlock,
   # think this is due to keyring being locked when without this
