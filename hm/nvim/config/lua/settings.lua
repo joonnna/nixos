@@ -12,6 +12,7 @@ o.undofile = true
 o.swapfile = false
 o.clipboard = 'unnamedplus'
 o.termguicolors = true
+o.mouse = ""
 
 -- require 'colorizer'.setup()
 
