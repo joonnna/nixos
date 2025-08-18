@@ -56,8 +56,8 @@ set({ 'n', 'v' }, '}', '{')
 set('n', '<BS>', 'ciw')
 
 set('n', '<leader><leader>', '<c-^>')
-set('n', '<leader>,', ':w<CR>')
-set('n', '<leader><', ':wqa<CR>')
+set('n', '<leader>w', ':w<CR>')
+set('n', '<leader>W', ':wqa<CR>')
 set('n', '<leader>h', ':q<CR>')
 set('n', '<leader>H', ':q!<CR>')
 
