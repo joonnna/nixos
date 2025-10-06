@@ -1,8 +1,9 @@
+
 { pkgs ? (import <nixpkgs> { config.allowUnfree = true; }) }:
 let
   overrides = (builtins.fromTOML (builtins.readFile ./rust-toolchain.toml));
   libPath = with pkgs; lib.makeLibraryPath [
-    # load external libraries that you need in your rust project here
+
     cudatoolkit
     cudaPackages.libcublas
     cudaPackages.cudnn
@@ -42,7 +43,7 @@ pkgs.mkShell {
     python311Packages.pip
     python311Packages.xgboost
     python311Packages.pandas
-    python311Packages.scikit-learn
+    # python310Packages.scikit-learn
     python311Packages.dbutils
     python311Packages.pyspark
     # python310Packages.protobuf
@@ -61,4 +62,3 @@ pkgs.mkShell {
     export PATH=$PATH:''${RUSTUP_HOME:-~/.rustup}/toolchains/$RUSTC_VERSION-x86_64-unknown-linux-gnu/bin/
   '';
 }
-

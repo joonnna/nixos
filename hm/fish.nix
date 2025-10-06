@@ -142,6 +142,8 @@
 
       copy = "wl-copy";
       paste = "wl-paste";
+
+      sshwn = "ssh jon@192.168.0.146 -Y";
     };
   };
 }
