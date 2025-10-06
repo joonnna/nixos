@@ -83,13 +83,13 @@ vim.g.rustaceanvim = {
     },
 }
 
-require 'lspconfig'.lua_ls.setup {
+vim.lsp.config('lua_ls', {
     capabilities = capabilities,
     on_attach = on_attach,
-}
+})
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
-require('lspconfig').yamlls.setup {
+vim.lsp.config('yamlls', {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -106,41 +106,41 @@ require('lspconfig').yamlls.setup {
             validate = true
         },
     }
-}
+})
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls
-require 'lspconfig'.dockerls.setup {
+vim.lsp.config('dockerls', {
     capabilities = capabilities,
     on_attach = on_attach,
-}
+})
 
-require 'lspconfig'.denols.setup {
+vim.lsp.config('denols', {
     capabilities = capabilities,
     on_attach = on_attach,
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript",
         "typescriptreact", "typescript.tsx", "markdown", "json" }
-}
+})
 
 -- https://github.com/mads-hartmann/bash-language-server
-require 'lspconfig'.bashls.setup {
+vim.lsp.config('bashls', {
     capabilities = capabilities,
     on_attach = on_attach,
-}
+})
 
-require 'lspconfig'.taplo.setup {
+vim.lsp.config('taplo', {
     capabilities = capabilities,
-}
+})
 
-require 'lspconfig'.terraformls.setup {
+vim.lsp.config('terraformls', {
     capabilities = capabilities,
     on_attach = on_attach,
-}
+})
 
-require 'lspconfig'.pyright.setup {
+vim.lsp.config('pyright', {
     capabilities = capabilities,
-}
+})
 
-require 'lspconfig'.nil_ls.setup {
+vim.lsp.config('nil_ls', {
     capabilities = capabilities,
     on_attach = on_attach,
     autostart = true,
@@ -151,7 +151,6 @@ require 'lspconfig'.nil_ls.setup {
             },
         },
     },
+})
 
-}
-
-require 'lspconfig'.nushell.setup {}
+vim.lsp.config('nushell', {})
