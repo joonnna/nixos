@@ -50,6 +50,8 @@ set -gx CARGO_HOME $HOME/.config/cargo
 set -x OP_BIOMETRIC_UNLOCK_ENABLED true
 set -x CLOUDSMITH_API_KEY "op://Employee/cloudsmith-api-token/token"
 source /home/jon/.config/op/plugins.sh
+
 fish_vi_key_bindings
+fzf --fish | source
 
 set fish_cursor_insert line
