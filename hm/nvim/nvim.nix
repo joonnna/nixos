@@ -47,7 +47,7 @@ in
       plenary-nvim
 
       # Integrates with Cargo.toml files in rust projects
-      # crates-nvim
+      crates-nvim
       # Adds additional rust lsp features
       rustaceanvim
 
