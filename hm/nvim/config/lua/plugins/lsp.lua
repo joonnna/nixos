@@ -153,4 +153,6 @@ vim.lsp.config('nil_ls', {
     },
 })
 
-vim.lsp.config('nushell', {})
+vim.lsp.config('nushell', {
+    capabilities = capabilities
+})

@@ -73,14 +73,15 @@ set('v', 'p', 'P')
 -- Search for selected text
 set('v', '/', "y/\\V<C-R>=escape(@\",'/\\')<CR><CR>")
 
+local crates = require("crates")
 -- Crates
--- set("n", "<leader>mr", crates.open_repository, { desc = "Open crate repository" })
--- set("n", "<leader>md", crates.open_documentation, { desc = "Open crate documentation" })
--- set("n", "<leader>mf", crates.show_features_popup, { desc = "Show crate features" })
--- set("n", "<leader>mv", crates.show_versions_popup, { desc = "Show crate versions" })
--- set("n", "<leader>mp", crates.show_dependencies_popup, { desc = "Show crate dependencies" })
--- set("n", "<leader>mu", crates.upgrade_crate, { desc = "Upgrade crate" })
--- set("n", "<leader>mU", crates.upgrade_crates, { desc = "Upgrade all crates" })
+set("n", "<leader>mr", crates.open_repository, { desc = "Open crate repository" })
+set("n", "<leader>md", crates.open_documentation, { desc = "Open crate documentation" })
+set("n", "<leader>mf", crates.show_features_popup, { desc = "Show crate features" })
+set("n", "<leader>mv", crates.show_versions_popup, { desc = "Show crate versions" })
+set("n", "<leader>mp", crates.show_dependencies_popup, { desc = "Show crate dependencies" })
+set("n", "<leader>mu", crates.upgrade_crate, { desc = "Upgrade crate" })
+set("n", "<leader>mU", crates.upgrade_crates, { desc = "Upgrade all crates" })
 
 set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', { desc = "Toggle Spectre" })
 

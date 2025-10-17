@@ -68,8 +68,6 @@ in
       # Auto closes brackets etc
       autoclose-nvim
 
-      # TODO: use nixpkgs version when its updated
-      # (pluginGit "saecki/crates.nvim" "a63681f36d06cf733ccbd296481957fb1efa6d09" "HEAD")
       (pluginGit "seblj/nvim-formatter" "793e90b42671e510057d6a1f4cd1d514fcacd8be" "HEAD")
     ];
   };
