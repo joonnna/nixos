@@ -1,2 +1,2 @@
-api.map("<ctrl-n>", "S");
-api.map("<ctrl-o>", "D");
+api.map("<Ctrl-n>", "S");
+api.map("<Ctrl-o>", "D");
