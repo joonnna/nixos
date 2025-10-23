@@ -26,6 +26,7 @@
       ./hm/bemenu.nix
       ./hm/rainfrog.nix
       ./hm/nushell.nix
+      ./hm/firefox.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
