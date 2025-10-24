@@ -1,14 +1,7 @@
-
-{ pkgs ? (import <nixpkgs> { config.allowUnfree = true; }) }:
+{ pkgs ? (import <nixpkgs> {}) }:
 let
   overrides = (builtins.fromTOML (builtins.readFile ./rust-toolchain.toml));
   libPath = with pkgs; lib.makeLibraryPath [
-
-    cudatoolkit
-    cudaPackages.libcublas
-    cudaPackages.cudnn
-    cudaPackages.libcurand
-    cudaPackages.libcufft
     openssl
     zlib
     libGL
@@ -18,37 +11,13 @@ in
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [ pkg-config ];
   buildInputs = with pkgs; [
-    # glibc.static
     ffmpeg
     clang
-    rustup
     pkg-config
-    yasm
-    # openssl, ffmpeg, and opencv4 are found through pkg-config, and are not in LD_LIBRARY_PATH
-    # The final pkg-config search path is defined by PKG_CONFIG_PATH_FOR_TARGET
-    (opencv4.override { enableUnfree = true; enableCuda = true; })
-    openssl
-    cudatoolkit
-    cudaPackages.libcublas
-    cudaPackages.cudnn
-    cudaPackages.libcurand
-    cudaPackages.libcufft
-    # linuxPackages.nvidia_x11
-    # cudaPackages.
-
-    protobuf
-
-    # python
     python311
-    python311Packages.pip
-    python311Packages.xgboost
-    python311Packages.pandas
-    # python310Packages.scikit-learn
-    python311Packages.dbutils
-    python311Packages.pyspark
-    # python310Packages.protobuf
-    # python310Packages.ultralytics
-    # python310Packages.lapx
+    yasm
+    openssl
+    protobuf
   ];
   RUSTC_VERSION = overrides.toolchain.channel;
   # https://github.com/rust-lang/rust-bindgen#environment-variables
@@ -62,3 +31,4 @@ pkgs.mkShell {
     export PATH=$PATH:''${RUSTUP_HOME:-~/.rustup}/toolchains/$RUSTC_VERSION-x86_64-unknown-linux-gnu/bin/
   '';
 }
+
