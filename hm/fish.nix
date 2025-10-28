@@ -82,7 +82,7 @@
 
       rsp = "systemctl --user restart pipewire.service";
 
-      blu = "bluetui";
+      bb = "bluetui";
 
       volu = "wpctl set-volume @DEFAULT_SINK@ 0.05+";
       vold = "wpctl set-volume @DEFAULT_SINK@ 0.05-";
