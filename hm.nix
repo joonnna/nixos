@@ -125,6 +125,9 @@
         tokei
         ripgrep
         csvlens
+        difftastic
+        ouch
+        xh
 
         rofi
 
