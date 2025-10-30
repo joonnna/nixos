@@ -47,46 +47,28 @@ cmp.setup({
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-vim.g.rustaceanvim = {
-    -- DAP configuration
-    dap = {
-    },
-    -- Plugin configuration
-    tools = {
-    },
-    -- LSP configuration
-    server = {
-        capabilities = capabilities,
-        on_attach = function(client, bufnr)
-            if client.server_capabilities ~= nil then
-                client.server_capabilities.semanticTokensProvider = nil
-            end
-        end,
-        default_settings = {
-            -- rust-analyzer language server configuration
-            ['rust-analyzer'] = {
-                cargo = {
-                    allFeatures = true,
-                    allTargets = true,
-                    extraEnv = {
-                        CARGO_TARGET_DIR = '/home/jon/workspace/rust-analyzer-target'
-                    },
-                },
-                check = {
-                    command = "clippy",
-                    allTargets = true,
-                    allFeatures = true,
-                    extraArgs = { "--tests" }
-                }
-            },
+vim.lsp.config('rust-analyzer', {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cargo = {
+        allFeatures = true,
+        allTargets = true,
+        extraEnv = {
+            CARGO_TARGET_DIR = '/home/jon/workspace/rust-analyzer-target'
         },
     },
-}
+    check = {
+        command = "clippy",
+        allTargets = true,
+        allFeatures = true,
+        extraArgs = { "--tests" }
+    }
+})
 
 
--- When adding new lsps,add them here, rustaceanvim handles rust autostart/configuration so its not present in this array
+-- When adding new lsps add them here
 vim.lsp.enable({ 'terraformls', 'nil_ls', 'taplo', 'lua_ls', 'pyright', 'bashls', 'dockerls', 'yamlls', 'denols',
-    'nushell' })
+    'nushell', 'rust-analyzer' })
 
 vim.lsp.config('lua_ls', {
     capabilities = capabilities,
