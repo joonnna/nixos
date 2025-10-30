@@ -18,6 +18,7 @@ pkgs.mkShell {
     yasm
     openssl
     protobuf
+    rustup
   ];
   RUSTC_VERSION = overrides.toolchain.channel;
   # https://github.com/rust-lang/rust-bindgen#environment-variables
