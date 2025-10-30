@@ -84,6 +84,8 @@
 
       bb = "bluetui";
 
+      nixgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+
       volu = "wpctl set-volume @DEFAULT_SINK@ 0.05+";
       vold = "wpctl set-volume @DEFAULT_SINK@ 0.05-";
       volm = "set-mute @DEFAULT_SINK@ toggle";

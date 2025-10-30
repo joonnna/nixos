@@ -27,7 +27,7 @@
           # is only set for the shell ant not ~/.profile.
           "${modifier}+t" = "exec alacritty";
           "${modifier}+p" = "exec 1password";
-          # "${modifier}+Shift+l" = "exec i3lock";
+          "${modifier}+Shift+l" = "exec i3lock";
           "${modifier}+v" = "exec vivaldi";
           "${modifier}+r" = "exec rofi -show drun";
           "${modifier}+d" = "exec dbeaver";

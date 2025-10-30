@@ -83,6 +83,11 @@ vim.g.rustaceanvim = {
     },
 }
 
+
+-- When adding new lsps,add them here, rustaceanvim handles rust autostart/configuration so its not present in this array
+vim.lsp.enable({ 'terraformls', 'nil_ls', 'taplo', 'lua_ls', 'pyright', 'bashls', 'dockerls', 'yamlls', 'denols',
+    'nushell' })
+
 vim.lsp.config('lua_ls', {
     capabilities = capabilities,
     on_attach = on_attach,
