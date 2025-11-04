@@ -1,6 +1,7 @@
 { config, home-manager, ... }:
 {
 
+
   imports = [
     home-manager.nixosModules.home-manager
   ];
@@ -118,7 +119,7 @@
         # Rust-based linux command replacements
         eza
         bat
-        du-dust
+        dust
         tealdeer
         dysk
         procs
@@ -147,7 +148,7 @@
 
 
         jq
-        sumneko-lua-language-server
+        lua-language-server
 
 
         # Nix
@@ -165,7 +166,7 @@
         pyright
 
         # TOML
-        taplo-lsp
+        taplo
         terraform-ls
         # Bash language server dependency
         shellcheck

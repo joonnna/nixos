@@ -14,6 +14,7 @@
       ./ssh.nix
     ];
 
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager.enable = true;
@@ -37,6 +38,8 @@
   # Need for nvidia (installed on system level)
   nixpkgs.config.allowUnfree = true;
   virtualisation.docker.enable = true;
+  # https://github.com/NixOS/nixpkgs/issues/456928
+  nixpkgs.config.cudaSupport = true;
 
   # Home-manager can only configure fish, but not set it as default login shell
   # as that requires root permissions
@@ -116,15 +119,10 @@
   fonts.fontconfig.enable = true;
 
   fonts.packages = with pkgs; [
-    # siji
-    # unifont
-    # font-awesome
     openmoji-color
     nerd-fonts.iosevka
-    # terminus
   ];
 
-  # auto mount usb sticks
   services.udisks2.enable = true;
 
   networking.firewall = {
