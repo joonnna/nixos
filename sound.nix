@@ -6,6 +6,8 @@
     settings = {
       General = {
         Experimental = true;
+        FastConnectable = "true";
+        ControllerMode = "bredr";
       };
       Policy = {
         AutoEnable = "true";

@@ -4,6 +4,14 @@
   services.udev.packages = [
     (pkgs.writeTextFile
       {
+        name = "disable_auto_suspend";
+        text = ''
+          ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="on"
+        '';
+        destination = "/etc/udev/rules.d/51-disable-auto-suspend.rules";
+      })
+    (pkgs.writeTextFile
+      {
         name = "moonlander_udev";
         text = ''
           # Rules for Oryx web flashing and live training

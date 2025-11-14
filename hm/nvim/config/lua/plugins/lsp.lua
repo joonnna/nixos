@@ -50,25 +50,29 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.config('rust-analyzer', {
     capabilities = capabilities,
     on_attach = on_attach,
-    cargo = {
-        allFeatures = true,
-        allTargets = true,
-        extraEnv = {
-            CARGO_TARGET_DIR = '/home/jon/workspace/rust-analyzer-target'
-        },
-    },
-    check = {
-        command = "clippy",
-        allTargets = true,
-        allFeatures = true,
-        extraArgs = { "--tests" }
+    settings = {
+        ["rust-analyzer"] = {
+            cargo = {
+                allFeatures = true,
+                allTargets = true,
+                extraEnv = {
+                    CARGO_TARGET_DIR = '/home/jon/workspace/rust-analyzer-target'
+                },
+            },
+            check = {
+                command = "clippy",
+                allTargets = true,
+                allFeatures = true,
+                extraArgs = { "--tests" }
+            }
+        }
     }
 })
 
 
 -- When adding new lsps add them here
 vim.lsp.enable({ 'terraformls', 'nil_ls', 'taplo', 'lua_ls', 'pyright', 'bashls', 'dockerls', 'yamlls', 'denols',
-    'nushell', 'rust-analyzer' })
+    'nushell', 'rust-analyzer', 'ts_ls' })
 
 vim.lsp.config('lua_ls', {
     capabilities = capabilities,
@@ -104,9 +108,16 @@ vim.lsp.config('dockerls', {
 vim.lsp.config('denols', {
     capabilities = capabilities,
     on_attach = on_attach,
-    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript",
-        "typescriptreact", "typescript.tsx", "markdown", "json" }
+    filetypes = { "markdown", "json" }
 })
+
+vim.lsp.config('ts-ls', {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript",
+        "typescriptreact", "typescript.tsx" }
+})
+
 
 -- https://github.com/mads-hartmann/bash-language-server
 vim.lsp.config('bashls', {

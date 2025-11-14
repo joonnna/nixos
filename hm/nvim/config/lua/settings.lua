@@ -47,7 +47,9 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     group = formatting,
     callback = function()
         vim.lsp.buf.format {
-            filter = function(client) return client.name ~= "denols" end
+            filter = function(client)
+                return not (client.name == "denols" or client.name == "ts_ls")
+            end
         }
     end,
 })

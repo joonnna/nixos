@@ -12,6 +12,9 @@
       diff = {
         external = "difft";
       };
+      add = {
+        external = "difft";
+      };
       pull = {
         ff = "only";
       };

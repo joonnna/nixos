@@ -97,6 +97,7 @@
         ttyper
         hyperfine
         pgcopydb
+        brave
 
         slack
         bluetui
@@ -129,6 +130,7 @@
         difftastic
         ouch
         xh
+        cargo-udeps
 
         rofi
 
@@ -144,7 +146,7 @@
 
         # Javascript hell (use this if we want to be compliant with everyone not using deno)
         # https://github.com/neovim/nvim-lspconfig/pull/3232#issuecomment-2331025714
-        # nodePackages.typescript-language-server
+        nodePackages.typescript-language-server
 
 
         jq
