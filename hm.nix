@@ -28,6 +28,7 @@
       ./hm/rainfrog.nix
       ./hm/nushell.nix
       ./hm/firefox.nix
+      ./hm/fzf.nix
     ];
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
@@ -61,7 +62,6 @@
         docker
         docker-compose
         vivaldi
-        fzf
         alacritty
         fd
         neofetch
@@ -112,6 +112,8 @@
 
         vial
 
+        carapace
+
         # tofi currently fails to open 1password which is installed on system lvl
         # due to not searching all xdg_data_dir paths for desktop entries.
         # For now using bemenu (see bemenu.nix)
@@ -152,6 +154,7 @@
         jq
         lua-language-server
 
+        tree
 
         # Nix
         nil

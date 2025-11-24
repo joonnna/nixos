@@ -8,15 +8,22 @@
   xsession.windowManager.i3 = {
     enable = true;
 
-    extraConfig = ''
-      default_border pixel 0
-      default_floating_border pixel 0
-    '';
-
-
+    # extraConfig = ''
+    #   default_border pixel 8
+    #   default_floating_border pixel 8
+    # '';
+    #
+    #
     config = {
       # removes all bars (default i3 bar)
       # bars = [ ];
+      colors.focused = {
+        background = "#285577";
+        border = "#4c7899";
+        childBorder = "#285577";
+        indicator = "#2e9ef4";
+        text = "#ffffff";
+      };
 
       keybindings =
         let

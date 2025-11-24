@@ -5,8 +5,8 @@ size = 12.0
 family = "Iosevka Nerd Font"
 style = "Regular"
 
-[window]
-decorations = "none"
+# [window]
+# decorations = "none"
 
 # Default colors
 [colors.primary]
