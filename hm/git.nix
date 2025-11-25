@@ -6,7 +6,7 @@
         name = "joonnna";
         email = "jonfossmikalsen1@gmail.com";
       };
-      aliases = {
+      alias = {
         ol = "log --oneline --format='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'";
       };
       diff = {
