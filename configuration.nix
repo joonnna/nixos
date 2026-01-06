@@ -51,6 +51,9 @@
   # https://github.com/NixOS/nixpkgs/issues/456928
   nixpkgs.config.cudaSupport = true;
 
+  hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia.modesetting.enable = true;
+
   # Home-manager can only configure fish, but not set it as default login shell
   # as that requires root permissions
   programs.fish.enable = true;
