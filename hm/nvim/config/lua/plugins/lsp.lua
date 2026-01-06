@@ -71,14 +71,27 @@ vim.lsp.config('rust-analyzer', {
 
 
 -- When adding new lsps add them here
-vim.lsp.enable({ 'terraformls', 'nil_ls', 'taplo', 'lua_ls', 'pyright', 'bashls', 'dockerls', 'yamlls', 'denols',
-    'nushell', 'rust-analyzer', 'ts_ls' })
+vim.lsp.enable({ 'terraformls', 'nil_ls', 'taplo', 'lua_ls', 'bashls', 'dockerls', 'yamlls', 'denols',
+    'nushell', 'rust-analyzer', 'ts_ls', 'ruff', 'ty' })
 
 vim.lsp.config('lua_ls', {
     capabilities = capabilities,
     on_attach = on_attach,
 })
 
+vim.lsp.config('ruff', {
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
+vim.lsp.config('ty', {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = { "uvx", "ty", "server" }
+})
+
+--
+--
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
 vim.lsp.config('yamlls', {
     capabilities = capabilities,
@@ -134,10 +147,10 @@ vim.lsp.config('terraformls', {
     on_attach = on_attach,
 })
 
-vim.lsp.config('pyright', {
-    capabilities = capabilities,
-})
-
+-- vim.lsp.config('pyright', {
+--     capabilities = capabilities,
+-- })
+--
 vim.lsp.config('nil_ls', {
     capabilities = capabilities,
     on_attach = on_attach,

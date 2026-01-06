@@ -166,8 +166,9 @@
         nodePackages.bash-language-server
         nodePackages.sql-formatter
 
+        # Python formatter used by ty
+        ruff
         # Python lsp
-        # ruff
         pyright
 
         # TOML
@@ -184,7 +185,7 @@
     home.file."workspace/rust-toolchain.toml".text = ''
       [toolchain]
       profile = "default"
-      channel = "stable"
+      channel = "1.90"
       components = ["rust-analyzer"]
     '';
 
