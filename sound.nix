@@ -30,7 +30,7 @@
     unload-module module-jackdbus-detect
   ";
 
-  # services.blueman.enable = true;
+  services.blueman.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
