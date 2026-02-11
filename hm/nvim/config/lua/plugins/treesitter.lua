@@ -1,12 +1,7 @@
-require 'nvim-treesitter.configs'.setup {
-    -- NixOS installs all parsers
+require 'nvim-treesitter'.setup {
     ensure_installed = {},
     auto_install = false,
     highlight = { enable = true },
-}
-
-
-require 'nvim-treesitter.configs'.setup {
     textobjects = {
         select = {
             enable = true,
@@ -53,3 +48,9 @@ require 'nvim-treesitter.configs'.setup {
         },
     },
 }
+
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'rust', 'sql', 'python', 'markdown', 'lua', 'nix', 'bash', 'nushell', 'yaml', 'javascript', 'terraform', 'docker', 'toml' },
+    callback = function() vim.treesitter.start() end,
+})
