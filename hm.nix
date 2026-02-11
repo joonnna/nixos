@@ -136,6 +136,9 @@
 
         rofi
 
+        file
+        imagemagick
+
         # Nix related commands
         nix-tree
 
