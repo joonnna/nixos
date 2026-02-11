@@ -15,6 +15,16 @@
     ];
 
 
+  services.earlyoom = {
+    enable = true;
+    freeMemThreshold = 3; # Percentage
+    extraArgs = [
+      "--avoid"
+      "^(X|i3|postgres|1password.*|docker)$"
+      "--prefer"
+      "^(rust-analyzer|cc1plus)$"
+    ];
+  };
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager.enable = true;
