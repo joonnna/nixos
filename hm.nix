@@ -156,6 +156,7 @@
 
         jq
         lua-language-server
+        lsof
 
         tree
 
@@ -168,6 +169,8 @@
         nodePackages.yaml-language-server
         nodePackages.bash-language-server
         nodePackages.sql-formatter
+
+        uv
 
         # Python formatter used by ty
         ruff

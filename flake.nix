@@ -5,9 +5,10 @@
       nixpkgs.url = "nixpkgs/nixos-unstable";
       home-manager.url = "github:nix-community/home-manager";
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
+      sqlit.url = "github:joonnna/sqlit";
     };
 
-  outputs = { self, nixpkgs, home-manager, ... }@attrs: {
+  outputs = { self, nixpkgs, home-manager, sqlit, ... }@attrs: {
     nixosConfigurations.jon = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       lib = nixpkgs.lib;

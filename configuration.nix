@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs, ... }:
+{ pkgs, nixpkgs, sqlit, ... }:
 
 {
   # TODO:
@@ -75,11 +75,14 @@
     ];
   };
 
+
+
   environment.systemPackages = with pkgs; [
     polkit_gnome
     man-pages
     man-pages-posix
     xdg-utils
+    sqlit.packages.x86_64-linux.default
   ];
 
   documentation.dev.enable = true;
