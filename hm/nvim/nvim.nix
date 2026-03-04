@@ -1,15 +1,5 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
-let
-  pluginGit = repo: rev: version: pkgs.vimUtils.buildVimPlugin {
-    pname = "${lib.strings.sanitizeDerivationName repo}";
-    version = version;
-    src = builtins.fetchGit {
-      url = "https://github.com/${repo}.git";
-      rev = rev;
-    };
-  };
-in
 {
   programs.neovim = {
     enable = true;
@@ -68,7 +58,8 @@ in
       # Auto closes brackets etc
       autoclose-nvim
 
-      (pluginGit "seblj/nvim-formatter" "793e90b42671e510057d6a1f4cd1d514fcacd8be" "HEAD")
+      # formatting
+      conform-nvim
     ];
   };
 
@@ -78,7 +69,7 @@ in
     recursive = true;
   };
 
-  xdg.configFile."nvim/after/queries/sql/injections.scm".text = ''
+  xdg.configFile."nvim/queries/sql/injections.scm".text = ''
     ; extends
 
     (field) @variable
@@ -88,7 +79,7 @@ in
     (column) @variable
   '';
 
-  xdg.configFile."nvim/after/queries/rust/injections.scm".text = ''
+  xdg.configFile."nvim/queries/rust/injections.scm".text = ''
     ; extends
 
     (macro_invocation
