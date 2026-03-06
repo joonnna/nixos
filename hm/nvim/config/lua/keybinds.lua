@@ -132,6 +132,8 @@ set('n', '<leader>c', ':noh<CR>')
 set('n', '<leader>gc', function() vim.cmd.RustLsp('openCargo') end)
 set('n', '<leader>gp', function() vim.cmd.RustLsp('parentModule') end)
 
+set('n', '<leader>y', ':mksession! ~/.cache/nvim/session.vim | wqa<CR>', { silent = true })
+set('n', '<leader>Y', ':source ~/.cache/nvim/session.vim<CR>', { silent = true })
 
 
 -- Treesitter

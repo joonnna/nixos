@@ -191,7 +191,7 @@
     home.file."workspace/rust-toolchain.toml".text = ''
       [toolchain]
       profile = "default"
-      channel = "1.93.0"
+      channel = "1.94.0"
       components = ["rust-analyzer"]
     '';
 
