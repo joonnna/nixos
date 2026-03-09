@@ -21,17 +21,10 @@
     "${pkgs.bluez}/libexec/bluetooth/bluetoothd -f /etc/bluetooth/main.conf -E"
   ];
 
-  # module list https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-bluetooth-discover
-  services.pulseaudio.extraConfig = "
-    load-module module-switch-on-connect
-    load-module module-bluetooth-discover
-    load-module module-bluetooth-policy
-    unload-module module-suspend-on-idle
-    unload-module module-jackdbus-detect
-  ";
-
-  services.blueman.enable = true;
   security.rtkit.enable = true;
+
+  # See comment for info on pipewire/alsa/jack/pulse relationship
+  # https://www.reddit.com/r/linuxaudio/comments/1jkvwb6/alsa_vs_pulseaudio_vs_jack_vs_pipewire/
   services.pipewire = {
     enable = true;
     alsa.enable = true;
