@@ -64,7 +64,7 @@
         vivaldi
         alacritty
         fd
-        neofetch
+        fastfetch
         tree-sitter
         nodejs
         dbeaver-bin
@@ -98,6 +98,7 @@
         hyperfine
         pgcopydb
         brave
+        typst
 
         slack
         bluetui
