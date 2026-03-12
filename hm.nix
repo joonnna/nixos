@@ -166,7 +166,7 @@
         # formatter for nil
         nixpkgs-fmt
 
-        nodePackages.dockerfile-language-server-nodejs
+        dockerfile-language-server
         nodePackages.yaml-language-server
         nodePackages.bash-language-server
         nodePackages.sql-formatter

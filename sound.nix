@@ -30,5 +30,14 @@
     alsa.enable = true;
     pulse.enable = true;
     jack.enable = false;
+
+    # https://bbs.archlinux.org/viewtopic.php?id=292316
+    extraConfig.pipewire = {
+      context.properties = {
+        default.clock.quantum = 2048;
+        default.clock.min-quantum = 1024;
+        default.clock.max-quantum = 4096;
+      };
+    };
   };
 }
