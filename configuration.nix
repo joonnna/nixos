@@ -20,7 +20,7 @@
     freeMemThreshold = 3; # Percentage
     extraArgs = [
       "--avoid"
-      "^(X|i3|postgres|1password.*|docker)$"
+      "^(X|i3|postgres|1password.*|docker|cc1plus)$"
       "--prefer"
       "^(rust-analyzer|cc1plus)$"
     ];
@@ -114,6 +114,17 @@
     };
   };
 
+
+
+  fileSystems."/home/jon/ignition" =
+    {
+      device = "/dev/sda1";
+      fsType = "exfat";
+      options = [ "rw" "defaults" "uid=1000" "gid=1000" "umask=000" ];
+    };
+
+
+  #
   # Need for 1password system authentication support
   security.polkit.enable = true;
   systemd = {
@@ -121,6 +132,7 @@
       description = "polkit-gnome-authentication-agent-1";
       wantedBy = [ "graphical-session.target" ];
       wants = [ "graphical-session.target" ];
+
       after = [ "graphical-session.target" ];
       serviceConfig = {
         Type = "simple";

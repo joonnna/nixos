@@ -35,6 +35,14 @@ magenta = '#d5eb34'
 cyan = '#42fff2'
 white = '#d3ebe9'
 
+[selection]
+save_to_clipboard = true
+
+[[keyboard.bindings]]
+key = "e"
+mods = "Control"
+action = "ToggleViMode"
+
 [[keyboard.bindings]]
 key = "Escape"
 mode = "Vi"

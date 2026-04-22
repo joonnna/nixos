@@ -52,6 +52,10 @@
           "${modifier}+i" = "focus up";
           "${modifier}+o" = "focus right";
 
+          "${modifier}+_" = "nop";
+          "${modifier}+f" = "nop";
+          "${modifier}+Return" = "nop";
+
           "${modifier}+Shift+n" = "move left";
           "${modifier}+Shift+e" = "move down";
           "${modifier}+Shift+i" = "move up";

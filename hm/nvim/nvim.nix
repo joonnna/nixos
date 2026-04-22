@@ -1,5 +1,17 @@
 { pkgs, ... }:
+let
+  dbtui = pkgs.vimUtils.buildVimPlugin {
+    pname = "dbtui";
+    version = "latest";
 
+    src = pkgs.fetchFromGitHub {
+      owner = "Di3go0-0";
+      repo = "dbtui.nvim";
+      rev = "main";
+      sha256 = "sha256-TP+oet/i9w9Et/tYXEy5ATgKi9f1YLXpYlkvkniJ1ys=";
+    };
+  };
+in
 {
   programs.neovim = {
     enable = true;
@@ -44,6 +56,8 @@
       # Search and replace across files
       nvim-spectre
 
+      dbtui
+
       # Used when changing colors in colorscheme
       # nvim-colorizer-lua
 
@@ -69,7 +83,7 @@
     recursive = true;
   };
 
-  xdg.configFile."nvim/queries/sql/injections.scm".text = ''
+  xdg.configFile." nvim/queries/sql/injections.scm ".text = ''
     ; extends
 
     (field) @variable
@@ -79,20 +93,28 @@
     (column) @variable
   '';
 
-  xdg.configFile."nvim/queries/rust/injections.scm".text = ''
+  xdg.configFile." nvim/queries/rust/injections.scm ".text = ''
     ; extends
 
     (macro_invocation
         (scoped_identifier
-            path: (identifier) @_path (#eq? @_path "sqlx")
-            name: (identifier) @_name (#match? @_name "query")
+            path: (identifier) @_path (#eq? @_path "
+        sqlx ")
+        name: (identifier) @_name (#match? @_name "
+        query ")
         )
         (token_tree
             (raw_string_literal
                 (string_content) @injection.content
             )
         )
-        (#set! injection.language "sql")
+        (#set! injection.language "
+        sql "     )
     )
   '';
 }
+
+
+
+
+

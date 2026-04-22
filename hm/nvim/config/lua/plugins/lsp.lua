@@ -47,32 +47,46 @@ cmp.setup({
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-vim.lsp.config('rust-analyzer', {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    settings = {
-        ["rust-analyzer"] = {
-            cargo = {
-                allFeatures = true,
-                allTargets = true,
-                extraEnv = {
-                    CARGO_TARGET_DIR = '/home/jon/workspace/rust-analyzer-target'
+vim.g.rustaceanvim = {
+    -- Plugin configuration
+    tools = {},
+    -- LSP configuration
+    server = {
+        on_attach = on_attach,
+        default_settings = {
+            -- rust-analyzer language server configuration
+            ['rust-analyzer'] = {
+                cargo = {
+                    allFeatures = true,
+                    allTargets = true,
+                    -- extraEnv = {
+                    --     CARGO_TARGET_DIR = '/home/jon/workspace/rust-analyzer-target'
+                    -- },
                 },
+                check = {
+                    command = "clippy",
+                    allTargets = true,
+                    allFeatures = true,
+                    extraArgs = { "--tests" }
+                }
             },
-            check = {
-                command = "clippy",
-                allTargets = true,
-                allFeatures = true,
-                extraArgs = { "--tests" }
-            }
-        }
-    }
-})
+        },
+    },
+}
+
 
 
 -- When adding new lsps add them here
 vim.lsp.enable({ 'terraformls', 'nil_ls', 'taplo', 'lua_ls', 'bashls', 'dockerls', 'yamlls', 'denols',
-    'nushell', 'rust-analyzer', 'ts_ls', 'ruff', 'ty' })
+    'nushell', 'ts_ls', 'ruff', 'ty' })
+
+-- vim.lsp.config('postrgres_lsp', {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     filetypes = { "sql" },
+--     cmd = { "postgres-language-server", "lsp-proxy" }
+-- })
+
 
 vim.lsp.config('lua_ls', {
     capabilities = capabilities,

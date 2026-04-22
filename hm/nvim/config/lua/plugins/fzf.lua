@@ -13,3 +13,8 @@ require('fzf-lua').setup({
         }
     },
 })
+
+require("dbtui").setup({
+    keymap = "<leader>db",      -- toggle
+    open_keymap = "<leader>dD", -- open only
+})

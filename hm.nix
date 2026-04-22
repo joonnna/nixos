@@ -55,6 +55,10 @@
         # Might also need to manually clear `~/.cache/fontconfig`
         # See issue for details: https://github.com/nix-community/home-manager/issues/6160
         nerd-fonts.iosevka
+        font-awesome
+        roboto
+        source-sans
+        source-sans-pro
 
         playerctl
         flameshot
@@ -86,6 +90,7 @@
         autorandr
         brightnessctl
         # linuxKernel.packages.linux_6_14.perf
+        perf
         cmake
         wget
         gnumake
@@ -135,6 +140,8 @@
         xh
         cargo-udeps
 
+        btop
+
         rofi
 
         file
@@ -143,16 +150,20 @@
         # Nix related commands
         nix-tree
 
-        nodePackages.prettier
+        yaml-language-server
+        bash-language-server
+        sql-formatter
+        prettier
+        # Javascript hell (use this if we want to be compliant with everyone not using deno)
+        # https://github.com/neovim/nvim-lspconfig/pull/3232#issuecomment-2331025714
+        typescript-language-server
 
         ### Language servers
 
         # Javascript runtime and lsp written in rust, not compatible formatting with everyone not using deno (see lsp.lua for all filetypes deno provides lsp/formatting for)
         deno
 
-        # Javascript hell (use this if we want to be compliant with everyone not using deno)
-        # https://github.com/neovim/nvim-lspconfig/pull/3232#issuecomment-2331025714
-        nodePackages.typescript-language-server
+        # postgres-language-server
 
 
         jq
@@ -167,10 +178,6 @@
         nixpkgs-fmt
 
         dockerfile-language-server
-        nodePackages.yaml-language-server
-        nodePackages.bash-language-server
-        nodePackages.sql-formatter
-
         uv
 
         # Python formatter used by ty

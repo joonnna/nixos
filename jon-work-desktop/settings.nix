@@ -13,7 +13,7 @@
   home-manager.users.jon = { pkgs, lib, ... }: {
     home.file.".xprofile".text = ''
       autorandr horizontal
-      xrandr --output DP-2 --primary
+      xrandr --output DP-0 --primary
     '';
     xsession.windowManager.i3 = {
       extraConfig = ''

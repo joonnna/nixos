@@ -138,8 +138,8 @@
       nn = "eza -l";
       nnn = "eza -la";
 
-      htop = "btm";
-      top = "btm";
+      htop = "btop";
+      top = "btop";
       du = "dust";
 
       copy = "wl-copy";
