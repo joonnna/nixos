@@ -53,7 +53,7 @@
           "${modifier}+o" = "focus right";
 
           "${modifier}+_" = "nop";
-          "${modifier}+f" = "nop";
+          # "${modifier}+f" = "nop";
           "${modifier}+Return" = "nop";
 
           "${modifier}+Shift+n" = "move left";
@@ -61,10 +61,11 @@
           "${modifier}+Shift+i" = "move up";
           "${modifier}+Shift+o" = "move right";
 
-          "${modifier}+m" = "fullscreen";
-          "${modifier}+l" = "layout stacking";
-          "${modifier}+u" = "layout tabbed";
-          "${modifier}+y" = "layout toggle split";
+          "${modifier}+f" = "fullscreen";
+          "${modifier}+s" = "layout toggle tabbed stacking splith splitv";
+          # "${modifier}+l" = "layout stacking";
+          # "${modifier}+u" = "layout tabbed";
+          # "${modifier}+y" = "layout toggle split";
           "${modifier}+h" = "kill";
           "${modifier}+Shift+r" = "reload";
         };
