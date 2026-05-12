@@ -24,10 +24,10 @@
       ./hm/starship.nix
       ./hm/gh.nix
       ./hm/bottom.nix
-      ./hm/bemenu.nix
+      # ./hm/bemenu.nix
       ./hm/rainfrog.nix
       ./hm/nushell.nix
-      ./hm/firefox.nix
+      # ./hm/firefox.nix
       ./hm/fzf.nix
     ];
     programs.direnv.enable = true;

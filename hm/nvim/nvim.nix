@@ -15,6 +15,8 @@ in
 {
   programs.neovim = {
     enable = true;
+    withPython3 = false;
+    withRuby = false;
     plugins = with pkgs.vimPlugins; [
       # Adding playground disables all nix installed parsers,
       # see https://github.com/NixOS/nixpkgs/issues/282927#issuecomment-2329559505 for details
