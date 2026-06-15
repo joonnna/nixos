@@ -20,7 +20,7 @@
     freeMemThreshold = 3; # Percentage
     extraArgs = [
       "--avoid"
-      "^(X|i3|postgres|1password.*|docker|cc1plus)$"
+      "^(X|i3|postgres|1password.*|docker|cc1plus|bluetooth*)$"
       "--prefer"
       "^(rust-analyzer|cc1plus)$"
     ];

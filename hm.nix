@@ -171,6 +171,8 @@
         lsof
 
         tree
+        vitejs
+        firefox
 
         # Nix
         nil
@@ -199,7 +201,7 @@
     home.file."workspace/rust-toolchain.toml".text = ''
       [toolchain]
       profile = "default"
-      channel = "1.95.0"
+      channel = "1.96.0"
       components = ["rust-analyzer"]
     '';
 

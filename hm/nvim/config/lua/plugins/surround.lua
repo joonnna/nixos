@@ -1,5 +1,8 @@
 require("nvim-surround").setup({
     surrounds = {
+        ["c"] = {
+            add = { "COALESCE(", ")" },
+        },
         ["d"] = {
             add = { "dbg!(", ")" },
         },
