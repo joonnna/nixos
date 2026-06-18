@@ -2,21 +2,33 @@ require("nvim-surround").setup({
     surrounds = {
         ["c"] = {
             add = { "COALESCE(", ")" },
+            find = "COALESCE%b()",
+            delete = "^(COALESCE%()().-(%))()$",
         },
         ["d"] = {
             add = { "dbg!(", ")" },
+            find = "dbg!%b()",
+            delete = "^(dbg!%()().-(%))()$",
         },
-        ["r"] = {
+        ["u"] = {
             add = { "Result<", ">" },
+            find = "Result<().-()>",
+            delete = "^(Result<)().-(>)()$",
         },
-        ["t"] = {
+        ["p"] = {
             add = { "Option<", ">" },
+            find = "Option<().-()>",
+            delete = "^(Option<)().-(>)()$",
         },
         ["o"] = {
             add = { "Ok(", ")" },
+            find = "Ok%b()",
+            delete = "^(Ok%()().-(%))()$",
         },
         ["e"] = {
             add = { "Err(", ")" },
+            find = "Err%b()",
+            delete = "^(Err%()().-(%))()$",
         },
     },
 })
