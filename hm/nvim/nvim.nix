@@ -134,9 +134,25 @@ in
         )
         (#set! injection.language "sql")
     )
-
   '';
 
+
+  # (
+  #     (attribute_item) @_start
+  #     .
+  #     [
+  #     (function_item)
+  #     ] @_end
+  #     (#make-range! "function.full" @_start @_end)
+  # )
+
+
+  # (
+  #   (attribute_item)*
+  #   .
+  #   (function_item)
+  # ) @function.outer_with_attrs
+  #
   # xdg.configFile." nvim/queries/rust/injections.scm ".text = ''
   #   ; extends
   #
