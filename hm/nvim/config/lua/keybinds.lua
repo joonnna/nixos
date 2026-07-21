@@ -108,15 +108,6 @@ set('n', '<leader>z', ':cclose<CR>')
 -- set('n', 't', ':tabn<CR>')
 -- set('n', 'T', ':tabp<CR>')
 
-set('n', '<leader>yt', ':norm ysiw<iOption<CR>')
-set('n', '<leader>yd', ':norm ysiw)idbg!<CR>')
-set('n', '<leader>yr', ':norm ysiw<iResult<CR>')
-set('n', '<leader>yo', ':norm ysiw(iOk<CR>')
-set('n', '<leader>ye', ':norm ysiw(iErr<CR>')
-
--- set("v", "<leader>yd", function() vim.cmd('normal! Sdbg!()') end)
-
-
 -- Lsp
 set('n', 'gt', function() require('fzf-lua').lsp_typedefs() end)
 set('n', 'gd', vim.lsp.buf.definition)
