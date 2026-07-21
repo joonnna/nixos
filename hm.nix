@@ -171,7 +171,8 @@
         lsof
 
         tree
-        vitejs
+        # re-add when the fetcherVersion bug is gone
+        # vitejs
         firefox
 
         # Nix
