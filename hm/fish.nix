@@ -31,6 +31,7 @@
       cdo = "cd ~/workspace/orcastrator";
       cdn = "cd ~/nixos";
       cdi = "cd ~/workspace/infrastructure";
+      cdw = "cd ~/workspace";
 
       play = "nvim ~/workspace/play/play/src/main.rs";
 
