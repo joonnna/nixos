@@ -57,7 +57,7 @@ vim.g.rustaceanvim = {
             -- rust-analyzer language server configuration
             ['rust-analyzer'] = {
                 cargo = {
-                    allFeatures = true,
+                    -- allFeatures = true,
                     allTargets = true,
                     -- extraEnv = {
                     --     CARGO_TARGET_DIR = '/home/jon/workspace/rust-analyzer-target'
@@ -66,7 +66,7 @@ vim.g.rustaceanvim = {
                 check = {
                     command = "clippy",
                     allTargets = true,
-                    allFeatures = true,
+                    -- allFeatures = true,
                     extraArgs = { "--tests" }
                 }
             },
