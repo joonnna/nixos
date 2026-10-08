@@ -39,7 +39,7 @@
     keep-outputs = true
     keep-derivations = true
   '';
-  nix.settings.experimental-features = "nix-command flakes";
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.etc."nix/path/nixpkgs".source = nixpkgs;
 
   # See: https://discourse.nixos.org/t/slow-build-at-building-man-cache/52365
