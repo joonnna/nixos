@@ -15,6 +15,11 @@ if ! test -f ~/nixos/"$HOSTNAME"/hardware-configuration.nix; then
   cp ~/nixos-backup/hardware-configuration.nix ~/nixos/"$HOSTNAME"
 fi
 
+if ! test -f ~/nixos/"$HOSTNAME"/settings.nix; then
+  echo "Copying settings"
+  cp ~/nixos-backup/settings.nix ~/nixos/"$HOSTNAME"
+fi
+
 if [ ! -L /etc/nixos ]; then
   echo "Symbolic link does not exist, linking"
   sudo rm -rf /etc/nixos
