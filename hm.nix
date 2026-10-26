@@ -6,14 +6,6 @@
     home-manager.nixosModules.home-manager
   ];
 
-  systemd.tmpfiles.settings."1password_config"."/home/jon/.config/op" = {
-    d = {
-      group = "jon";
-      mode = "0700";
-      user = "jon";
-    };
-  };
-
   home-manager.users.jon = { pkgs, lib, ... }: {
     imports = [
       ./hm/i3.nix
@@ -146,6 +138,7 @@
         xh
         cargo-udeps
         vitejs
+        usbimager
 
         btop
 
