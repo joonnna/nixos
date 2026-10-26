@@ -44,9 +44,15 @@
 
     fonts.fontconfig.enable = true;
 
+    nixpkgs.overlays = [
+      (final: prev: {
+        vitejs = final.callPackage ./vitejs.nix { };
+      })
+    ];
+
     # need for vivaldi (installed on user level)
     nixpkgs.config.allowUnfree = true;
-
+    # home-manager.useGlobalPkgs = true;
     home.packages = with pkgs;
       [
         # Clipboard support
@@ -139,6 +145,7 @@
         ouch
         xh
         cargo-udeps
+        vitejs
 
         btop
 
