@@ -44,4 +44,5 @@ cat > /mnt/etc/nixos/configuration.nix <<EOF
   system.stateVersion = "26.11"; # Matches your install version
 }
 EOF
+nixos-install
 nixos-enter --root /mnt -c \'"passwd $4"\'
