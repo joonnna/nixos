@@ -45,4 +45,5 @@ cat > /mnt/etc/nixos/configuration.nix <<EOF
 }
 EOF
 nixos-install
-nixos-enter --root /mnt -c \'"passwd $4"\'
+printf -v cmd 'passwd %q' "$4"
+nixos-enter --root /mnt -c "$cmd"
