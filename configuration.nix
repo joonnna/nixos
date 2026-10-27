@@ -116,14 +116,6 @@
 
 
 
-  fileSystems."/home/jon/ignition" =
-    {
-      device = "/dev/sda1";
-      fsType = "exfat";
-      options = [ "rw" "defaults" "uid=1000" "gid=1000" "umask=000" ];
-    };
-
-
   #
   # Need for 1password system authentication support
   security.polkit.enable = true;

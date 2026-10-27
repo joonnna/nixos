@@ -17,6 +17,14 @@
     };
   };
 
+  fileSystems."/home/jon/ignition" =
+    {
+      device = "/dev/sda1";
+      fsType = "exfat";
+      options = [ "rw" "defaults" "uid=1000" "gid=1000" "umask=000" ];
+    };
+
+
   home-manager.users.jon = { pkgs, lib, ... }: {
     home.file.".xprofile".text = ''
       autorandr horizontal
