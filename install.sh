@@ -10,15 +10,11 @@ fi
 
 mkdir -p ~/nixos/"$HOSTNAME"
 
-if ! test -f ~/nixos/"$HOSTNAME"/hardware-configuration.nix; then
-  echo "Copying hardware-configuration"
-  cp ~/nixos-backup/hardware-configuration.nix ~/nixos/"$HOSTNAME"
-fi
+echo "Copying hardware-configuration"
+cp ~/nixos-backup/hardware-configuration.nix ~/nixos/"$HOSTNAME"
 
-if ! test -f ~/nixos/"$HOSTNAME"/settings.nix; then
-  echo "Copying settings"
-  cp ~/nixos-backup/settings.nix ~/nixos/"$HOSTNAME"
-fi
+echo "Copying settings"
+cp ~/nixos-backup/settings.nix ~/nixos/"$HOSTNAME"
 
 if [ ! -L /etc/nixos ]; then
   echo "Symbolic link does not exist, linking"
