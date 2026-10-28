@@ -5,7 +5,7 @@
     group = "users";
     name = "onprem-datafangst";
     tokenFile = "/home/jon/secrets/github-runner-pat.token";
-    url = "https://github.com/orcalabs/kyogre";
+    url = "https://github.com/orcalabs";
     replace = true;
     # workDir = "/home/jon/github-runner-workspace/repos";
     # serviceOverrides = {
