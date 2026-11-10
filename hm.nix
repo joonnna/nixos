@@ -16,6 +16,7 @@
       ./hm/starship.nix
       ./hm/gh.nix
       ./hm/bottom.nix
+      ./hm/flameshot.nix
       # ./hm/bemenu.nix
       ./hm/rainfrog.nix
       ./hm/nushell.nix
@@ -59,7 +60,6 @@
         source-sans-pro
 
         playerctl
-        flameshot
         gcc
         docker
         docker-compose
